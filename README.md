@@ -6,7 +6,8 @@
 
 ## usage
 - 发布新的博客
-```hexo new "new post"
+```
+hexo new "new post"
 hexo g -d
 ```
 
