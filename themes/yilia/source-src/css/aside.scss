@@ -89,16 +89,16 @@
         min-height: 100px;
         text-align: left;
         padding: 5px 0 5px 20px;
-        right: 4.7em;
+        right: 2.7em;
         min-width: 200px;
         width: initial;
         font-size: 14px;
-        text-shadow: 1px 1px 1px #398199;
-        bottom: -10px;
+        /*text-shadow: 1px 1px 1px #398199;*/
+        bottom: -1px;
         transform-origin: 100% 100%;
         transform: translate3d(0, -10px, 0) rotate3d(1, 1, 1, -30deg);
         a {
-            color: #fff;
+            color: #1a1a1a;
         }
         &::after {
             top: initial;
