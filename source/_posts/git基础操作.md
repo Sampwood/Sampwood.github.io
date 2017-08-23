@@ -1,6 +1,9 @@
 ---
 title: git基础操作
 date: 2017-07-24 19:14:46
+categories:
+- coding
+- version-control
 tags: git
 ---
 记录一些git操作
@@ -14,7 +17,7 @@ git fetch <远程主机名> <分支名>
 ```
 
 fetch下来的代码，在本地主机上可以用`远程主机名/分支名`的形式读取。
-
+<!--more-->
 把远程remoteBranch分支拉去到本地的localBranch下，没有则创建: 
 ```
 git fetch origin localBranch:remoteBranch

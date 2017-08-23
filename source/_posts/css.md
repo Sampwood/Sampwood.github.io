@@ -1,6 +1,9 @@
 ---
 title: css
 date: 2017-08-22 14:45:09
+categories:
+- coding
+- font-end
 tags: css
 ---
 一些css知识。
@@ -14,7 +17,7 @@ focus和hover可以互换，写在后面的优先级高
 ### rem、em
 
 rem是相对html中的font-size的大小来计算的。值得注意的是chrome中文版的最小字体是12px，所以如果font-size设置了小于12px的值将不起作用。
-
+<!--more-->
 对em来说，如果是算font-size的大小，则用父类的font-size；计算其他大小，如margin，则用本身的font-size。
 
 ### 盒子模型
