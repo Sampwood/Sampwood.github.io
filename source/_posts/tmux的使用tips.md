@@ -10,7 +10,7 @@ toc: true
 ### xshell中配置
 
 Xshell下：文件->属性->终端->VT模式->初始VT模式->去掉 Auto Wrap Mode (DECAWM) 勾选->退出SSH重新登录一次：
-
+<!--more-->
 ![xshell-Tmux](/img/xshell_Tmux.png)
 
 
