@@ -44,6 +44,7 @@ git checkout -f
 git branch -r 查看远程分支
 git branch -a 查看所有分支
 git branch -vv 查看分支绑定的远程主机地址和远程分支
+git branch --track/--set-upstream-to localBranch origin/remoteBranch
 ```
 
 ### diff
@@ -81,4 +82,11 @@ git blame filename
 查看文件的详细提交记录，具体修改过哪些地方:
 ```
 git log -p filename
+```
+
+### 修改默认编辑器
+
+在GIT配置中设置 core.editor
+```
+git config --global core.editor "vim"
 ```
