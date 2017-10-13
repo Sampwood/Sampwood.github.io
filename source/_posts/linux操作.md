@@ -56,16 +56,16 @@ toc: true
 
 # 文件命令
 - 解压文件：
->     1. *.tar 用 tar -xvf 解压
->     2. *.gz 用 gzip -d或者gunzip 解压
->     3. *.tar.gz 和 *.tgz 用 tar -xzf 解压
->     4. *.bz2 用 bzip2 -d或者用bunzip2 解压
->     5. *.tar.bz2用tar -xjf 解压
->     6. *.Z 用 uncompress 解压
->     7. *.tar.Z 用tar -xZf 解压
->     8. *.rar 用 unrar e解压
->     9. *.zip 用 unzip 解压
->     10. *.tar.xz 先用 xz -d 解压成tar文件
+> 1. *.tar 用 tar -xvf 解压
+> 2. *.gz 用 gzip -d或者gunzip 解压
+> 3. *.tar.gz 和 *.tgz 用 tar -xzf 解压
+> 4. *.bz2 用 bzip2 -d或者用bunzip2 解压
+> 5. *.tar.bz2用tar -xjf 解压
+> 6. *.Z 用 uncompress 解压
+> 7. *.tar.Z 用tar -xZf 解压
+> 8. *.rar 用 unrar e解压
+> 9. *.zip 用 unzip 解压
+> 10. *.tar.xz 先用 xz -d 解压成tar文件
 - 移动/重命名文件：mv A B
 - 修改文件权限：chmod [option] MODE <file>
 - 修改文件拥有者：chown [-R] 账号名称:用户组名称 文件或目录
@@ -76,6 +76,6 @@ toc: true
 
 # 系统配置
 - 修改系统时区：
->     1. rm -rf /etc/localtime
->     2. ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+> 1. rm -rf /etc/localtime
+> 2. ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 - 修改系统时间：date -s "2008-08-08 12:00:00"

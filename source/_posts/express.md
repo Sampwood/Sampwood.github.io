@@ -13,7 +13,7 @@ toc: true
 `$ npm install express --save`
 
 <!--more-->
-### 1. session
+### session
 
 > express-session  
 在Express4.x版本之后，session和cookies等模块不再包含在Express框架中，需要单独添加相应模块。
@@ -53,10 +53,10 @@ toc: true
       }
     })
     
-### 2. 中间件
+### 中间件
 
 > 利用 Express 中间件功能实现登录拦截。如果用户请求的路径需要登录后才能访问，将用户重定向到登录页面，登录成功后将用户重定向到原始请求路径。
 
-### 3. 配置
+### 配置
 
 - 访问刷新session计时：session({rolling: true})

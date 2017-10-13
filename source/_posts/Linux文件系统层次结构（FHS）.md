@@ -5,7 +5,6 @@ categories:
 - coding
 - linux
 tags: linux
-toc: true
 ---
 
 文件可以用两种方式来区分：可否共享，以及是是否常常修改。把不同类别的文件放在不同的目录下，例如：

@@ -5,7 +5,6 @@ categories:
 - coding
 - database
 tags: mongodb
-toc: true
 ---
 
 ### 数据库操作
