@@ -90,3 +90,7 @@ git log -p filename
 ```
 git config --global core.editor "vim"
 ```
+
+### 删除untracked files
+
+`git clean -f`

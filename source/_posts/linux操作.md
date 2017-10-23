@@ -66,12 +66,12 @@ toc: true
 > 8. *.rar 用 unrar e解压
 > 9. *.zip 用 unzip 解压
 > 10. *.tar.xz 先用 xz -d 解压成tar文件
-- 移动/重命名文件：mv A B
-- 修改文件权限：chmod [option] MODE <file>
-- 修改文件拥有者：chown [-R] 账号名称:用户组名称 文件或目录
-- 修改文件所属用户组：chgrp [-R] 用户组名称 dirname/filename ...
-- 删除文件夹：rm -rf <dir>
-- 删除文件：rm -f <file>
+- 移动/重命名文件：`mv A B`
+- 修改文件权限：`chmod [option] MODE <file>`
+- 修改文件拥有者：`chown [-R] 账号名称:用户组名称 文件或目录`
+- 修改文件所属用户组：`chgrp [-R] 用户组名称 dirname/filename ...`
+- 删除文件夹：`rm -rf <dir>`
+- 删除文件：`rm -f <file>`
 - 运行sh文件的几种方法：`sh test.sh`, `bash test.sh`, `./test.sh`, `source test.sh`
 
 # 系统配置
