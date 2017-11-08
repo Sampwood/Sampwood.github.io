@@ -47,7 +47,7 @@ background: rgba(0, 0, 0, .3), url(...)
 1. 
 div {
     display: table-cell;
-    vertical-align: middle;    
+    vertical-align: middle;  //针对自己的居中，而不是子元素  
 }
 2.
 div {
