@@ -629,9 +629,30 @@ it('should request login if not logged in', () => {
 });
 ```
 
+
+### 生命周期
+
+#### `ExpressionChangedAfterItHasBeenCheckedError` error 
+
+constructor -> OnChanges -> onInit -> doCheck -> afterContentInit -> afterContentChecked -> afterViewInit -> afterViewChecked -> onDestroy
+
+angular从app-root开始做变化检查（change detection），检查所有的数据绑定，然后开始检查子组件，
+并且其只做一次检查（而不是循环检查直到稳定），父组件的数据绑定将不会再次检查，
+所以此时应用处在一个不稳定状态（inconsistent state。
+
+在开发模式中，angular进行两个变化检查，第二次将会确认数据绑定是否发生改变，如果有就抛出`这个`错误。
+
+所以，如果在afterViewInit中修改了数据绑定就会出现这个错误。
+
+**解决方案**：
+1. setTimeout / Promise.resolve().then
+2. ChangeDetectorRef#detectChanges() 强制检查
+3. 如果是对与`*ngIf`的问题，可用`[hidden]`替代
+
 ## 参考
 
 1. [[Angular 2] ElementRef, @ViewChild & Renderer](http://www.cnblogs.com/Answer1215/p/5898545.html)
 2. [Angular ngFor, &lt;ng-template&gt; and the compiler](https://toddmotto.com/angular-ngfor-template-element)
 3. [Angular 2 HostListener & HostBinding](https://segmentfault.com/a/1190000008878888)
 4. [Angular4: 文档-核心知识-测试](https://angular.cn/guide/testing#测试)
+5. [Everything you need to know about the `ExpressionChangedAfterItHasBeenCheckedError` error](https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4)
