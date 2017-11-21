@@ -43,6 +43,7 @@ git checkout -f
 ```
 git branch -r 查看远程分支
 git branch -a 查看所有分支
+git branch -D localBranch 删除本地分支
 git branch -vv 查看分支绑定的远程主机地址和远程分支
 git branch --track/--set-upstream-to localBranch origin/remoteBranch
 ```

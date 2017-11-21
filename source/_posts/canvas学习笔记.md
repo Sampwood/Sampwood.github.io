@@ -3,10 +3,20 @@ title: canvas学习笔记
 date: 2017-11-14 16:51:03
 categories:
 - coding
-- font-end
-tags: ["html5", "canvas"]
+- js
+tags: 
+- html5 
+- canvas
 toc: true
 ---
+
+```
+let canvas = document.getElementById('myCanvas');
+let ctx = canvas.getContext('2d');
+
+ctx.fillStyle = '#FF0000';
+ctx.fillRect(0,0,80,100);
+```
 
 ### 矩形
 

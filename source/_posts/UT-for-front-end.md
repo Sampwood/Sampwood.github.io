@@ -3,8 +3,9 @@ title: UT for front-end
 date: 2017-11-14 13:29:31
 categories:
 - coding
-- font-end
-tags: UT
+- js
+tags: 
+- UT
 ---
 
 前段项目的UT一般可以采用karma+jasmine来搭建。jasmine做单元测试，karma自动化完成单元测试。
