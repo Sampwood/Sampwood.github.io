@@ -6,6 +6,7 @@ categories:
 tags:
   - css
 date: 2017-11-21 15:00:25
+update: 2017-11-22 14:57:30
 ---
 ### display: flex
 
@@ -15,8 +16,8 @@ date: 2017-11-21 15:00:25
 - `flex-start`：子元素靠左排列
 - `flex-end`：子元素靠右排列
 - `center`：子元素居中排列
-- `space-between`：子元素之间有相等的空格 
-- `space-around`：更多的空格
+- `space-between`：子元素之间有相等的空格; 一行内所有的空格在元素之间平分
+- `space-around`：更多的空格；一行内所有的空格在元素前后（即`2*n`）平分
 - `space-evenly`：较少的空格
 <!--more-->
 
