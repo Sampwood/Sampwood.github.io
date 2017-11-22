@@ -40,11 +40,11 @@ node_js:
 
 这样子就完成了设置，下次github仓库有代码提交之后就会跑CI：
 
-![Travis CI结果图](/img/Travis_CI.png)
+![Travis CI结果图](/images/Travis_CI.png)
 
 如果想在github项目的markdown文件中直接看到CI结果，可以点击上图中【build|passing】按钮，然后出现的dialog中的第二个下拉按钮选markdown，然后拷贝下面文本框内容，粘贴到项目的md文件中。
 
-![CI和coverage直观结果](/img/coverage_CI.png)
+![CI和coverage直观结果](/images/coverage_CI.png)
 
 ### Coveralls
 

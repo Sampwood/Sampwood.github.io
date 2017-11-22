@@ -35,7 +35,7 @@ github支持http和ssh协议连接。使用http协议连接时需要输入github
 
 此种方式是把凭证存储至Windows的凭据管理器中：
 
-![manager-git](/img/manager-git.jpg)
+![manager-git](/images/manager-git.jpg)
 
 ### wincred
 
