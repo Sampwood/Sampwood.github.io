@@ -495,7 +495,7 @@ export class BannerComponent {
 以前测试内联模板时使用的设置方式不适用于外部模板。
 
 `BannerComponent`测试的设置方式必须给Angular模板编译器一些时间来读取文件。
-以前放在`beforeEach`中的逻辑被拆分成了两个`beforeEac`h调用。 第一个`beforeEach`处理异步编译工作。
+以前放在`beforeEach`中的逻辑被拆分成了两个`beforeEach`调用。 第一个`beforeEach`处理异步编译工作。
 
 ```TypeScript
 import { async } from '@angular/core/testing';

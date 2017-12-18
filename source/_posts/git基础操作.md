@@ -46,6 +46,7 @@ git branch -a 查看所有分支
 git branch -D localBranch 删除本地分支
 git branch -vv 查看分支绑定的远程主机地址和远程分支
 git branch --track/--set-upstream-to localBranch origin/remoteBranch
+git branch -m <老的分支名> <新的分支名>
 ```
 
 ### diff
@@ -61,6 +62,7 @@ git merge/rebase 远程主机名/分支名（origin/master） 在当前分支上
 ### push
 ```
 git push 远程主机名 分支名
+git push --set-upstream origin 分支名 (To push the current branch and set the remote as upstream)
 ```
 如果要push到gerrit上面用：
 ```
