@@ -5,7 +5,7 @@ categories:
   - linux
 tags:
   - vnc
-  - Ubuntu
+  - linux
 date: 2017-12-18 15:24:02
 update: 2017-12-18 15:24:02
 ---
