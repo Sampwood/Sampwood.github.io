@@ -50,6 +50,12 @@ toc: true
 - 查看进程：ps -ef
 - 查看端口占用：netstat –apn
 
+### 进程
+- 停止进程并放入后台：ctrl+z
+- 显示当前暂停的进程：jobs
+- 使第N个任务在后台运行：bg %N
+- 使第N个任务在前台运行：fg %N (bg, fg不带%N时表示对最后一个进程操作)
+
 ### shell命令
 - 创建SSH Key：ssh-keygen -t rsa -C "youremail@example.com"
 - 使命令脱离终端在后台运行：nohup 你的shell命令 &
