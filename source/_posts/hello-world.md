@@ -1,5 +1,6 @@
 ---
 title: Hello World
+date: 2017-07-17 18:20:15
 categories:
 - 随笔
 tags: ["blog framework", "hexo"]

@@ -1,5 +1,5 @@
 ---
-title: ccss学习笔记
+title: css学习笔记
 categories:
   - coding
   - css

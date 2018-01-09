@@ -125,3 +125,27 @@ nautilus &
 ```
 
 **note**：好多google出来的xstartup文件配置都不能完美的解决本文最开始说的问题，所以就不一一列出来其他写法。
+
+### 环境的删除
+
+#### gnome的删除
+
+>  sudo apt-get remove gnome-shell #卸载掉gnome-shell主程序
+>  sudo apt-get remove gnome #卸载掉gnome
+>  sudo apt-get autoremove #卸载不需要的依赖关系
+>  sudo apt-get purge gnome #彻底卸载删除gnome的相关配置文件
+>  sudo apt-get autoclean #清理安装gnome时候留下的缓存程序软件包
+>  sudo apt-get clean
+
+#### Xfce的删除
+
+>  sudo apt-get -f install
+>  sudo apt-get clean
+>  sudo apt-get autoclean
+>  sudo apt-get update
+>  sudo apt-get purge xfce4
+>  sudo apt autoremove
+
+## 其他问题
+1. 在VNC中Xfce4中Tab键失效的解决方法: http://blog.csdn.net/xuezhisdc/article/details/48662435
+2. ubuntu下sublime无法输入中文的解决方法：https://www.jianshu.com/p/bf05fb3a4709
