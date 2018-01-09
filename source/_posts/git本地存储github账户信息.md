@@ -6,6 +6,8 @@ categories:
 - version-control
 tags: git
 ---
+如果可以用SSH，还是使用SSH来建立链接。
+
 ### git配置信息由config来维护
 
 1. system级别：/%GitPath%/mingw64/etc/gitconfig文件
