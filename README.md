@@ -41,6 +41,7 @@ git subtree push --prefix=themes/yilia yilia master
 	- web framework
 	- database
 	- version-control
+    - python
 - 随笔
 ```
 ### 标签
@@ -63,4 +64,6 @@ git subtree push --prefix=themes/yilia yilia master
 - e2e
 - vim
 - blog framework
+- web crawler
+- environment
 
