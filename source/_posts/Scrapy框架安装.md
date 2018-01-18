@@ -131,9 +131,9 @@ Use "scrapy <command> -h" to see more info about a command
 ```
 
 ## 文章
-- [Installation guide](https://doc.scrapy.org/en/latest/intro/install.html)
-- [Anaconda](https://docs.anaconda.com/anaconda/)
-- [Miniconda](https://conda.io/docs/user-guide/install/index.html)
-- [Conda: Installing on Linux](https://conda.io/docs/user-guide/install/linux.html)
-- [ubuntu 16.04 安装 scrapy 一个花了我5个小时的bug最终解决](https://www.cnblogs.com/hizf/p/7804711.html)
-- [使用conda管理python环境](https://zhuanlan.zhihu.com/p/22678445)
+1. [Installation guide](https://doc.scrapy.org/en/latest/intro/install.html)
+2. [Anaconda](https://docs.anaconda.com/anaconda/)
+3. [Miniconda](https://conda.io/docs/user-guide/install/index.html)
+4. [Conda: Installing on Linux](https://conda.io/docs/user-guide/install/linux.html)
+5. [ubuntu 16.04 安装 scrapy 一个花了我5个小时的bug最终解决](https://www.cnblogs.com/hizf/p/7804711.html)
+6. [使用conda管理python环境](https://zhuanlan.zhihu.com/p/22678445)
