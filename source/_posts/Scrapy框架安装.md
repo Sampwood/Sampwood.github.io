@@ -19,6 +19,8 @@ update: 2018-01-18 14:28:22
 pip install Scrapy
 ```
 
+<!--more-->
+
 出现了如下错误：
 ```
  Complete output from command python setup.py egg_info:
@@ -127,3 +129,11 @@ Available commands:
 
 Use "scrapy <command> -h" to see more info about a command
 ```
+
+## 文章
+- [Installation guide](https://doc.scrapy.org/en/latest/intro/install.html)
+- [Anaconda](https://docs.anaconda.com/anaconda/)
+- [Miniconda](https://conda.io/docs/user-guide/install/index.html)
+- [Conda: Installing on Linux](https://conda.io/docs/user-guide/install/linux.html)
+- [ubuntu 16.04 安装 scrapy 一个花了我5个小时的bug最终解决](https://www.cnblogs.com/hizf/p/7804711.html)
+- [使用conda管理python环境](https://zhuanlan.zhihu.com/p/22678445)
