@@ -42,6 +42,7 @@ git subtree push --prefix=themes/yilia yilia master
 	- database
 	- version-control
     - python
+    - vue
 - 随笔
 ```
 ### 标签
@@ -66,4 +67,6 @@ git subtree push --prefix=themes/yilia yilia master
 - blog framework
 - web crawler
 - environment
-
+- vue
+- 文件引用路径
+- 第三方库引用
