@@ -66,6 +66,7 @@ set tabstop=2                 " set a tab = N spaces
 set shiftwidth=2              " set 换行缩进的空格数
 set expandtab
 :%retab!											" 用space来替代tab
+set colorcolumn=100           " 设置多少宽度出现竖线（代码规范）
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -166,4 +167,23 @@ map <C-n> :NERDTreeToggle<CR>
 > ]z       到当前打开的折叠的末尾处。
 > zj       向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。
 > zk      向上移动到前一折叠的结束处。关闭的折叠也被计入。
+
+### 全局搜索并跳转
+
+在vim的命令模式下输入如下命令：`vim /test1/ ** | copen`，就会在当前目录下递归找出所有包含`test1`字符串的文件，
+并且点击想查看的那行就能直接跳转到这个文件包含`test1`的位置中去。
+
+![global search in vim](/images/global-search-in-vim.jpg)
+
+上述例子是当前目录递归搜索所有，列出的全部文件，点击想要看的一行就直接跳转到这个文件相应行中。
+
+除此之外，这个命令还有一些变种用法：
+1. 只搜索当前文件：`vim /test1/ % | copen`
+2. 只搜索当前目录：`vim /test1/ * | copen`
+3. 搜索上级目录下，并递归：`vim /test1/ ../** | copen`
+4. 可以在多个路劲中搜索：`vim /test1/ path1/** path2/** | copen`
+
+
+
+
 

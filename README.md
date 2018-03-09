@@ -70,3 +70,4 @@ git subtree push --prefix=themes/yilia yilia master
 - vue
 - 文件引用路径
 - 第三方库引用
+- issue
