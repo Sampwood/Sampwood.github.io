@@ -41,6 +41,8 @@ export default {
 </script>
 ```
 
+<!--more-->
+
 And this is my html template:
 
 ```
