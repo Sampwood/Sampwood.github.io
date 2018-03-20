@@ -37,17 +37,60 @@ MyPromise.prototype.catch = function (rej) {
 #### 网页渲染过程
 
 1. 通过URI，定位服务器IP；
-2. 发送http请求；
-3. 建立http链接；
+2. 建立TCP/IP连接；
+3. 发送http请求；
 4. 服务器返回客户端请求内容；
 5. 浏览器对返回的数据进行解析；
 6. html/xhtml解析成DOM，css解析成cssom，遇到script标签即执行，停止页面解析；
 7. 结合DOM和cssom生成render tree，布局render树，绘制render树；
 8. 回流和重绘
 
-**参考**：http://blog.csdn.net/xiaozhuxmen/article/details/52014901
+**参考**：
+
+1. [浏览器加载、解析、渲染的过程](http://blog.csdn.net/xiaozhuxmen/article/details/52014901)
 
 #### 前后端交互的细致过程
+
+当我们在浏览器的地址栏输入 www.baidu.com ，然后回车，回车这一瞬间到看到页面到底发生了什么呢？
+
+1. 域名解析，根据域名找到服务器的IP -->
+2. 发起TCP的3次握手 -->
+3. 建立TCP连接后发起http请求 --> 
+4. 服务器响应http请求，浏览器得到html代码 -->
+5. 浏览器解析html代码，并请求html代码中的资源（如js、css、图片等） --> 
+6. 浏览器对页面进行渲染呈现给用户
+
+每次都请求都会经过:
+
+1. 客户端的应用层（http协议）-->  
+2. 客户端的传输层（tcp或udp协议） -->
+3. 客户端的网络层（ip协议） --> 
+4. 客户端的链路层（网卡，路由器等） -->  
+5. 经过dns解析，穿越多个isp（互联网服务提供商，移动，联通，电信等），各种数据交换，找到了服务器-->
+6. 服务器的链路层  -->
+7. 服务器的网络层  -->
+8. 服务器的传输层  -->
+9. 服务器的应用层。
+
+服务器响应  与请求相反，倒过来看即可。
+
+##### 缓存
+1. 强制缓存：服务端`header`中的`Cache-Control` 和 `Expires`
+2. 对比缓存：`header`中的`Last-Modified(服务端)／If-Modified-Since(客户端)`和`Etag(服务端)/If-None-Match(客户端)`
+
+##### 压缩
+服务端可以根据`Accept-Ecoding`头来返回响应的压缩资源，同时设置`Content-Encoding`头告诉浏览器你用了什么压缩方式。
+
+##### 断点续传
+
+断点续传的原理就是利用HTTP头中的Range来告诉服务器我所上传的文件的内容区间。
+
+**参考**: 
+
+1. [WEB程序的前后端数据交互流程](https://segmentfault.com/a/1190000011235491)
+2. [通过手写文件服务器，说说前后端交互](通过手写文件服务器，说说前后端交互)
+3. [一次完整的HTTP事务是怎样一个过程？](http://blog.51cto.com/linux5588/1351007)
+4. [从输入URL到页面加载完成的过程中都发生了什么事情？](https://segmentfault.com/q/1010000000489803)
 
 #### javascript的gc（垃圾回收机制）
 
@@ -191,3 +234,5 @@ html结构如下：
 
 #### 盒模型的理解
 
+## 参考
+1. [前端笔试题面试题记录（上）](https://juejin.im/post/5aad40e4f265da237f1e12ed?utm_source=gold_browser_extension)
