@@ -234,5 +234,24 @@ html结构如下：
 
 #### 盒模型的理解
 
+css盒子模型，又称为框模型，包含了元素内容（`content`）、内边框（`padding`）、边框（`border`）、外边框（`margin`）几个要素。
+
+盒子模型有两种，W3C和IE盒子模型：
+1. W3C定义的盒子模型包括`margin`、`border`、`padding`、`content`，元素的`width=content`的宽度
+2. IE盒子模型与W3C的盒子模型唯一区别就是元素的宽度，元素的`width=content+padding+border`
+
+CSS3中新增了一个样式box-sizing，包含两个属性content-box 和 border-box。
+1. `content-box`元素的`width=content`(W3C盒子)
+2. `border-box`元素的`width=content+padding+border`(IE盒子)
+
+**css 外边距合并（叠加）**:
+
+1.对于行级元素，`margin-top`和`margin-bottom`对于上下元素无效，`margin-left`和`margin-right`有效；
+2.两个上下方向相邻的元素框垂直相遇时，外边距(margin)会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值，margin-left和margin-right不会合并。
+
+**参考**:
+1. [Web前端面试指导(九)：盒子模型你是怎么理解的？](http://blog.csdn.net/lxcao/article/details/52620453)
+2. [css 盒子模型理解](https://www.cnblogs.com/clearsky/p/5696286.html)
+
 ## 参考
 1. [前端笔试题面试题记录（上）](https://juejin.im/post/5aad40e4f265da237f1e12ed?utm_source=gold_browser_extension)
