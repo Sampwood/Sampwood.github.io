@@ -92,7 +92,7 @@ div {
 
 ** overflow:hidden/scroll/auto能清除浮动 (除了overflow:visible) **
 
-清除浮动的两种方式：
+清除浮动的三种方式：
 ```html
 1. 
 <div>
@@ -105,6 +105,16 @@ div {
     <div style="float: left;">left</div>
     <div style="float: right;">right</div>
 </div>
+3.
+<style>
+.parent:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+</style>
+<div class="parent">
+    <div style="float: left;">left</div>
+    <div style="float: right;">right</div>
+</div>
 ```
-
-### BFC
