@@ -14,6 +14,8 @@ update: 2018-03-09 10:05:08
 
 #### issue detail
 
+<!--more-->
+
 I define the custom directive "focus" in my component:
 
 ```
