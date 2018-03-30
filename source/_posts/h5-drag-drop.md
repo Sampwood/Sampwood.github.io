@@ -1,5 +1,5 @@
 ---
-title: h5学习笔记
+title: h5之拖放
 categories:
   - coding
   - html
@@ -9,6 +9,7 @@ date: 2017-12-09 13:23:20
 update: 2017-12-09 13:23:20
 ---
 
+本文主要介绍下h5中元素的拖放。
 
 ### 拖放
 拖放（Drag和Drop）是HMTL5标准的组成部分。

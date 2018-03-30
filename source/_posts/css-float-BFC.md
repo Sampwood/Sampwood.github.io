@@ -1,5 +1,5 @@
 ---
-title: css float&BFC
+title: css之float&BFC
 categories:
   - coding
   - css
@@ -21,8 +21,8 @@ update: 2018-03-28 22:07:29
 块级元素对应`block box`，行级元素对应`inline boxes`，整行的元素会对应一个`line boxes`。
 对于块级元素下面直接写的文字，称之为`匿名inline boxes`。
 
-正常情况下`inline boxes`的基线是对齐的，所以只有一行文字会和图片处在同一行内。
-但是增加`float`属性之后，破坏了元素的`inline boxes`，使其脱离了其原来所在的`line box`链，跟随自身的方位属性，靠边排列。
+正常情况下`inline boxes`的基线是对齐的，所以只有一行文字会和图片处在同一行内。`line box`的高度由行内最高的`inline boxes`决定。
+但是增加`float`属性之后，破坏了元素的`inline boxes`，使其脱离了其原来所在的`line box`链，跟随自身的方位属性，靠边排列。（有点类似于`display: inline-block`）
 但浮动元素依旧在文档流中，同处于文档流中的文字实体不会与浮动元素重叠，就出现了文字环绕显示。
 
 ### BFC
