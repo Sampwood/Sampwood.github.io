@@ -23,9 +23,13 @@ rem是相对html中的font-size的大小来计算的。值得注意的是chrome�
 
 ### 盒子模型
 
-元素宽度 = width + padding + border
+`box-sizing: content-box`: 
+1. 元素宽度 = width + padding + border
+2. 元素content宽度 = width
 
-元素content宽度 = width
+`box-sizing: border-box`:
+1. 元素宽度 = width
+2. 元素content宽度 = width - padding - border
 
 ### background设置
 

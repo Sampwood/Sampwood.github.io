@@ -16,6 +16,8 @@ update: 2018-03-28 22:07:29
 而浮动则会在文档流中占据一定的位置。这个从文字环绕float图片就可以看出来。
 当然，浮动最开始的意图就是为了能让文字环绕图片。
 
+<!--more-->
+
 说到浮动，就不得不说下`inline boxes`和`line boxes`的概念。
 视觉格式化模型(Visual formatting model)下，文档中每个元素在页面布局中都会产生一个对应的盒子（box）。
 块级元素对应`block box`，行级元素对应`inline boxes`，整行的元素会对应一个`line boxes`。
