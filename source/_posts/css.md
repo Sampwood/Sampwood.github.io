@@ -50,22 +50,55 @@ background: rgba(0, 0, 0, .3), url(...)
 定义垂直居中：
 ```css
 1. 
-div {
+.parent {
     display: table-cell;
     vertical-align: middle;  //针对自己的居中，而不是子元素  
 }
 2.
-div {
+.parent {
     display: flex;
     align-items: center;
 }
 3.
-div {
+.parent {
+    position: relative/absolute;
+}
+.child {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    margin: auto;
+}
+```
+
+#### display: table-cell
+
+这个属性的主要作用有两个：
+1. 元素垂直居中，看上面的代码；
+2. 设置了`display: table-cell`的同一行列表元素都等高，所以可以用来实现等高布局；
+3. 当`display: table-cell`的元素设置的宽度大于实际可占用的宽度时，会使用可用宽度来渲染元素，所以可以用在侧边栏的自适应布局上；
+
+#### display: table-row
+
+实现动态高度的页脚（页眉）贴在页面底部（顶部）：
+```css
+.main {
+    height: 100%;
+}
+.footer {
+    display: table-row;
+    height:1px;
+}
+```
+
+#### display: table
+
+可以用来实现动态水平居中：
+```css
+.child {
+    display: table;
     margin: auto;
 }
 ```
@@ -122,3 +155,6 @@ div {
     <div style="float: right;">right</div>
 </div>
 ```
+
+## 参考
+1. [css Table布局-display:table](http://www.css88.com/archives/6308)

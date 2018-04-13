@@ -44,3 +44,8 @@ BFC主要有下面几个特点：
 3. BFC会计算浮动元素的高宽
 4. 在BFC中，每个盒子的左外边框都紧挨着包含快的左边框（从右到左的格式，则紧挨着右边框），除非盒子内部创建了一个新的BFC
 5. 同一个BFC中存在外边距折叠，即`margin-top`和`margin-bottom`的重合；不同的BFC则不存在外边距折叠
+
+## 参考
+1. [学习 BFC (Block Formatting Context)](https://juejin.im/post/59b73d5bf265da064618731d)
+2. [理解CSS中BFC](https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html)
+3. [CSS float浮动的深入研究、详解及拓展(一)](http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)
