@@ -156,5 +156,11 @@ background: rgba(0, 0, 0, .3), url(...)
 </div>
 ```
 
+### 元素尺寸的相关概念
+
+1. 元素尺寸：对应jQuery中的$().width()和$().height()方法，包括padding和border，也就是元素的border box的尺寸。在原生的DOM API中写作offsetWidth和offsetHeight，所以，有时候也称为“元素偏移尺寸”。
+2. 元素内部尺寸：对应jQuery中的$().innerWidth和$().innerHeight()方法，表示元素的内部区域尺寸，包括padding但不包括border，也就是元素的padding box的尺寸。在原生的DOM API中写作clientWidth和clientHeight，所以，有时候也称为“元素可视尺寸”
+3. 元素外部尺寸：对应jQuery中的$().outerWidth(true)和$().outerHeight(true)方法，表示元素的外部尺寸，不仅包括padding和border，还包括maring，也就是元素的margin box的尺寸。没有相对应的原生的DOM API。
+
 ## 参考
 1. [css Table布局-display:table](http://www.css88.com/archives/6308)
