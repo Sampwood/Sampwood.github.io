@@ -71,3 +71,6 @@ git subtree push --prefix=themes/yilia yilia master
 - 文件引用路径
 - 第三方库引用
 - issue
+- polygon
+- mobile
+- 浮点数

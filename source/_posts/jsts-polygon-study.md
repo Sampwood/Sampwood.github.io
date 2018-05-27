@@ -65,7 +65,7 @@ function pointToSegmentDist(p, a, b) {
 }
 
 /**
- * 判断点是否在多边形内部
+ * 判断点是否在多边形内部，一般用射线法
  * @param  {{x: Number, y: Number}} p 点
  * @param  {Array} polygon 多边形坐标
  * @return {Number} 1: 在内部，0: 在外部

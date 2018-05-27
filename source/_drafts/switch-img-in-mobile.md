@@ -1,7 +1,7 @@
 ---
 title: switch img in mobile
 tags:
-  - js
+  - mobile
 ---
 
 在移动端实现，随手势木马旋转图片。直接上代码：

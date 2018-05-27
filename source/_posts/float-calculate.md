@@ -4,7 +4,7 @@ categories:
   - coding
   - js
 tags:
-  - js
+  - 浮点数
 date: 2018-05-18 20:27:09
 update: 2018-05-18 20:27:09
 ---
