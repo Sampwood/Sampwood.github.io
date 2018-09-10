@@ -108,6 +108,35 @@ function pointToPolygonDist(p, polygon) {
   if (count % 2 === 0) minDist = -minDist
   return minDist
 }
+
+/**
+ * 二维坐标围绕某个点旋转特定角度
+ * @param  {Array} pointList 二维坐标集合
+ * @param  {Number} theta     弧度
+ * @param  {Object} point     旋转点
+ * @return {Array}            结果集合
+ */
+function rotationByPoint(pointList, theta, point) {
+  let {x, y} = point;
+  let sinTheta = Math.sin(theta);
+  let cosTheta = Math.cos(theta);
+
+  let m00 = cosTheta;
+  let m01 = -sinTheta;
+  let m02 = x - x * cosTheta + y * sinTheta;
+  let m10 = sinTheta;
+  let m11 = cosTheta;
+  let m12 = y - x * sinTheta - y * cosTheta;
+
+  return pointList.map(src => {
+    let dest = {};
+    let xp = m00 * src.x + m01 * src.y + m02;
+    let yp = m10 * src.x + m11 * src.y + m12;
+    dest.x = xp;
+    dest.y = yp;
+    return dest;
+  });
+}
 ```
 
 ### jsts
@@ -137,6 +166,9 @@ console.log('nearest points', distance.nearestPoints());
 console.log('distance', distance.distance())
 console.log(ring.contains(mouse_point))
 ```
+
+#### jsts的一些API
+- 两个多边形是否相交：polygon1.intersects(polygon2) => true/false
 
 ## 参考
 1. [JSTS demonstration](http://bjornharrtell.github.io/jsts/)
