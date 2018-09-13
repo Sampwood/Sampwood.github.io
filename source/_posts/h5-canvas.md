@@ -1,5 +1,5 @@
 ---
-title: canvas学习笔记
+title: h5之canvas
 date: 2017-11-14 16:51:03
 categories:
 - coding
@@ -9,6 +9,8 @@ tags:
 - canvas
 toc: true
 ---
+
+本文介绍下`canvas`标签的一些用法：
 
 ```
 let canvas = document.getElementById('myCanvas');

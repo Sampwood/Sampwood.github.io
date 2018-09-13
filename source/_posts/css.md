@@ -23,9 +23,13 @@ rem是相对html中的font-size的大小来计算的。值得注意的是chrome�
 
 ### 盒子模型
 
-元素宽度 = width + padding + border
+`box-sizing: content-box`: 
+1. 元素宽度 = width + padding + border
+2. 元素content宽度 = width
 
-元素content宽度 = width
+`box-sizing: border-box`:
+1. 元素宽度 = width
+2. 元素content宽度 = width - padding - border
 
 ### background设置
 
@@ -46,22 +50,55 @@ background: rgba(0, 0, 0, .3), url(...)
 定义垂直居中：
 ```css
 1. 
-div {
+.parent {
     display: table-cell;
     vertical-align: middle;  //针对自己的居中，而不是子元素  
 }
 2.
-div {
+.parent {
     display: flex;
     align-items: center;
 }
 3.
-div {
+.parent {
+    position: relative/absolute;
+}
+.child {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    margin: auto;
+}
+```
+
+#### display: table-cell
+
+这个属性的主要作用有两个：
+1. 元素垂直居中，看上面的代码；
+2. 设置了`display: table-cell`的同一行列表元素都等高，所以可以用来实现等高布局；
+3. 当`display: table-cell`的元素设置的宽度大于实际可占用的宽度时，会使用可用宽度来渲染元素，所以可以用在侧边栏的自适应布局上；
+
+#### display: table-row
+
+实现动态高度的页脚（页眉）贴在页面底部（顶部）：
+```css
+.main {
+    height: 100%;
+}
+.footer {
+    display: table-row;
+    height:1px;
+}
+```
+
+#### display: table
+
+可以用来实现动态水平居中：
+```css
+.child {
+    display: table;
     margin: auto;
 }
 ```
@@ -118,3 +155,12 @@ div {
     <div style="float: right;">right</div>
 </div>
 ```
+
+### 元素尺寸的相关概念
+
+1. 元素尺寸：对应jQuery中的$().width()和$().height()方法，包括padding和border，也就是元素的border box的尺寸。在原生的DOM API中写作offsetWidth和offsetHeight，所以，有时候也称为“元素偏移尺寸”。
+2. 元素内部尺寸：对应jQuery中的$().innerWidth和$().innerHeight()方法，表示元素的内部区域尺寸，包括padding但不包括border，也就是元素的padding box的尺寸。在原生的DOM API中写作clientWidth和clientHeight，所以，有时候也称为“元素可视尺寸”
+3. 元素外部尺寸：对应jQuery中的$().outerWidth(true)和$().outerHeight(true)方法，表示元素的外部尺寸，不仅包括padding和border，还包括maring，也就是元素的margin box的尺寸。没有相对应的原生的DOM API。
+
+## 参考
+1. [css Table布局-display:table](http://www.css88.com/archives/6308)

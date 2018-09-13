@@ -1,5 +1,5 @@
 ---
-title: css float&BFC
+title: css之float&BFC
 categories:
   - coding
   - css
@@ -16,13 +16,15 @@ update: 2018-03-28 22:07:29
 而浮动则会在文档流中占据一定的位置。这个从文字环绕float图片就可以看出来。
 当然，浮动最开始的意图就是为了能让文字环绕图片。
 
+<!--more-->
+
 说到浮动，就不得不说下`inline boxes`和`line boxes`的概念。
 视觉格式化模型(Visual formatting model)下，文档中每个元素在页面布局中都会产生一个对应的盒子（box）。
 块级元素对应`block box`，行级元素对应`inline boxes`，整行的元素会对应一个`line boxes`。
 对于块级元素下面直接写的文字，称之为`匿名inline boxes`。
 
-正常情况下`inline boxes`的基线是对齐的，所以只有一行文字会和图片处在同一行内。
-但是增加`float`属性之后，破坏了元素的`inline boxes`，使其脱离了其原来所在的`line box`链，跟随自身的方位属性，靠边排列。
+正常情况下`inline boxes`的基线是对齐的，所以只有一行文字会和图片处在同一行内。`line box`的高度由行内最高的`inline boxes`决定。
+但是增加`float`属性之后，破坏了元素的`inline boxes`，使其脱离了其原来所在的`line box`链，跟随自身的方位属性，靠边排列。（有点类似于`display: inline-block`）
 但浮动元素依旧在文档流中，同处于文档流中的文字实体不会与浮动元素重叠，就出现了文字环绕显示。
 
 ### BFC
@@ -42,3 +44,8 @@ BFC主要有下面几个特点：
 3. BFC会计算浮动元素的高宽
 4. 在BFC中，每个盒子的左外边框都紧挨着包含快的左边框（从右到左的格式，则紧挨着右边框），除非盒子内部创建了一个新的BFC
 5. 同一个BFC中存在外边距折叠，即`margin-top`和`margin-bottom`的重合；不同的BFC则不存在外边距折叠
+
+## 参考
+1. [学习 BFC (Block Formatting Context)](https://juejin.im/post/59b73d5bf265da064618731d)
+2. [理解CSS中BFC](https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html)
+3. [CSS float浮动的深入研究、详解及拓展(一)](http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)

@@ -1,7 +1,11 @@
 ---
 title: parenting
-tags:
+categories:
+  - 随笔
+date: 2018-05-27 21:38:09
+update: 2018-05-27 21:38:09
 ---
+
 
 ### 书籍
 

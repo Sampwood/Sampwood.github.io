@@ -17,6 +17,19 @@ $ hexo new "My New Post"
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 <!--more-->
+
+### Create a new draft
+
+```bash
+$ hexo new draft "my new draft"
+```
+
+### Publish draft
+
+```bash
+$ hexo publish draft "my new draft"
+```
+
 ### Run server
 
 ``` bash

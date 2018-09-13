@@ -1,5 +1,5 @@
 ---
-title: es6学习
+title: es6之babel
 categories:
   - coding
   - js
@@ -9,10 +9,9 @@ date: 2017-10-31 13:35:20
 update: 2017-10-31 13:35:20
 ---
 
+本文主要介绍下Babel转码器。
 
-### Babel转码器
-
-#### 配置文件`.babelrc`
+### 配置文件`.babelrc`
 
 Babel的配置文件是`.babelrc`，存放在项目的根目录下。使用Babel的第一步，就是配置这个文件。
 
