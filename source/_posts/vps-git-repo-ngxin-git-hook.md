@@ -17,6 +17,8 @@ update: 2018-10-17 16:27:19
 某一天，忽然想要开发一个私人的项目玩，感觉放在github上就不太好， 毕竟一些私人的东西不好放上去。
 于是决定在自己的vps上搭建一个git仓库来维护自己的代码。
 
+<!-- more -->
+
 ### vps上搭建git仓库
 
 对比github代码仓库ssh地址`git@ github.com:Sampwood/sampwood.github.io.git`
