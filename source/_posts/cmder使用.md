@@ -15,6 +15,8 @@ cmder是一个超棒的windows命令窗口。
 
 一般都只用下载mini版本就可以了，因为git都会自己下载 = =
 
+<!-- more -->
+
 ### 配置
 
 因为下载的mini版本，所以要使用bash的话就得自己配置git bash的路径
