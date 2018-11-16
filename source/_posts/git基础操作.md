@@ -37,7 +37,26 @@ git checkout origin/remoteBranch -b localBranch
 git checkout -f
 ```
 
+### stash
 
+用于保存本地修改并还原到干净的工作分支。
+
+基础用法
+```
+git stash 保存所有修改
+git stash list 查看所有保存列表
+git stash pop 从所有保存的中推出并删除最新的一次保存
+git stash (save | push) 等同于 git stash
+```
+
+提升用法
+```
+git stash apply 从所有保存的中推出最新的一次保存，但并不删除这次保存
+git stash (pop | apply) (1 | stash@{1}) 从所有保存的中推出次新的一次保存；1表示次新的顺序，可以是任何存在的顺序
+git stash save --keep-index 只保存未被添加到git暂存区（Stage）的修改
+git stash 'message' 保存时，自定义保存信息
+git stash push -m 'message' -- <pathspec> 只保存特定路径的文件，并自定义保存信息
+```
 
 ### branch
 ```
