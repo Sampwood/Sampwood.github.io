@@ -44,14 +44,14 @@ update: 2018-10-26 17:23:43
 
 ```
 [
-    // 切换Project
-    {
-        "keys": ["ctrl+alt+p"],
-        "command": "prompt_select_workspace"
-    },
-    // 快速到行首行尾
-    { "keys": ["ctrl+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-    { "keys": ["ctrl+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+  // 切换Project
+  {
+      "keys": ["ctrl+alt+p"],
+      "command": "prompt_select_workspace"
+  },
+  // 快速到行首行尾
+  { "keys": ["ctrl+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+  { "keys": ["ctrl+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
 ]
 ```
 
@@ -59,16 +59,18 @@ update: 2018-10-26 17:23:43
 
 ```
 {
-    "font_size": 11,
-    "ignored_packages":
-    [
-        "Vintage"
-    ],
-    // 竖线
-    "rulers":
-    [
-        100,
-        120
-    ]
+  "font_size": 11,
+  "ignored_packages":
+  [
+      "Vintage"
+  ],
+  // 竖线
+  "rulers":
+  [
+      100,
+      120
+  ],
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
 }
 ```
