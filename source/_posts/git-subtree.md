@@ -1,7 +1,7 @@
 ---
 title: git subtree
 date: 2017-07-18 18:38:53
-update: 2017-11-22 16:26:53
+update: 2018-09-30 16:26:53
 categories:
 - coding
 - version-control
@@ -20,14 +20,16 @@ git subtree add --prefix=<子目录名> <子仓库名> <分支>
 ```
 <!--more-->
 
-**Note**：在我这，如果用`--squash`加入子目录，在更新子项目时`git subtree pull`会出现
-`fatal: refusing to merge unrelated histories`错误。
+~~**Note**：在我这，如果用`--squash`加入子目录，在更新子项目时`git subtree pull`会出现~~
+~~`fatal: refusing to merge unrelated histories`错误。~~
+
+**Note**：如果用`--squash`加入子目录，在更新子项目时也要加上`--squash`
 
 #### 从远程仓库更新子目录
 
 ```
 git fetch <远程仓库名> <分支>
-git subtree pull --prefix=<子目录名> <远程分支> <分支> --squash
+git subtree pull --prefix=<子目录名> <远程分支> <分支>
 ```
 
 #### 从子目录push到远程仓库
