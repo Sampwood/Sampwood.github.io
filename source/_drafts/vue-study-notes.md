@@ -27,3 +27,4 @@ this.config.name = 'new value'
 
 ```
 
+**最好是用sync和update:prop 的方式来进行双向数据绑定**
