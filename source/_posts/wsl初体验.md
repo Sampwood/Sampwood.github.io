@@ -38,17 +38,32 @@ wsl, 就是Windows Subsystem for Linux, 简单的说 WSL 就是让开发者在 W
 
 既然可以使用ubuntu的bash，我们就可以配置bash，来让我们的操作更舒适。
 
-例如安装zsh，
+例如安装zsh+Oh My ZSH，
 
 ```bash
-sudo apt-get install zsh
+sudo apt-get install zsh -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s /bin/zsh
+```
+
+让命令行高亮的插件
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+激活这个插`~/.zshrc`
+```
+plugins=( [plugins...] zsh-syntax-highlighting)
+source ~/.zshrc
 ```
 
 为了让某些theme能在windows下正常显示，还要安装`Powerline`字体，例如我就安装了`DejaVu Sans Mono for Powerline` 字体。
 安装字体之后，就可以在命令行窗口设置字体了，设置之后显示就正常了。
 
+安装`Powerline`字体，参考：https://github.com/powerline/fonts
 
-#### zsh配置文件
+
+#### zsh配置文件`.zshrc`
 
 目前使用的主题是`amuse`，也自定义了一些命令:
 
@@ -170,6 +185,10 @@ function git_push_gerrit {
 }
 alias gpg="git_push_gerrit"
 ```
+
+### 影响
+
+1. sublime整合eslint时，如果是用wsl来安装npm依赖，node_modules文件夹下的.bin文件夹不会出现\*.cmd文件，这就会影响eslint的运行
 
 
 ## 参考

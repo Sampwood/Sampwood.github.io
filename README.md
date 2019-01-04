@@ -37,8 +37,9 @@ git subtree pull --prefix=themes/even even master --squash
 	- web framework
 	- database
 	- version-control
-    - python
-    - vue
+  - python
+  - vue
+  - linter
 - 随笔
 ```
 ### 标签
@@ -73,3 +74,4 @@ git subtree pull --prefix=themes/even even master --squash
 - WebGL
 - threejs
 - 缓存
+- eslint
