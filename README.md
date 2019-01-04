@@ -27,21 +27,20 @@ git subtree pull --prefix=themes/even even master --squash
 ```
 
 ### 分类
-```
 - coding
-	- linux
-	- html
-	- js
-	- css
-	- TS
-	- web framework
-	- database
-	- version-control
-  - python
-  - vue
-  - linter
+    - linux
+    - html
+    - js
+    - css
+    - TS
+    - web framework
+    - database
+    - version-control
+    - python
+    - vue
+    - linter
 - 随笔
-```
+
 ### 标签
 - html5
 - hexo
