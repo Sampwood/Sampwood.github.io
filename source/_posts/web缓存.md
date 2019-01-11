@@ -117,18 +117,35 @@ window.applicationCache.addEventListener('updateready', function(e) {
 - 在更新了资源之后，新的资源需要到下次再打开app才会生效，如果需要资源马上就能生效，那么可以使用`window.applicationCache.swapCache()`方法来使之生效，出现这种现象的原因是浏览器会先使用离线资源加载页面，然后再去检查manifest是否有更新，所以需要到下次打开页面才能生效。
 - 配置manifest的**index.html文件也会被缓存**。
 
+#### cookie
+
+`cookie`非常小，它的大小限制为4KB左右。主要用途有保存登录信息，做身份认证。
+cookie是不可跨域的，他会根据域名来区分是向哪个服务器发送数据。
+
+#### sessionStorage
+sessionStorage和localStorage是html5提供的两种本地存储方式，只会存在本地，大小要比cookie大
+
+sessionStorage是用户从打开回话窗到关闭会话窗这一段时间有效，关闭之后存的数据就会被删除。
+
+**刷新页面数据依旧存在，但不同会话窗口之间不同享**
+
 #### localStorage
 
 严格说来localStorage更像是cookie一类的本地数据存储。但在标准缓存之外，开发人员可以用浏览器的一些功能来实现自定义的客户端“缓存”。
 
 与sessionStroage主要的区别是存储时间和作用域。
 
-LocalStorage是一种本地存储的公共资源，域名下很多应用共享这份资源会有风险；LocalStorage是以页面域名划分的，如果有多个等价域名之间的LocalStorage不互通，则会造成缓存多份浪费。
+LocalStorage是一种本地存储的公共资源，域名下很多应用共享这份资源会有风险；
+LocalStorage是以页面域名划分的，如果有多个等价域名之间的LocalStorage不互通，则会造成缓存多份浪费。
 
-LocalStorage在PC上的兼容性不太好，而且当网络速度快、协商缓存响应快时使用localStorage的速度比不上304。并且不能缓存css文件。而移动端由于网速慢，使用localStorage要快于304。
+LocalStorage在PC上的兼容性不太好，而且当网络速度快、协商缓存响应快时使用localStorage的速度比不上304。
+并且不能缓存css文件。而移动端由于网速慢，使用localStorage要快于304。
 
 
 ## 参考
 1. [浅谈Web缓存](http://www.alloyteam.com/2016/03/discussion-on-web-caching/)
 2. [缓存策略](http://imweb.io/topic/55c6f9bac222e3af6ce235b9)
 3. [前端工程精粹（一）：静态资源版本更新与缓存](http://www.infoq.com/cn/articles/front-end-engineering-and-performance-optimization-part1)
+4. [详说 Cookie, LocalStorage 与 SessionStorage](http://jerryzou.com/posts/cookie-and-web-storage/)
+5. [前端存储浅谈——cookie、sessionStorage、localStorage](https://segmentfault.com/a/1190000012478396)
+6. [cookie、sessionStorage、localStorage 详解及应用场景](https://segmentfault.com/a/1190000010400892)

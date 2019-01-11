@@ -39,6 +39,7 @@ git subtree pull --prefix=themes/even even master --squash
     - python
     - vue
     - linter
+    - http
 - 随笔
 
 ### 标签
@@ -74,3 +75,5 @@ git subtree pull --prefix=themes/even even master --squash
 - threejs
 - 缓存
 - eslint
+- 跨域
+- utils
