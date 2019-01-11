@@ -230,7 +230,7 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name blog;
+        server_name blog.sampwood.top; // 根据域名转发到不同端口
 
         root /var/www/blog;
         index index.html;
@@ -248,6 +248,20 @@ server {
 
         location @router {
                 rewrite ^.*$ /index.html last;
+        }
+}
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name _; // 默认nginx的访问页面
+
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        location / {
+                try_files $uri $uri/ =404;
         }
 }
 ```
