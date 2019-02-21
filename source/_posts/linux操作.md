@@ -41,6 +41,7 @@ toc: true
 - 增加环境变量：修改/etc/profile，在最下面增加：export PATH=$PATH:/usr/local/mongodb/bin
 - 建立软链接指向环境path: sudo ln -s /opt/node-v6.11.2-linux-x64/bin/vue /usr/local/bin/vue
 - 让/etc/profile文件修改立即生效：source /etc/profile
+- 防火墙开发某个端口： sudo ufw allow 80
 
 ### 服务
 - 注册服务：在/etc/init.d/目录下新建文件如：mongodb。
