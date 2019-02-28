@@ -253,6 +253,16 @@ CSS3中新增了一个样式box-sizing，包含两个属性content-box 和 borde
 1.对于行级元素，`margin-top`和`margin-bottom`对于上下元素无效，`margin-left`和`margin-right`有效；
 2.两个上下方向相邻的元素框垂直相遇时，外边距(margin)会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值，margin-left和margin-right不会合并。
 
+
+#### 跨域之CORS
+
+#### cookie vs storage
+
+#### es6
+
+#### import vs require
+
+
 **参考**:
 1. [Web前端面试指导(九)：盒子模型你是怎么理解的？](http://blog.csdn.net/lxcao/article/details/52620453)
 2. [css 盒子模型理解](https://www.cnblogs.com/clearsky/p/5696286.html)

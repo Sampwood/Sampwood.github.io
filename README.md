@@ -77,3 +77,4 @@ git subtree pull --prefix=themes/even even master --squash
 - eslint
 - 跨域
 - utils
+- 浏览器

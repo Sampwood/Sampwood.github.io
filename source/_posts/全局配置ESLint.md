@@ -14,6 +14,8 @@ update: 2019-01-04 14:23:58
 
 目前在自己的机子上面用到的eslint配置是：`airbnb`+`eslint-plugin-vue`。
 
+<!-- more -->
+
 ### 安装
 
 需要安装的包有：`eslint`, `eslint-config-airbnb-base`, `eslint-plugin-import`, `eslint-plugin-vue`。
