@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="git多平台换行符问题(LF/CRLF)">
+
+
+
+
+  <meta name="keywords" content="git, Sampwood的One Piece">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/2019/01/07/git多平台换行符问题-LF-CRLF/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> git多平台换行符问题(LF/CRLF) - Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          git多平台换行符问题(LF/CRLF)
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-01-07
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/version-control/">version-control</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#差异"><span class="toc-text">差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git处理"><span class="toc-text">git处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#core-autocrlf"><span class="toc-text">core.autocrlf</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#core-safecrlf"><span class="toc-text">core.safecrlf</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gitattributes-文件"><span class="toc-text">.gitattributes 文件</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a>
+    </li></div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h3><p>目前大部分的前端开发用macos/windows来开发，linux系统使用的较少。<br>一个多人开发的项目必然会覆盖windows和unix系统。<br>而这个两个系统间存在一些差异，其中之一就是文本换行的方式。</p>
+<p>CRLF, LF 都是用来表示文本换行的方式。主流的操作系统一般使用CRLF或者LF作为其文本的换行符。<br>CR(Carriage Return) 代表回车，对应字符 <code>\r</code>；LF(Line Feed) 代表换行，对应字符 <code>\n</code>。</p>
+<p>unix/linux(macos)使用的是LF，windows使用的是CRLF。</p>
+<p>跨平台协作开发是常有的，不统一的换行符确实对跨平台的文件交换带来了麻烦。<br>最大的问题是，在不同平台上，换行符发生改变时，Git 会认为整个文件被修改，这就造成我们 <code>diff</code> 不能正确反映本次的修改。</p>
+<p>例如在查看<code>diff</code>的时候，出现下面的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in .gitignore.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">warning: LF will be replaced by CRLF in README.md.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="git处理"><a href="#git处理" class="headerlink" title="git处理"></a>git处理</h3><p>还好 Git 在设计时就考虑了这一点，提供了换行符相关的处理方式。</p>
+<p>这里先指定两个非官方的概念，方便后面解释与描述：(重要，否则后面看不懂)</p>
+<ol>
+<li><strong>标准化</strong> 指在提交代码到git数据库(本地库) 中将文本文件中的换行符CRLF转为LF的过程</li>
+<li><strong>转换</strong> 指在检出Git数据库代码过程中将文本文件中的换行符LF转换为CRLF的过程</li>
+</ol>
+<h4 id="core-autocrlf"><a href="#core-autocrlf" class="headerlink" title="core.autocrlf"></a>core.autocrlf</h4><p>git提供了一个 <code>autocrlf</code> 的配置项，用于在提交和检出时自动转换换行符，该配置有三个可选项：</p>
+<ul>
+<li>true: 提交时转换为 LF，检出时转换为 CRLF</li>
+<li>false: 提交检出均不转换</li>
+<li>input: 提交时转换为LF，检出时不转换</li>
+</ul>
+<blockquote>
+<p>CRLF 与 LF 混合的文本文件不受此配置控制。</p>
+</blockquote>
+<blockquote>
+<p>Git 安装后默认为 false</p>
+</blockquote>
+<p>所以，一种规范换行符的方式是这样的：</p>
+<p>使用 Windows 系统的开发者设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.aurocrlf true</span><br></pre></td></tr></table></figure></p>
+<p>使用 Linux/MacOS 的开发者设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf input</span><br></pre></td></tr></table></figure></p>
+<h4 id="core-safecrlf"><a href="#core-safecrlf" class="headerlink" title="core.safecrlf"></a>core.safecrlf</h4><p>git同时提供了另一个配置项 <code>safecrlf</code>，用于检查文件是否包含混合换行符，该配置也有三个可选项：</p>
+<ul>
+<li>true 禁止提交混合换行符的文本文件(git add 的时候会被拦截，提示异常)</li>
+<li>warn 提交混合换行符的文本文件的时候发出警告，但是不会阻止 git add 操作</li>
+<li>false 不禁止提交混合换行符的文本文件（默认配置）</li>
+</ul>
+<p>该配置用来防止错误的标准化与转换。</p>
+<h4 id="gitattributes-文件"><a href="#gitattributes-文件" class="headerlink" title=".gitattributes 文件"></a><code>.gitattributes</code> 文件</h4><p><code>core.autocrlf</code> 的配置依赖于每一位参与项目的开发机器上的配置，这很难确保每个人都能正确配置。<br>于是在规范项目中的换行符方面，还有一套添加配置文件的方案。<br>在项目的根目录下可以添加一个<code>.gitattributes</code> 文件。<br>它的优先级高于<code>core.autocrlf</code>的设置，可以覆盖<code>core.autocrlf</code>的。<br>它类似于 <code>.gitignore</code> 文件，随提交修改生效，一个项目中可以维持一份相同的配置。<br>所以，它能够避免每个开发人员配置不同的问题。</p>
+<p><code>.gitattributes</code>文件的功能不只有配置换行符，所以它的配置相对复杂一下。<br>详细的说明文档可以参考 <a href="http://schacon.github.io/git/gitattributes.html" target="_blank" rel="noopener">地址</a>。<br>这里只针对换行符的配置做一下简单的介绍：</p>
+<p>每行基本形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter attr1 attr2 ....</span><br></pre></td></tr></table></figure>
+<p>filter 代表匹配文件的通配符，在它后面跟着相应的属性，用空格间隔。</p>
+<p>filter 的选项比较简单，常见的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 匹配所有文件</span><br><span class="line">*.txt  匹配文件名以txt结尾的文件</span><br></pre></td></tr></table></figure>
+<p>attr的选择比较多，其中与换行符相关的属性只有几条：</p>
+<ul>
+<li>text<ul>
+<li>text 自动完成标准化与转换</li>
+<li>-text 不执行标准化与转换</li>
+<li>text=auto 根据 Git 决定是否需要执行标准化与转化</li>
+<li>不设置 使用core.autocrlf配置决定是否执行标准化与转换</li>
+</ul>
+</li>
+<li>eol<ul>
+<li>eol=lf 强制完成标准化，不执行转换（相当于指定转换为LF格式）</li>
+<li>eol=crlf 强制完成标准化，指定转换为CRLF格式</li>
+</ul>
+</li>
+<li>binary<ul>
+<li>binary 二进制文件不参与标准化与转换</li>
+<li>不设置 由 Git 决定是否为二进制文件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>text 设置的时候，转换自动转换到对应平台的换行符</p>
+</blockquote>
+<blockquote>
+<p>行号高的设置会覆盖行号低的设置</p>
+</blockquote>
+<p>这里给出一个简单的例子来说明一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Set the default behavior, in case people don&apos;t have core.autocrlf set.</span><br><span class="line">* text eol=lf</span><br><span class="line"></span><br><span class="line"># Denote all files that are truly binary and should not be modified.</span><br><span class="line">*.png binary</span><br><span class="line">*.jpg binary</span><br></pre></td></tr></table></figure></p>
+<p><strong>推荐使用.gitattributes来规范项目中换行符。简单，方便，灵活。</strong></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://www.jianshu.com/p/ec9564fe1c2b" target="_blank" rel="noopener">理解 CRLF，LF</a></li>
+<li><a href="http://blog.konghy.cn/2017/03/19/git-lf-or-crlf/" target="_blank" rel="noopener">Git 多平台换行符问题(LF or CRLF)</a></li>
+</ol>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2019/01/07/git多平台换行符问题-LF-CRLF/">https://sampwood.github.io/2019/01/07/git多平台换行符问题-LF-CRLF/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/git/">git</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/01/08/跨域问题/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">跨域问题</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/01/04/全局配置ESLint/">
+        <span class="next-text nav-default">全局配置ESLint</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Web developer form somewhere">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/page/2/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <section id="posts" class="posts">
+    
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/26/sublime使用/">sublime使用</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-26
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>因为喜欢sublime的配色，所以一直都使用sublime来开发前端代码。<br>下面记录一些常用的配置。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>官网下载： <a href="http://www.sublimetext.com/" target="_blank" rel="noopener">http://www.sublimetext.com/</a></p>
+<p>然后就是安装<code>package control</code>: <a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">https://packagecontrol.io/installation</a></p>
+          <div class="read-more">
+            <a href="/2018/10/26/sublime使用/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/24/cmder使用/">cmder使用</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-24
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>cmder是一个超棒的windows命令窗口。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载地址： <a href="http://cmder.net/" target="_blank" rel="noopener">http://cmder.net/</a></p>
+<p>一般都只用下载mini版本就可以了，因为git都会自己下载 = =</p>
+          <div class="read-more">
+            <a href="/2018/10/24/cmder使用/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/17/vps-git-repo-ngxin-git-hook/">在vps上搭建一个git仓库并实现代码提交之后自动部署到nginx上</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-17
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/linux/">linux</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>现在一般自己玩的项目都会托管在github上，然后使用github提供的git仓库地址来维护自己的代码。<br>例如<code>git@ github.com:Sampwood/sampwood.github.io.git</code>。</p>
+<p>某一天，忽然想要开发一个私人的项目玩，感觉放在github上就不太好， 毕竟一些私人的东西不好放上去。<br>于是决定在自己的vps上搭建一个git仓库来维护自己的代码。</p>
+          <div class="read-more">
+            <a href="/2018/10/17/vps-git-repo-ngxin-git-hook/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/18/web缓存/">web缓存</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-18
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/js/">js</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>在前端开发中，性能一直都是被大家所重视的一点，然而判断一个网站的性能最直观的就是看网页打开的速度。其中提高网页反应速度的一个方式就是使用缓存。一个优秀的缓存策略可以缩短网页请求资源的距离，减少延迟，并且由于缓存文件可以重复利用，还可以减少带宽，降低网络负荷。</p>
+<p>在这里整理一些web缓存的方法。</p>
+<h3 id="缓存分类"><a href="#缓存分类" class="headerlink" title="缓存分类"></a>缓存分类</h3><p><img src="/images/classify.png" alt="缓存分类"></p>
+          <div class="read-more">
+            <a href="/2018/06/18/web缓存/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/03/threejs-study/">threejs study</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-03
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/js/">js</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>threejs是一个用来创建三维图形应用的js库。<br>说到三维图形应用，就不得不提一句webGL。在百度百科中是这么描述webGL的：<br><code>WebGL（全写Web Graphics Library）是一种3D绘图协议，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起，通过增加OpenGL ES 2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复杂的导航和数据视觉化。</code><br>也就是说：<code>WebGL可以看做是将OpenGL ES（OpenGL for Embedded Systems，OpenGL嵌入式版本，针对手机、游戏机等设备相对较轻量级的版本）移植到了网页平台</code>。</p>
+<p>Three.js封装了底层的图形接口，使得程序员能够在无需掌握繁冗的图形学知识的情况下，也能用简单的代码实现三维场景的渲染。<br>除了WebGL之外，Three.js还提供了基于Canvas、SVG标签的渲染器。</p>
+          <div class="read-more">
+            <a href="/2018/06/03/threejs-study/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/05/27/parenting/">parenting</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-27
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/随笔/">随笔</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><ol>
+<li>护理喂养疾病：《美国儿科协会育儿百科0~5岁》。<strong>建议阅读时间</strong>：根据月龄读，可以作为随时放在案边查询的工具书。</li>
+<li>规律作息和睡眠问题:《实用程序育儿法》。<strong>建议阅读时间</strong>：宝宝1个月之前读完，可以对今后规划宝宝作息有个全面的安排。而且小月龄宝宝更加容易培养好习惯。当然如果你错过了，现在补看也可以。</li>
+<li>心理认知发展: 《你的1岁孩子》。<strong>建议阅读时间</strong>：宝宝6个月以后，或者当你觉得应付宝宝吃睡等这些基础问题已经游刃有余时。</li>
+<li>如何与孩子互动：《游戏力》。</li>
+<li>《崔玉涛：宝贝健康公开课》</li>
+<li>《张思莱育儿微访谈》</li>
+<li>《给孩子一口漂亮的牙齿》</li>
+<li>《冀连梅谈：中国人应该这样用药》</li>
+<li>《郑玉巧育儿经》胎儿卷、婴儿卷、幼儿卷</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://www.zhihu.com/question/20853110" target="_blank" rel="noopener">有哪些值得推荐的育儿类图书？</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/05/18/float-calculate/">js中的浮点数计算</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-18
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/js/">js</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>由于<code>舍入误差</code>的存在，浮点数的计算会不是很精确。例如<code>1.11 * 100 =&gt; 111.00000000000001</code>。</p>
+<p>下面是一段简单处理的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//按照有效数字位数进行四舍五入，默认6位有效数字</span><br><span class="line">Math.signFigures = function(num, rank = 6) &#123;</span><br><span class="line">    if(!num) return(0);</span><br><span class="line">    let sign = num / Math.abs(num);</span><br><span class="line">    let number = num * sign;</span><br><span class="line">    let temp = rank - 1 - Math.floor(Math.log10(number));</span><br><span class="line">    let ans;</span><br><span class="line">    if (temp &gt; 0) &#123;</span><br><span class="line">        ans = parseFloat(number.toFixed(temp));</span><br><span class="line">    &#125; else if (temp &lt; 0) &#123;</span><br><span class="line">        temp = Math.pow(10, temp);</span><br><span class="line">        ans = Math.round(number / temp) * temp;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        ans = Math.round(number);</span><br><span class="line">    &#125;</span><br><span class="line">    return (ans * sign);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>Math.signFigures(123.242545, 1) 会出问题！</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://segmentfault.com/q/1010000005697295" target="_blank" rel="noopener">为什么js里面有些数字*100结果会不准确?</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/05/14/jsts-polygon-study/">jsts-polygon-study</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-14
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/js/">js</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>在这里主要说一些在图形应用中多边形相关的判断和操作。<br>例如求点映射到线上的坐标，计算点到线的距离，以及点是否在多边形内，点到多边形的距离。<br>最后介绍一个第三方库：jsts。</p>
+          <div class="read-more">
+            <a href="/2018/05/14/jsts-polygon-study/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/03/28/css-float-BFC/">css之float&BFC</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-28
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/css/">css</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="float"><a href="#float" class="headerlink" title="float"></a>float</h3><p>虽然说浮动和绝对定位都是脱离文档流的布局且父元素获取不到元素高度，但浮动还是和绝对定位有一定的区别的。<br>绝对定位是<strong>绝对</strong>地脱离文档流，不会对正常文档流产生任何影响。<br>而浮动则会在文档流中占据一定的位置。这个从文字环绕float图片就可以看出来。<br>当然，浮动最开始的意图就是为了能让文字环绕图片。</p>
+          <div class="read-more">
+            <a href="/2018/03/28/css-float-BFC/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/03/17/setup-environment-in-ubuntu/">setup environment in ubuntu</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-17
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/linux/">linux</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <ol>
+<li>添加用户：<code>useradd –d /home/sam -m sam</code></li>
+<li>添加密码：<code>passwd sam</code></li>
+<li>给用户添加组(添加sudo功能)：<code>usermod -aG sudo,adm sam</code></li>
+<li>修改服务端使用的shell：<code>sudo vim /etc/passwd</code>，编辑/etc/passwd文件，给新建的用户指定shell解释器，添加<strong>/bin/bash</strong>：<code>sam:x:1000:1000::/home/sam:/bin/bash</code></li>
+<li>更新apt源：<code>sudo apt-get update</code></li>
+<li><a href="https://git-scm.com/download/linux" target="_blank" rel="noopener">安装git</a>：<code># add-apt-repository ppa:git-core/ppa</code> <code># apt update; apt install git</code></li>
+<li><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions" target="_blank" rel="noopener">安装node</a>：<code>curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -</code> <code>sudo apt-get install -y nodejs</code></li>
+<li>安装Mongodb：<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+      
+  <nav class="pagination">
+    
+      <a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+    
+      <a class="next" href="/page/3/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+    
+  </section>
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

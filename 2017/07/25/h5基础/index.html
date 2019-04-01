@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="h5基础">
+
+
+
+
+  <meta name="keywords" content="html5, Sampwood的One Piece">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/2017/07/25/h5基础/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> h5基础 - Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          h5基础
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-07-25
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/html/">html</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#来源"><span class="toc-text">来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新特性"><span class="toc-text">新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视频"><span class="toc-text">视频</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例："><span class="toc-text">实例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#video标签的属性"><span class="toc-text">video标签的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#video标签的方法、属性和事件"><span class="toc-text">video标签的方法、属性和事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#音频-audio"><span class="toc-text">音频 audio</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例：-1"><span class="toc-text">实例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拖放（Drag和drop）"><span class="toc-text">拖放（Drag和drop）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设置元素可为拖放"><span class="toc-text">设置元素可为拖放</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#拖动什么-ondragstart-和-setData"><span class="toc-text">拖动什么 - ondragstart 和 setData()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#何处可放-ondragover"><span class="toc-text">何处可放 - ondragover</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何放置-ondrop"><span class="toc-text">如何放置 - ondrop</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#画布-canvas"><span class="toc-text">画布 canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-1"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SVG"><span class="toc-text">SVG</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SVG-的优势"><span class="toc-text">SVG 的优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-1"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-2"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Canvas-vs-SVG"><span class="toc-text">Canvas vs. SVG</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SVG-1"><span class="toc-text">SVG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Canvas"><span class="toc-text">Canvas</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Canvas-与-SVG-的比较"><span class="toc-text">Canvas 与 SVG 的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Canvas-1"><span class="toc-text">Canvas</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SVG-2"><span class="toc-text">SVG</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地理定位"><span class="toc-text">地理定位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-2"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-3"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getCurrentPosition-方法-返回数据"><span class="toc-text">getCurrentPosition() 方法 - 返回数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Geolocation-对象-其他有趣的方法"><span class="toc-text">Geolocation 对象 - 其他有趣的方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web存储"><span class="toc-text">web存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage-方法"><span class="toc-text">localStorage 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#实例-4"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sessionStorage方法"><span class="toc-text">sessionStorage方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#实例-5"><span class="toc-text">实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序缓存"><span class="toc-text">应用程序缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-3"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-6"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Manifest文件"><span class="toc-text">Manifest文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#CACHE-MANIFEST"><span class="toc-text">CACHE MANIFEST</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#NETWORK"><span class="toc-text">NETWORK</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FALLBACK"><span class="toc-text">FALLBACK</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新缓存"><span class="toc-text">更新缓存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-workers"><span class="toc-text">web workers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-4"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-7"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web-Workers-和-DOM"><span class="toc-text">Web Workers 和 DOM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器发送事件"><span class="toc-text">服务器发送事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-5"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-8"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EventSource-对象"><span class="toc-text">EventSource 对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-类型"><span class="toc-text">Input 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-6"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类型的属性"><span class="toc-text">类型的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#number"><span class="toc-text">number</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#range"><span class="toc-text">range</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#date-pickers-日期选择器"><span class="toc-text">date pickers(日期选择器)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单元素"><span class="toc-text">表单元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-7"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例-9"><span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#datalist"><span class="toc-text">datalist</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#kegen"><span class="toc-text">kegen</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ouput"><span class="toc-text">ouput</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新的表单属性"><span class="toc-text">新的表单属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持-8"><span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#autocomplete-属性"><span class="toc-text">autocomplete 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#autofocus-属性"><span class="toc-text">autofocus 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#form-属性"><span class="toc-text">form 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#表单重写属性"><span class="toc-text">表单重写属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#height-和-width-属性"><span class="toc-text">height 和 width 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list-属性"><span class="toc-text">list 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#min、max-和-step-属性"><span class="toc-text">min、max 和 step 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#multiple-属性"><span class="toc-text">multiple 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#novalidate-属性"><span class="toc-text">novalidate 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#pattern-属性"><span class="toc-text">pattern 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#placeholder-属性"><span class="toc-text">placeholder 属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#required-属性"><span class="toc-text">required 属性</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>html5的一些基础知识。（以下内容来自<a href="http://www.w3school.com.cn/html5" target="_blank" rel="noopener">w3School</a>，浏览器支持信息不是很准确）</p>
+<h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>HTML5 是 W3C 与 WHATWG 合作的结果。</p>
+<p>编者注：W3C 指 World Wide Web Consortium，万维网联盟。</p>
+<p>编者注：WHATWG 指 Web Hypertext Application Technology Working Group。</p>
+<p>WHATWG 致力于 web 表单和应用程序，而 W3C 专注于 XHTML 2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。<br><a id="more"></a><br>为 HTML5 建立的一些规则：</p>
+<ul>
+<li>新特性应该基于 HTML、CSS、DOM 以及 JavaScript。</li>
+<li>减少对外部插件的需求（比如 Flash）</li>
+<li>更优秀的错误处理</li>
+<li>更多取代脚本的标记</li>
+<li>HTML5 应该独立于设备</li>
+<li>开发进程应对公众透明</li>
+</ul>
+<h3 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h3><p>HTML5 中的一些有趣的新特性：</p>
+<ul>
+<li>用于绘画的 canvas 元素</li>
+<li>用于媒介回放的 video 和 audio 元素</li>
+<li>对本地离线存储的更好的支持</li>
+<li>新的特殊内容元素，比如 main、article、footer、header、nav、section</li>
+<li>新的表单控件，比如 calendar、date、time、email、url、search</li>
+</ul>
+<hr>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><p>当前，video 元素支持三种视频格式：</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>IE</th>
+<th>Firefox</th>
+<th>Opera</th>
+<th>chrome</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MPEG 4</td>
+<td>9.0+</td>
+<td>21+</td>
+<td>25+</td>
+<td>5.0+</td>
+<td>3.0+</td>
+</tr>
+<tr>
+<td>WebM</td>
+<td>No</td>
+<td>4.0+</td>
+<td>10.6+</td>
+<td>6.0+</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Ogg</td>
+<td>No</td>
+<td>3.5+</td>
+<td>10.5+</td>
+<td>5.0+</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>MPEG4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件（video/mp4）</p>
+<p>WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件（video/webm）</p>
+<p>Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件（video/ogg）</p>
+<h4 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"movie.ogg"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line">    你的浏览器不支持video标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>control</code>属性供添加播放、暂停和音量控件。</p>
+<p>或者如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">width</span>=<span class="string">"320"</span> <span class="attr">height</span>=<span class="string">"240"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.ogg"</span> <span class="attr">type</span>=<span class="string">"video/ogg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">    你的浏览器不支持video标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如有多个源文件，使用第一个可识别的格式</p>
+<p><strong>重点来了，有时候我们使用的是MP4格式的视频，但是没有视频画面。</strong></p>
+<p><font color="#f00">那是因为MP4也有很多编码格式</font>，标签支持的格式如下：</p>
+<pre><code>MP4 = MPEG 4文件使用 H264 视频编解码器和AAC音频编解码器
+WebM = WebM 文件使用 VP8 视频编解码器和 Vorbis 音频编解码器
+Ogg = Ogg 文件使用 Theora 视频编解码器和 Vorbis音频编解码器
+</code></pre><p>如果MP4格式的视频没有画面，用网上的格式工厂转为<font color="#f00">avc(h264)</font>，就可以了。MP4视频有很多编码格式比如：mpg4(xdiv),,mpg4(xvid)，avc(h264)等。</p>
+<h4 id="video标签的属性"><a href="#video标签的属性" class="headerlink" title="video标签的属性"></a>video标签的属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>如果出现该属性，则视频在就绪后马上播放。</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
+</tr>
+<tr>
+<td>height</td>
+<td>pixels</td>
+<td>设置视频播放器的高度。</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>如果出现该属性，则当媒介文件完成播放后再次开始播放。</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>preload</td>
+<td>如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</td>
+</tr>
+<tr>
+<td>src</td>
+<td>url</td>
+<td>要播放的视频的 URL。</td>
+</tr>
+<tr>
+<td>width</td>
+<td>pixels</td>
+<td>设置视频播放器的宽度。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="video标签的方法、属性和事件"><a href="#video标签的方法、属性和事件" class="headerlink" title="video标签的方法、属性和事件"></a>video标签的方法、属性和事件</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>属性</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>play()</td>
+<td>currentSrc</td>
+<td>play</td>
+</tr>
+<tr>
+<td>pause()</td>
+<td>currentTime</td>
+<td>pause</td>
+</tr>
+<tr>
+<td>load()</td>
+<td>videoWidth</td>
+<td>progress</td>
+</tr>
+<tr>
+<td>canPlayType()</td>
+<td>videoHeight</td>
+<td>error</td>
+</tr>
+<tr>
+<td>-</td>
+<td>duration</td>
+<td>timeupdate</td>
+</tr>
+<tr>
+<td>-</td>
+<td>ended</td>
+<td>ended</td>
+</tr>
+<tr>
+<td>-</td>
+<td>error</td>
+<td>abort</td>
+</tr>
+<tr>
+<td>-</td>
+<td>paused</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>-</td>
+<td>muted</td>
+<td>emptied</td>
+</tr>
+<tr>
+<td>-</td>
+<td>seeking</td>
+<td>waiting</td>
+</tr>
+<tr>
+<td>-</td>
+<td>volume</td>
+<td>loadedmetadata</td>
+</tr>
+<tr>
+<td>-</td>
+<td>height</td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td>width</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="音频-audio"><a href="#音频-audio" class="headerlink" title="音频 audio"></a>音频 audio</h3><p>audio元素支持三种音频格式：</p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>IE 9</th>
+<th>Firefox 3.5</th>
+<th>Opera 10.5</th>
+<th>Chrome 3.0</th>
+<th>Safari 3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ogg Vorbis</td>
+<td>-</td>
+<td>√</td>
+<td>√</td>
+<td>√     </td>
+</tr>
+<tr>
+<td>MP3</td>
+<td>√</td>
+<td></td>
+<td></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>Wav</td>
+<td></td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h4 id="实例：-1"><a href="#实例：-1" class="headerlink" title="实例："></a>实例：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></span><br><span class="line">  你的浏览器不支持audio标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>如果出现该属性，则音频在就绪后马上播放。</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>如果出现该属性，则每当音频结束时重新开始播放。</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>preload</td>
+<td>如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</td>
+</tr>
+<tr>
+<td>src</td>
+<td>url</td>
+<td>要播放的音频的 URL。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="拖放（Drag和drop）"><a href="#拖放（Drag和drop）" class="headerlink" title="拖放（Drag和drop）"></a>拖放（Drag和drop）</h3><p>拖放是一种常见的特性，即抓取对象以后拖到另一个位置。</p>
+<p>在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放。</p>
+<h4 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>Internet Explorer 9、Firefox、Opera 12、Chrome 以及 Safari 5 支持拖放。</p>
+<p>注释：在 Safari 5.1.2 中不支持拖放。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><h5 id="设置元素可为拖放"><a href="#设置元素可为拖放" class="headerlink" title="设置元素可为拖放"></a>设置元素可为拖放</h5><p>首先，为了使元素可拖动，把 draggable 属性设置为 true ：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">draggable</span>=<span class="string">"true"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="拖动什么-ondragstart-和-setData"><a href="#拖动什么-ondragstart-和-setData" class="headerlink" title="拖动什么 - ondragstart 和 setData()"></a>拖动什么 - ondragstart 和 setData()</h5><p>然后，规定当元素被拖动时，会发生什么。</p>
+<p><code>ondragstart</code> 属性可调用一个函数，<code>drag(event)</code>，它规定了被拖动的数据。</p>
+<p><code>dataTransfer.setData()</code> 方法设置被拖数据的键和值：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"drag1"</span> <span class="attr">draggable</span>=<span class="string">"true"</span> <span class="attr">ondragstart</span>=<span class="string">"drag(event)"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">drag</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        event.dataTransfer.setData(<span class="string">"Text"</span>, event.target.id);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在这个例子中，键是 “Text”，值是可拖动元素的 id (“drag1”)，因此要设置<code>&lt;img&gt;</code>的id。</p>
+<h5 id="何处可放-ondragover"><a href="#何处可放-ondragover" class="headerlink" title="何处可放 - ondragover"></a>何处可放 - ondragover</h5><p><code>ondragover</code>事件规定在何处放置被拖动的数据。</p>
+<p>默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。</p>
+<p>这要通过调用<code>ondragover</code>事件的<code>event.preventDefault()</code>方法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">ondragover</span>=<span class="string">"allowDrop(event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">allowDrop</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        event.preventDefault();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="如何放置-ondrop"><a href="#如何放置-ondrop" class="headerlink" title="如何放置 - ondrop"></a>如何放置 - ondrop</h5><p>当放置被拖数据时，会发生 drop 事件。</p>
+<p><code>ondrop</code>属性可调用一个函数，<code>drop(event)</code>：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">ondragover</span>=<span class="string">"allowDrop(event)"</span> <span class="attr">ondrop</span>=<span class="string">"drop(event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">allowDrop</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        event.prevetnDefault();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">drop</span>(<span class="params">event</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        event.preventDefault();</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> data=event.dataTransfer.getData(<span class="string">"Text"</span>);</span></span><br><span class="line"><span class="javascript">        event.target.appendChild(<span class="built_in">document</span>.getElementById(data));</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Note: 在W3School上这么说：调用<code>preventDefault()</code> 来避免浏览器对数据的默认处理（<code>drop</code> 事件的默认行为是以链接形式打开）。 但是没有看明白到底什么意思，不用好像也是可以的。</p>
+<hr>
+<h3 id="画布-canvas"><a href="#画布-canvas" class="headerlink" title="画布 canvas"></a>画布 canvas</h3><p>TML5 的<code>canvas</code>元素使用 JavaScript 在网页上绘制图像。</p>
+<p>画布是一个矩形区域，您可以控制其每一像素。</p>
+<p>canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</p>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">    你的浏览器不支持canvas标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> cxt=c.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="javascript">    cxt.fillStyle=<span class="string">"#FF0000"</span>;</span></span><br><span class="line"><span class="undefined">    cxt.fillRect(0,0,150,75);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通过创建<code>context</code>对象来操作<code>canvas</code>画布，相当于<strong>画笔</strong></p>
+<p>具体API操作可以参考链接：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noopener">Canvas教程</a></p>
+<hr>
+<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h3><p>什么是SVG？</p>
+<ul>
+<li>SVG 指可伸缩矢量图形 (Scalable Vector Graphics)</li>
+<li>SVG 用于定义用于网络的基于矢量的图形</li>
+<li>SVG 使用 XML 格式定义图形</li>
+<li>SVG 图像在放大或改变尺寸的情况下其图形质量不会有损失</li>
+<li>SVG 是万维网联盟的标准</li>
+</ul>
+<h4 id="SVG-的优势"><a href="#SVG-的优势" class="headerlink" title="SVG 的优势"></a>SVG 的优势</h4><p>与其他图像格式相比（比如 JPEG 和 GIF），使用 SVG 的优势在于：</p>
+<ul>
+<li>SVG 图像可通过文本编辑器来创建和修改</li>
+<li>SVG 图像可被搜索、索引、脚本化或压缩</li>
+<li>SVG 是可伸缩的</li>
+<li>SVG 图像可在任何的分辨率下被高质量地打印</li>
+<li>SVG 可在图像质量不下降的情况下被放大</li>
+</ul>
+<h4 id="浏览器支持-1"><a href="#浏览器支持-1" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>Internet Explorer 9、Firefox、Opera、Chrome 以及 Safari 支持内联 SVG。</p>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><p>在 HTML5 中，可以把<code>SVG</code>元素直接嵌入 HTML 页面中：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span>=<span class="string">"1.1"</span> <span class="attr">height</span>=<span class="string">"190"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">polygon</span> <span class="attr">points</span>=<span class="string">"100,10 40,180 190,60 10,60 160,180"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">style</span>=<span class="string">"fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Canvas-vs-SVG"><a href="#Canvas-vs-SVG" class="headerlink" title="Canvas vs. SVG"></a>Canvas vs. SVG</h3><h4 id="SVG-1"><a href="#SVG-1" class="headerlink" title="SVG"></a>SVG</h4><p>SVG 是一种使用 XML 描述 2D 图形的语言。</p>
+<p>SVG 基于 XML，这意味着 SVG DOM 中的每个元素都是可用的。您可以为某个元素附加 JavaScript 事件处理器。</p>
+<p>在 SVG 中，每个被绘制的图形均被视为对象。如果 SVG 对象的属性发生变化，那么浏览器能够自动重现图形。</p>
+<h4 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h4><p>Canvas 通过 JavaScript 来绘制 2D 图形。</p>
+<p>Canvas 是逐像素进行渲染的。</p>
+<p>在 canvas 中，一旦图形被绘制完成，它就不会继续得到浏览器的关注。如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或许已被图形覆盖的对象。</p>
+<h4 id="Canvas-与-SVG-的比较"><a href="#Canvas-与-SVG-的比较" class="headerlink" title="Canvas 与 SVG 的比较"></a>Canvas 与 SVG 的比较</h4><p>下表列出了 canvas 与 SVG 之间的一些不同之处。</p>
+<h5 id="Canvas-1"><a href="#Canvas-1" class="headerlink" title="Canvas"></a>Canvas</h5><ul>
+<li>依赖分辨率</li>
+<li>不支持事件处理器</li>
+<li>弱的文本渲染能力</li>
+<li>能够以 .png 或 .jpg 格式保存结果图像</li>
+<li>最适合图像密集型的游戏，其中的许多对象会被频繁重绘<h5 id="SVG-2"><a href="#SVG-2" class="headerlink" title="SVG"></a>SVG</h5></li>
+<li>不依赖分辨率</li>
+<li>支持事件处理器</li>
+<li>最适合带有大型渲染区域的应用程序（比如谷歌地图）</li>
+<li>复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）</li>
+<li>不适合游戏应用</li>
+</ul>
+<hr>
+<h3 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h3><p>HTML5 Geolocation API 用于获得用户的地理位置。</p>
+<p>鉴于该特性可能侵犯用户的隐私，除非用户同意，否则用户位置信息是不可用的。</p>
+<h4 id="浏览器支持-2"><a href="#浏览器支持-2" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>Internet Explorer 9、Firefox、Chrome、Safari 以及 Opera 支持地理定位。</p>
+<p>注释：对于拥有 GPS 的设备，比如 iPhone，地理定位更加精确。</p>
+<h4 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h4><p>在js中使用<code>getCurrentPosition()</code>方法来获得用户的位置。</p>
+<p>下例是一个简单的地理定位实例，可返回用户位置的经度和纬度。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x=<span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocation</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (navigator.geolocation)&#123;</span><br><span class="line">        navigator.geolocation.getCurrentPosition(showPosition, showError);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        x.innerHTML=<span class="string">"Geolocation is not supported by this browser."</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showPosition</span>(<span class="params">position</span>)</span>&#123;</span><br><span class="line">    x.innerHTML=<span class="string">"Latitude: "</span> + position.coords.latitude +</span><br><span class="line">      <span class="string">"&lt;br /&gt;Longitude: "</span> + position.coords.longitude;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showError</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(error.code)&#123;</span><br><span class="line">    <span class="keyword">case</span> error.PERMISSION_DENIED:</span><br><span class="line">      x.innerHTML=<span class="string">"User denied the request for Geolocation."</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> error.POSITION_UNAVAILABLE:</span><br><span class="line">      x.innerHTML=<span class="string">"Location information is unavailable."</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> error.TIMEOUT:</span><br><span class="line">      x.innerHTML=<span class="string">"The request to get user location timed out."</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> error.UNKNOWN_ERROR:</span><br><span class="line">      x.innerHTML=<span class="string">"An unknown error occurred."</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="getCurrentPosition-方法-返回数据"><a href="#getCurrentPosition-方法-返回数据" class="headerlink" title="getCurrentPosition() 方法 - 返回数据"></a>getCurrentPosition() 方法 - 返回数据</h4><p>若成功，则 getCurrentPosition() 方法返回对象，包含其他下面的属性。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>coords.latitude</td>
+<td>十进制数的纬度</td>
+</tr>
+<tr>
+<td>coords.longitude</td>
+<td>十进制数的经度</td>
+</tr>
+<tr>
+<td>coords.accuracy</td>
+<td>位置精度</td>
+</tr>
+<tr>
+<td>coords.altitude</td>
+<td>海拔，海平面以上以米计</td>
+</tr>
+<tr>
+<td>coords.altitudeAccuracy</td>
+<td>位置的海拔精度</td>
+</tr>
+<tr>
+<td>coords.heading</td>
+<td>方向，从正北开始以度计</td>
+</tr>
+<tr>
+<td>coords.speed</td>
+<td>速度，以米/每秒计</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>响应的日期/时间</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Geolocation-对象-其他有趣的方法"><a href="#Geolocation-对象-其他有趣的方法" class="headerlink" title="Geolocation 对象 - 其他有趣的方法"></a>Geolocation 对象 - 其他有趣的方法</h4><p>watchPosition() - 返回用户的当前位置，并继续返回用户移动时的更新位置（就像汽车上的 GPS）。</p>
+<p>clearWatch() - 停止 watchPosition() 方法</p>
+<hr>
+<h3 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h3><p>HTML5 提供了两种在客户端存储数据的新方法：</p>
+<ul>
+<li><code>localStorage</code> - 没有时间限制的数据存储</li>
+<li><code>sessionStorage</code> - 针对一个 session 的数据存储</li>
+</ul>
+<h4 id="localStorage-方法"><a href="#localStorage-方法" class="headerlink" title="localStorage 方法"></a>localStorage 方法</h4><p><code>localStorage</code>方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。</p>
+<h5 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h5><p>创建和访问<code>localStorage</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.lastname = <span class="string">"Smith"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(localStorage.lastname);</span><br></pre></td></tr></table></figure></p>
+<h4 id="sessionStorage方法"><a href="#sessionStorage方法" class="headerlink" title="sessionStorage方法"></a>sessionStorage方法</h4><p>sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。</p>
+<h5 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h5><p>创建和访问<code>sessionStorage</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.lastname = <span class="string">"Smith"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(sessionStorage);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="应用程序缓存"><a href="#应用程序缓存" class="headerlink" title="应用程序缓存"></a>应用程序缓存</h3><p>什么是应用程序缓存（Application Cache）？</p>
+<p>HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。</p>
+<p>应用程序缓存为应用带来三个优势：</p>
+<ul>
+<li>离线浏览 - 用户可在应用离线时使用它们</li>
+<li>速度 - 已缓存资源加载得更快</li>
+<li>减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。</li>
+</ul>
+<h4 id="浏览器支持-3"><a href="#浏览器支持-3" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>所有主流浏览器均支持应用程序缓存，除了 Internet Explorer。</p>
+<h4 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h4><p>通过创建 cache manifest 文件，创建 web 应用的离线版本。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">The content of the document......</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。</p>
+<p>manifest 文件的建议的文件扩展名是：”.appcache”。</p>
+<p>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置。</p>
+<h4 id="Manifest文件"><a href="#Manifest文件" class="headerlink" title="Manifest文件"></a>Manifest文件</h4><p>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。</p>
+<p>manifest 文件可分为三个部分：</p>
+<ul>
+<li>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</li>
+<li>NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存</li>
+<li>FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）</li>
+</ul>
+<h5 id="CACHE-MANIFEST"><a href="#CACHE-MANIFEST" class="headerlink" title="CACHE MANIFEST"></a>CACHE MANIFEST</h5><p>第一行，CACHE MANIFEST，是必需的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"># 2012-02-21 v1.0.0</span><br><span class="line">/theme.css</span><br><span class="line">/logo.gif</span><br><span class="line">/main.js</span><br></pre></td></tr></table></figure></p>
+<p>上面的 manifest 文件列出了三个资源：一个 CSS 文件，一个 GIF 图像，以及一个 JavaScript 文件。当 manifest 文件加载后，浏览器会从网站的根目录下载这三个文件。然后，无论用户何时与因特网断开连接，这些资源依然是可用的。</p>
+<h5 id="NETWORK"><a href="#NETWORK" class="headerlink" title="NETWORK"></a>NETWORK</h5><p>下面的 NETWORK 小节规定文件 “login.asp” 永远不会被缓存，且离线时是不可用的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NETWORK:</span><br><span class="line">login.asp</span><br></pre></td></tr></table></figure></p>
+<p>可以使用星号来指示所有其他资源/文件都需要因特网连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NETWORK:</span><br><span class="line">*</span><br></pre></td></tr></table></figure></p>
+<h5 id="FALLBACK"><a href="#FALLBACK" class="headerlink" title="FALLBACK"></a>FALLBACK</h5><p>下面的 FALLBACK 小节规定如果无法建立因特网连接，则用 “offline.html” 替代 /html5/ 目录中的所有文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FALLBACK:</span><br><span class="line">/html5/ /404.html</span><br></pre></td></tr></table></figure></p>
+<p>注释：第一个 URI 是资源，第二个是替补。</p>
+<h5 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h5><p>一旦应用被缓存，它就会保持缓存直到发生下列情况：</p>
+<ul>
+<li>用户清空浏览器缓存</li>
+<li>manifest 文件被修改（参阅下面的提示）</li>
+<li>由程序来更新应用缓存</li>
+</ul>
+<p><strong>重要的提示</strong>：以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法</p>
+<hr>
+<h3 id="web-workers"><a href="#web-workers" class="headerlink" title="web workers"></a>web workers</h3><p>什么是 Web Worker？</p>
+<p>当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。</p>
+<p>web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。</p>
+<h4 id="浏览器支持-4"><a href="#浏览器支持-4" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>所有主流浏览器均支持 web worker，除了 Internet Explorer。</p>
+<h4 id="实例-7"><a href="#实例-7" class="headerlink" title="实例"></a>实例</h4><p>web worker运行的是外部js，因此我们需要先创建一个脚本<code>demo_work.js</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timedCount</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    i=i+<span class="number">1</span>;</span><br><span class="line">    postMessage(i);</span><br><span class="line">    setTimeout(<span class="string">"timedCount()"</span>,<span class="number">500</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timedCount();</span><br></pre></td></tr></table></figure>
+<p>以上代码中重要的部分是 postMessage() 方法 - 它用于向 HTML 页面传回一段消息。</p>
+<p>接下来在HTML页面中调用它<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startWorker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span>(Worker) !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span>(w)=== <span class="literal">undefined</span>) &#123;</span><br><span class="line">            w = <span class="keyword">new</span> Workder(<span class="string">"demo_workder.js"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        w.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = event.data;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"你的浏览器不支持web workers..."</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopWorker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    w.terminate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>onmessage</code>事件监听器来接受消息。</p>
+<p>当我们创建 web worker 对象后，它会继续监听消息（即使在外部脚本完成之后）直到其被终止为止。<br>如需终止 web worker，并释放浏览器/计算机资源，请使用 terminate() 方法。</p>
+<h4 id="Web-Workers-和-DOM"><a href="#Web-Workers-和-DOM" class="headerlink" title="Web Workers 和 DOM"></a>Web Workers 和 DOM</h4><p>由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：</p>
+<ul>
+<li>window 对象</li>
+<li>document 对象</li>
+<li>parent 对象</li>
+</ul>
+<hr>
+<h3 id="服务器发送事件"><a href="#服务器发送事件" class="headerlink" title="服务器发送事件"></a>服务器发送事件</h3><p><code>Server-Sent</code>事件指的是网页自动获取来自服务器的更新。</p>
+<p>以前也可能做到这一点，前提是网页不得不询问是否有可用的更新。通过服务器发送事件，更新能够自动到达。<br>例子：Facebook/Twitter 更新、估价更新、新的博文、赛事结果等。</p>
+<h4 id="浏览器支持-5"><a href="#浏览器支持-5" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>所有主流浏览器均支持服务器发送事件，除了 Internet Explorer。</p>
+<h4 id="实例-8"><a href="#实例-8" class="headerlink" title="实例"></a>实例</h4><p>创建一个新的 EventSource 对象，然后规定发送更新的页面的 URL（本例中是 “demo_sse.php”）。每接收到一次更新，就会发生 onmessage 事件。当 onmessage 事件发生时，把已接收的数据推入 id 为 “result” 的元素中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span>(EventSource)!==<span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> source=<span class="keyword">new</span> EventSource(<span class="string">"demo_sse.php"</span>);</span><br><span class="line">    source.onmessage=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML+=event.data + <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"你的浏览器不支持EventSource"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong>：为了让上面的例子可以运行，您还需要能够发送数据更新的服务器（比如 PHP 和 ASP）。服务器端事件流要把 “Content-Type” 报头设置为 “text/event-stream”</p>
+<h4 id="EventSource-对象"><a href="#EventSource-对象" class="headerlink" title="EventSource 对象"></a>EventSource 对象</h4><p>在上面的例子中，我们使用 onmessage 事件来获取消息。不过还可以使用其他事件：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onopen</td>
+<td>当通往服务器的连接被打开</td>
+</tr>
+<tr>
+<td>onmessage</td>
+<td>当接收到消息</td>
+</tr>
+<tr>
+<td>onerror</td>
+<td>当错误发生</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="Input-类型"><a href="#Input-类型" class="headerlink" title="Input 类型"></a>Input 类型</h3><p>HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证：</p>
+<ul>
+<li>email</li>
+<li>url</li>
+<li>number</li>
+<li>range</li>
+<li>Date pickers (date, month, week, time, datetime, datetime-local)</li>
+<li>search</li>
+<li>color</li>
+</ul>
+<h4 id="浏览器支持-6"><a href="#浏览器支持-6" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><table>
+<thead>
+<tr>
+<th>Inputtype</th>
+<th>IE</th>
+<th>Firefox</th>
+<th>Opera</th>
+<th>Chrome</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>No</td>
+<td>4.0</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>url</td>
+<td>No</td>
+<td>4.0</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>number</td>
+<td>No</td>
+<td>No</td>
+<td>9.0</td>
+<td>7.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>range</td>
+<td>No</td>
+<td>No</td>
+<td>9.0</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>Date pickers</td>
+<td>No</td>
+<td>No</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>search</td>
+<td>No</td>
+<td>4.0</td>
+<td>11.0</td>
+<td>10.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>color</td>
+<td>No</td>
+<td>No</td>
+<td>11.0</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>在提交表单时，会自动验证<code>input</code>域的值。</p>
+<h4 id="类型的属性"><a href="#类型的属性" class="headerlink" title="类型的属性"></a>类型的属性</h4><h5 id="number"><a href="#number" class="headerlink" title="number"></a>number</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max</td>
+<td>number</td>
+<td>规定允许的最大值</td>
+</tr>
+<tr>
+<td>min</td>
+<td>number</td>
+<td>规定允许的最小值</td>
+</tr>
+<tr>
+<td>step</td>
+<td>number</td>
+<td>规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>规定默认值</td>
+</tr>
+</tbody>
+</table>
+<h5 id="range"><a href="#range" class="headerlink" title="range"></a>range</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max</td>
+<td>number</td>
+<td>规定允许的最大值</td>
+</tr>
+<tr>
+<td>min</td>
+<td>number</td>
+<td>规定允许的最小值</td>
+</tr>
+<tr>
+<td>step</td>
+<td>number</td>
+<td>规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>规定默认值</td>
+</tr>
+</tbody>
+</table>
+<h5 id="date-pickers-日期选择器"><a href="#date-pickers-日期选择器" class="headerlink" title="date pickers(日期选择器)"></a>date pickers(日期选择器)</h5><p>HTML5 拥有多个可供选取日期和时间的新输入类型：</p>
+<ul>
+<li>date - 选取日、月、年</li>
+<li>month - 选取月、年</li>
+<li>week - 选取周和年</li>
+<li>time - 选取时间（小时和分钟）</li>
+<li>datetime - 选取时间、日、月、年（UTC 时间）</li>
+<li>datetime-local - 选取时间、日、月、年（本地时间）</li>
+</ul>
+<hr>
+<h3 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h3><p>HTML5 拥有若干涉及表单的元素和属性：</p>
+<ul>
+<li>datalist</li>
+<li>keygen</li>
+<li>output</li>
+</ul>
+<h4 id="浏览器支持-7"><a href="#浏览器支持-7" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><table>
+<thead>
+<tr>
+<th>Input type</th>
+<th>IE</th>
+<th>Firefox</th>
+<th>Opera</th>
+<th>Chrome</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datalist</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>keygen</td>
+<td>No</td>
+<td>No</td>
+<td>10.5</td>
+<td>3.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>output</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="实例-9"><a href="#实例-9" class="headerlink" title="实例"></a>实例</h4><h5 id="datalist"><a href="#datalist" class="headerlink" title="datalist"></a>datalist</h5><p>datalist 元素规定输入域的选项列表。</p>
+<p>列表是通过 datalist 内的 option 元素创建的。</p>
+<p>如需把 datalist 绑定到输入域，请用输入域的 list 属性引用 datalist 的 id：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">list</span>=<span class="string">"url_list"</span> <span class="attr">name</span>=<span class="string">"link"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"url_list"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"W3School"</span> <span class="attr">value</span>=<span class="string">"http://www.W3School.com.cn"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"Google"</span> <span class="attr">value</span>=<span class="string">"http://www.google.com"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"Microsoft"</span> <span class="attr">value</span>=<span class="string">"http://www.microsoft.com"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>提示</strong>：option 元素永远都要设置 value 属性。</p>
+<h5 id="kegen"><a href="#kegen" class="headerlink" title="kegen"></a>kegen</h5><p>keygen 元素的作用是提供一种验证用户的可靠方法。</p>
+<p>keygen 元素是密钥对生成器（key-pair generator）。当提交表单时，会生成两个键，一个是私钥，一个公钥。</p>
+<p>私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。公钥可用于之后验证用户的客户端证书（client certificate）。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"demo_form.asp"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">    Username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"usr_name"</span> /&gt;</span></span><br><span class="line">    Encryption: <span class="tag">&lt;<span class="name">keygen</span> <span class="attr">name</span>=<span class="string">"security"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="ouput"><a href="#ouput" class="headerlink" title="ouput"></a>ouput</h5><p>output 元素用于不同类型的输出，比如计算或脚本输出：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">output</span> <span class="attr">id</span>=<span class="string">"result"</span> <span class="attr">onforminput</span>=<span class="string">"resCalc()"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="新的表单属性"><a href="#新的表单属性" class="headerlink" title="新的表单属性"></a>新的表单属性</h3><p>新的 form 属性：</p>
+<ul>
+<li>autocomplete</li>
+<li>novalidate</li>
+</ul>
+<p>新的 input 属性：</p>
+<ul>
+<li>autocomplete</li>
+<li>autofocus</li>
+<li>form</li>
+<li>form overrides (formaction, formenctype, formmethod, formnovalidate, formtarget)</li>
+<li>height 和 width</li>
+<li>list</li>
+<li>min, max 和 step</li>
+<li>multiple</li>
+<li>pattern (regexp)</li>
+<li>placeholder</li>
+<li>required</li>
+</ul>
+<h4 id="浏览器支持-8"><a href="#浏览器支持-8" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><table>
+<thead>
+<tr>
+<th>Input type</th>
+<th>IE</th>
+<th>Firefox</th>
+<th>Opera</th>
+<th>Chrome</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autocomplete</td>
+<td>8.0</td>
+<td>3.5</td>
+<td>9.5</td>
+<td>3.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td>No</td>
+<td>No</td>
+<td>10.0</td>
+<td>3.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>form</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>form overrides</td>
+<td>No</td>
+<td>No</td>
+<td>10.5</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>height and width</td>
+<td>8.0</td>
+<td>3.5</td>
+<td>9.5</td>
+<td>3.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>list</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>min, max and step</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>3.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>No</td>
+<td>3.5</td>
+<td>No</td>
+<td>3.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>novalidate</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>3.0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>required</td>
+<td>No</td>
+<td>No</td>
+<td>9.5</td>
+<td>3.0</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><h5 id="autocomplete-属性"><a href="#autocomplete-属性" class="headerlink" title="autocomplete 属性"></a>autocomplete 属性</h5><p><code>autocomplete</code> 属性规定 form 或 input 域应该拥有自动完成功能。</p>
+<p><strong>注释</strong>：autocomplete 适用于 <code>&lt;form&gt;</code> 标签，以及以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email, password, datepickers, range 以及 color。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"demo_form.asp"</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">autocomplete</span>=<span class="string">"on"</span>&gt;</span></span><br><span class="line">    First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="autofocus-属性"><a href="#autofocus-属性" class="headerlink" title="autofocus 属性"></a>autofocus 属性</h5><p><code>autofocus</code> 属性规定在页面加载时，域自动地获得焦点。</p>
+<p>注释：autofocus 属性适用于所有 <code>&lt;input&gt;</code> 标签的类型。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user_name"</span>  <span class="attr">autofocus</span>=<span class="string">"autofocus"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="form-属性"><a href="#form-属性" class="headerlink" title="form 属性"></a>form 属性</h5><p><code>form</code> 属性规定输入域所属的一个或多个表单。</p>
+<p><strong>注释</strong>：form 属性适用于所有 <code>&lt;input&gt;</code> 标签的类型。form 属性必须引用所属表单的 id：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"demo_form.asp"</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">id</span>=<span class="string">"user_form"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span> <span class="attr">form</span>=<span class="string">"user_form"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注释</strong>：如需引用一个以上的表单，请使用空格分隔的列表。</p>
+<h5 id="表单重写属性"><a href="#表单重写属性" class="headerlink" title="表单重写属性"></a>表单重写属性</h5><p>表单重写属性（form override attributes）允许您重写 form 元素的某些属性设定。</p>
+<p>表单重写属性有：</p>
+<ul>
+<li>formaction - 重写表单的 action 属性</li>
+<li>formenctype - 重写表单的 enctype 属性</li>
+<li>formmethod - 重写表单的 method 属性</li>
+<li>formnovalidate - 重写表单的 novalidate 属性</li>
+<li>formtarget - 重写表单的 target 属性</li>
+</ul>
+<p><strong>注释</strong>：表单重写属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：submit 和 image。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"demo_form.asp"</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">id</span>=<span class="string">"user_form"</span>&gt;</span></span><br><span class="line">    E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"userid"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formaction</span>=<span class="string">"demo_admin.asp"</span> <span class="attr">value</span>=<span class="string">"Submit as admin"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formnovalidate</span>=<span class="string">"true"</span> <span class="attr">value</span>=<span class="string">"Submit without validation"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="height-和-width-属性"><a href="#height-和-width-属性" class="headerlink" title="height 和 width 属性"></a>height 和 width 属性</h5><p><code>height</code> 和 <code>width</code> 属性规定用于 image 类型的 input 标签的图像高度和宽度。</p>
+<p><strong>注释</strong>：height 和 width 属性只适用于 image 类型的 <code>&lt;input&gt;</code> 标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"img_submit.gif"</span> <span class="attr">width</span>=<span class="string">"99"</span> <span class="attr">height</span>=<span class="string">"99"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="list-属性"><a href="#list-属性" class="headerlink" title="list 属性"></a>list 属性</h5><p><code>list</code> 属性规定输入域的 datalist。datalist 是输入域的选项列表。</p>
+<p><strong>注释</strong>：list 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email, date pickers, number, range 以及 color。</p>
+<h5 id="min、max-和-step-属性"><a href="#min、max-和-step-属性" class="headerlink" title="min、max 和 step 属性"></a>min、max 和 step 属性</h5><p><code>min</code>、<code>max</code> 和 <code>step</code> 属性用于为包含数字或日期的 input 类型规定限定（约束）。</p>
+<p><code>max</code> 属性规定输入域所允许的最大值。</p>
+<p><code>min</code> 属性规定输入域所允许的最小值。</p>
+<p><code>step</code> 属性为输入域规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）。</p>
+<p><strong>注释</strong>：min、max 和 step 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：date pickers、number 以及 range。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Points: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"points"</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"10"</span> <span class="attr">step</span>=<span class="string">"3"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="multiple-属性"><a href="#multiple-属性" class="headerlink" title="multiple 属性"></a>multiple 属性</h5><p><code>multiple</code>属性规定输入域中可选择多个值。</p>
+<p><strong>注释</strong>：multiple 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：email 和 file。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select images: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"img"</span> <span class="attr">multiple</span>=<span class="string">"multiple"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="novalidate-属性"><a href="#novalidate-属性" class="headerlink" title="novalidate 属性"></a>novalidate 属性</h5><p><code>novalidate</code>属性规定在提交表单时不应该验证 form 或 input 域。</p>
+<p><strong>注释</strong>：novalidate 属性适用于 <code>&lt;form&gt;</code> 以及以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email, password, date pickers, range 以及 color.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"demo_form.asp"</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">novalidate</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"user_email"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="pattern-属性"><a href="#pattern-属性" class="headerlink" title="pattern 属性"></a>pattern 属性</h5><p><code>pattern</code> 属性规定用于验证 input 域的模式（pattern）。模式是正则表达式。</p>
+<p><strong>注释</strong>：pattern 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email 以及 password。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Country code: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"country_code"</span></span></span><br><span class="line"><span class="tag"><span class="attr">pattern</span>=<span class="string">"[A-z]&#123;3&#125;"</span> <span class="attr">title</span>=<span class="string">"Three letter country code"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="placeholder-属性"><a href="#placeholder-属性" class="headerlink" title="placeholder 属性"></a>placeholder 属性</h5><p><code>placeholder</code> 属性提供一种提示（hint），描述输入域所期待的值。</p>
+<p><strong>注释</strong>：placeholder 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email 以及 password。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">name</span>=<span class="string">"user_search"</span>  <span class="attr">placeholder</span>=<span class="string">"Search W3School"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="required-属性"><a href="#required-属性" class="headerlink" title="required 属性"></a>required 属性</h5><p><code>required</code> 属性规定必须在提交之前填写输入域（不能为空）。</p>
+<p><strong>注</strong>释：required 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email, password, date pickers, number, checkbox, radio 以及 file。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"usr_name"</span> <span class="attr">required</span>=<span class="string">"required"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2017/07/25/h5基础/">https://sampwood.github.io/2017/07/25/h5基础/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/html5/">html5</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/08/22/css/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">css</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/07/24/git基础操作/">
+        <span class="next-text nav-default">git基础操作</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

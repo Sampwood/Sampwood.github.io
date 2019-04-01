@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="angular4学习笔记">
+
+
+
+
+  <meta name="keywords" content="SPA, Angular4, Sampwood的One Piece">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/2017/10/23/angular4学习笔记/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> angular4学习笔记 - Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          angular4学习笔记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-10-23
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/TS/">TS</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#可观察对象-Observable"><span class="toc-text">可观察对象 (Observable)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板"><span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取input输入"><span class="toc-text">获取input输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取Form的引用"><span class="toc-text">获取Form的引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#从模板视图中获取元素"><span class="toc-text">从模板视图中获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ViewChild-使用模板变量名"><span class="toc-text">@ViewChild 使用模板变量名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ViewChild-使用模板变量名及设置查询条件"><span class="toc-text">@ViewChild 使用模板变量名及设置查询条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ViewChild-使用类型查询"><span class="toc-text">@ViewChild 使用类型查询</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构性指令"><span class="toc-text">结构性指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用trackBy，作为items的key"><span class="toc-text">使用trackBy，作为items的key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖注入"><span class="toc-text">依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性装饰器"><span class="toc-text">属性装饰器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#宿主元素（Host-Element）"><span class="toc-text">宿主元素（Host Element）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HostListener"><span class="toc-text">@HostListener</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HostListener-装饰器定义"><span class="toc-text">HostListener 装饰器定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HostListener-装饰器应用"><span class="toc-text">HostListener 装饰器应用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Host-Event-Listener"><span class="toc-text">Host Event Listener</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HostBinding"><span class="toc-text">@HostBinding</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HostBinding-装饰器定义"><span class="toc-text">HostBinding 装饰器定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HostBinding-装饰器应用"><span class="toc-text">HostBinding 装饰器应用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Host-Property-Bindings"><span class="toc-text">Host Property Bindings</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TestBed测试台"><span class="toc-text">TestBed测试台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createComponent-方法"><span class="toc-text">createComponent 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ComponentFixture、DebugElement-和-query-By-css"><span class="toc-text">ComponentFixture、DebugElement 和 query(By.css)</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">`元素。
+query方法接受predicate函数，并搜索fixture的整个DOM树，试图寻找第一个满足predicate函数的元素。
+By类是Angular测试工具之一，它生成有用的predicate。 它的By.css静态方法产生标准CSS选择器 predicate，与JQuery选择器相同的方式过滤。
+测试程序再每个测试程序之前，Jasmin都一次运行beforeEach函数：12345678910it(&#39;should display original title&#39;, () =&gt; {  fixture.detectChanges();  expect(el.textContent).toContain(comp.title);});it(&#39;should display a different test title&#39;, () =&gt; {  comp.title = &#39;Test Title&#39;;  fixture.detectChanges();  expect(el.textContent).toContain(&#39;Test Title&#39;);});
+测试带有外部模板的组件在实际应用中，BannerComponent的行为和刚才的版本相同，但是实现方式不同。它有一个外部模板和CSS文件，通过templateUrl和styleUrls属性来指定。
+12345678910import { Component } from &#39;@angular/core&#39;;@Component({  selector: &#39;app-banner&#39;,  templateUrl: &#39;./banner.component.html&#39;,  styleUrls:  [&#39;./banner.component.css&#39;]})export class BannerComponent {  title = &#39;Test Tour of Heroes&#39;;}
+这些测试有一个问题。 TestBed.createComponent方法是同步的。但是Angular模板编译器必须在创建组件实例之前先从文件系统中读取这些值，而这是异步的。以前测试内联模板时使用的设置方式不适用于外部模板。
+BannerComponent测试的设置方式必须给Angular模板编译器一些时间来读取文件。以前放在beforeEach中的逻辑被拆分成了两个beforeEach调用。 第一个beforeEach处理异步编译工作。
+123456789import { async } from &#39;@angular/core/testing&#39;;// async beforeEachbeforeEach(async(() =&gt; {  TestBed.configureTestingModule({    declarations: [ BannerComponent ], // declare the test component  })  .compileComponents();  // compile template and css}));
+TestBed.compileComponents方法会异步编译这个测试模块中配置的所有组件。在这个例子中，BannerComponent是唯一要编译的组件。当compileComponents完成时，外部组件和css文件会被“内联”，而TestBed.createComponent会用同步的方式创建一个BannerComponent的新实例。
+
+NOTE: WebPack用户不用调用compileComponents，因为它会在构建过程中自动内联模板和css，然后执行测试
+
+测试有依赖的组件组件经常依赖其他服务。
+WelcomeComponent为登陆的用户显示一条欢迎信息。它从注入的UserService的属性得知用户的身份：123456789101112131415161718192021222324252627// welcome.component.tsimport { Component, OnInit } from &#39;@angular/core&#39;;import { UserService }       from &#39;./model/user.service&#39;;@Component({  selector: &#39;app-welcome&#39;,  template: &#39;&lt;h3 class=&quot;welcome&quot; &gt;&lt;i&gt;{{welcome}}&lt;/i&gt;&lt;/h3&gt;&#39;})export class WelcomeComponent  implements OnInit {  welcome = &#39;-- not initialized yet --&#39;;  constructor(private userService: UserService) { }  ngOnInit(): void {    this.welcome = this.userService.isLoggedIn ?      &#39;Welcome, &#39; + this.userService.user.name :      &#39;Please log in.&#39;;  }}// welcome.component.sepc.tsTestBed.configureTestingModule({   declarations: [ WelcomeComponent ],// providers:    [ UserService ]  // NO! Don&#39;t provide the real service!                                  // Provide a test-double instead   providers:    [ {provide: UserService, useValue: userServiceStub } ]});
+提供服务替身注入真实的service组件有可能很麻烦，而且不能确保能获取到相同的测试对象。实际上，服务的替身（stubs、fakes、spies或者mocks）通常会更加合适。所以在真实的UserService的位置创建和注册UserService替身，会让测试更加容易和安全。
+1234userServiceStub = {  isLoggedIn: true,  user: { name: &#39;Test User&#39;}};
+获取注入的服务最安全并总是有效的获取注入服务的方法，是从被测试的组件的注入器获取。 组件注入器是fixture的DebugElement的属性。
+12// UserService actually injected into the componentuserService = fixture.debugElement.injector.get(UserService);
+TestBed.get 方法你可以通过TestBed.get方法来从根注入器中获取服务。 它更容易被记住，也更加简介。但是只有在Angular使用测试的根注入器中的那个服务实例来注入到组件时，它才有效。幸运的是，在这个测试套件中，唯一的UserService提供商就是根测试模块，所以像下面这样调用TestBed.get很安全：
+12// UserService from the root injectoruserService = TestBed.get(UserService);
+测试程序12345678910111213141516171819202122232425262728293031323334353637383940414243beforeEach(() =&gt; {  // stub UserService for test purposes  userServiceStub = {    isLoggedIn: true,    user: { name: &#39;Test User&#39;}  };  TestBed.configureTestingModule({     declarations: [ WelcomeComponent ],     providers:    [ {provide: UserService, useValue: userServiceStub } ]  });  fixture = TestBed.createComponent(WelcomeComponent);  comp    = fixture.componentInstance;  // UserService from the root injector  userService = TestBed.get(UserService);  //  get the &quot;welcome&quot; element by CSS selector (e.g., by class name)  de = fixture.debugElement.query(By.css(&#39;.welcome&#39;));  el = de.nativeElement;});it(&#39;should welcome the user&#39;, () =&gt; {  fixture.detectChanges();  const content = el.textContent;  expect(content).toContain(&#39;Welcome&#39;, &#39;&quot;Welcome ...&quot;&#39;);  expect(content).toContain(&#39;Test User&#39;, &#39;expected name&#39;);});it(&#39;should welcome &quot;Bubba&quot;&#39;, () =&gt; {  userService.user.name = &#39;Bubba&#39;; // welcome message hasn&#39;t been shown yet  fixture.detectChanges();  expect(el.textContent).toContain(&#39;Bubba&#39;);});it(&#39;should request login if not logged in&#39;, () =&gt; {  userService.isLoggedIn = false; // welcome message hasn&#39;t been shown yet  fixture.detectChanges();  const content = el.textContent;  expect(content).not.toContain(&#39;Welcome&#39;, &#39;not welcomed&#39;);  expect(content).toMatch(/log in/i, &#39;&quot;log in&quot;&#39;);});
+生命周期ExpressionChangedAfterItHasBeenCheckedError errorconstructor -&gt; OnChanges -&gt; onInit -&gt; doCheck -&gt; afterContentInit -&gt; afterContentChecked -&gt; afterViewInit -&gt; afterViewChecked -&gt; onDestroy
+angular从app-root开始做变化检查（change detection），检查所有的数据绑定，然后开始检查子组件，并且其只做一次检查（而不是循环检查直到稳定），父组件的数据绑定将不会再次检查，所以此时应用处在一个不稳定状态（inconsistent state。
+在开发模式中，angular进行两个变化检查，第二次将会确认数据绑定是否发生改变，如果有就抛出这个错误。
+所以，如果在afterViewInit中修改了数据绑定就会出现这个错误。
+解决方案：
+
+setTimeout / Promise.resolve().then
+ChangeDetectorRef#detectChanges() 强制检查
+如果是对与*ngIf的问题，可用[hidden]替代
+
+参考
+[Angular 2] ElementRef, @ViewChild &amp; Renderer
+Angular ngFor, &lt;ng-template&gt; and the compiler
+Angular 2 HostListener &amp; HostBinding
+Angular4: 文档-核心知识-测试
+Everything you need to know about the ExpressionChangedAfterItHasBeenCheckedError error
+
+</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试程序"><span class="toc-text">测试程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试带有外部模板的组件"><span class="toc-text">测试带有外部模板的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试有依赖的组件"><span class="toc-text">测试有依赖的组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#提供服务替身"><span class="toc-text">提供服务替身</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取注入的服务"><span class="toc-text">获取注入的服务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#TestBed-get-方法"><span class="toc-text">TestBed.get 方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试程序-1"><span class="toc-text">测试程序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ExpressionChangedAfterItHasBeenCheckedError-error"><span class="toc-text">ExpressionChangedAfterItHasBeenCheckedError error</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a>
+    </li></div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><h4 id="可观察对象-Observable"><a href="#可观察对象-Observable" class="headerlink" title="可观察对象 (Observable)"></a>可观察对象 (Observable)</h4><p><code>Http</code>服务中的每个方法都返回一个 HTTP <code>Response</code>对象的<code>Observable</code>实例</p>
+<p>一个可观察对象是一个事件流，我们可以用数组型操作符来处理它。<br><a id="more"></a></p>
+<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p><strong>TODO</strong>: ngModel</p>
+<p>在标识符前加上<code>#</code>就能声明一个模板引用变量。</p>
+<p>模板引用变量通常用来引用模板中的某个DOM元素，它还可以引用Angular组件或者Web Component</p>
+<h4 id="获取input输入"><a href="#获取input输入" class="headerlink" title="获取input输入"></a>获取input输入</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">    selector: <span class="string">'demo'</span>,</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;input #box&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;&#123;&#123;box.value&#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> DemoComponent &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="获取Form的引用"><a href="#获取Form的引用" class="headerlink" title="获取Form的引用"></a>获取Form的引用</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> #<span class="attr">demoForm</span>=<span class="string">"ngForm"</span> (<span class="attr">ngSubmit</span>)=<span class="string">"onSubmit(demoForm)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> [<span class="attr">disabled</span>]=<span class="string">"!demoForm.form.valid"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="从模板视图中获取元素"><a href="#从模板视图中获取元素" class="headerlink" title="从模板视图中获取元素"></a>从模板视图中获取元素</h4><p>ViewChild是属性装饰器，用来从模板视图中获取匹配的元素。视图查询在 ngAfterViewInit 钩子函数调用前完成，因此在 ngAfterViewInit 钩子函数中，才能正确获取查询的元素。</p>
+<h5 id="ViewChild-使用模板变量名"><a href="#ViewChild-使用模板变量名" class="headerlink" title="@ViewChild 使用模板变量名"></a>@ViewChild 使用模板变量名</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, ElementRef, ViewChild, AfterViewInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'my-app'</span>,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h1&gt;Welcome to Angular World&lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;p #greet&gt;Hello &#123;&#123; name &#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppComponent &#123;</span><br><span class="line">  name: <span class="built_in">string</span> = <span class="string">'Semlinker'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@ViewChild</span>(<span class="string">'greet'</span>)</span><br><span class="line">  greetDiv: ElementRef;</span><br><span class="line"></span><br><span class="line">  ngAfterViewInit() &#123;</span><br><span class="line">    <span class="built_in">console</span>.dir(<span class="keyword">this</span>.greetDiv);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="ViewChild-使用模板变量名及设置查询条件"><a href="#ViewChild-使用模板变量名及设置查询条件" class="headerlink" title="@ViewChild 使用模板变量名及设置查询条件"></a>@ViewChild 使用模板变量名及设置查询条件</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, TemplateRef, ViewChild, ViewContainerRef, AfterViewInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'my-app'</span>,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h1&gt;Welcome to Angular World&lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;template #tpl&gt;</span></span><br><span class="line"><span class="string">      &lt;span&gt;I am span in template&lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/template&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppComponent &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@ViewChild</span>(<span class="string">'tpl'</span>)</span><br><span class="line">  tplRef: TemplateRef&lt;<span class="built_in">any</span>&gt;;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@ViewChild</span>(<span class="string">'tpl'</span>, &#123; read: ViewContainerRef &#125;)</span><br><span class="line">  tplVcRef: ViewContainerRef;</span><br><span class="line"></span><br><span class="line">  ngAfterViewInit() &#123;</span><br><span class="line">    <span class="built_in">console</span>.dir(<span class="keyword">this</span>.tplVcRef);</span><br><span class="line">    <span class="keyword">this</span>.tplVcRef.createEmbeddedView(<span class="keyword">this</span>.tplRef);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="ViewChild-使用类型查询"><a href="#ViewChild-使用类型查询" class="headerlink" title="@ViewChild 使用类型查询"></a>@ViewChild 使用类型查询</h5><p>child.component.ts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">    selector: &apos;exe-child&apos;,</span><br><span class="line">    template: `</span><br><span class="line">      &lt;p&gt;Child Component&lt;/p&gt;  </span><br><span class="line">    `</span><br><span class="line">&#125;)</span><br><span class="line">export class ChildComponent &#123;</span><br><span class="line">    name: string = &apos;child-component&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>app.component.ts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, ViewChild, AfterViewInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; ChildComponent &#125; from &apos;./child.component&apos;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;my-app&apos;,</span><br><span class="line">  template: `</span><br><span class="line">    &lt;h4&gt;Welcome to Angular World&lt;/h4&gt;</span><br><span class="line">    &lt;exe-child&gt;&lt;/exe-child&gt;</span><br><span class="line">  `,</span><br><span class="line">&#125;)</span><br><span class="line">export class AppComponent &#123;</span><br><span class="line"></span><br><span class="line">  @ViewChild(ChildComponent)</span><br><span class="line">  childCmp: ChildComponent;</span><br><span class="line"></span><br><span class="line">  ngAfterViewInit() &#123;</span><br><span class="line">    console.dir(this.childCmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="结构性指令"><a href="#结构性指令" class="headerlink" title="结构性指令"></a>结构性指令</h4><p><code>&lt;ng-template&gt;</code>是一个 Angular 元素，用来渲染HTML。 它永远不会直接显示出来。 事实上，在渲染视图之前，Angular 会把<code>&lt;ng-template&gt;</code>及其内容替换为一个注释。</p>
+<p>等同于js中的模板文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script id=&quot;myTemplate&quot; type=&quot;text/ng-template&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    My awesome template!</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或者：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;myTemplate&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    My awesome template!</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>要获取上面的模板并实例化它，我们需要使用简单的JavaScript:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;host&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  let template = document.querySelector(&apos;#myTemplate&apos;);</span><br><span class="line">  let clone = document.importNode(template.content, true);</span><br><span class="line">  let host = document.querySelector(&apos;#host&apos;);</span><br><span class="line">  host.appendChild(clone);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用trackBy，作为items的key"><a href="#使用trackBy，作为items的key" class="headerlink" title="使用trackBy，作为items的key"></a>使用trackBy，作为items的key</h3><p><strong>TODO</strong>: ngFor index count odd…</p>
+<p>Angular把对象或keys与特定的DOM节点相互联系起来。如此当对象改变或UI需要重新渲染时，框架能更有效的处理。Angular的<code>ngFor</code>默认使用对象的引用(?)做检查。但我们可以自定义跟踪方案：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let contact of contacts | async; trackBy: trackById;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">contact-card</span> [<span class="attr">contact</span>]=<span class="string">"contact"</span>&gt;</span><span class="tag">&lt;/<span class="name">contact-card</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">trackById(index, contact) &#123;</span><br><span class="line">  <span class="keyword">return</span> contact.id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>trackBy</code>通知angular使用每个contact的id来建立联系。</p>
+<p>Notes: 如果使用数组的index来作为id，那重新排序之后，就会导致DOM对象的销毁和重建而不是复用</p>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><p>使用依赖注入就不需要在class内部去新建实例对象，这样可以更好的支持功能扩展，例如构造方法的改变（参数的增加）</p>
+<h3 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h3><h4 id="宿主元素（Host-Element）"><a href="#宿主元素（Host-Element）" class="headerlink" title="宿主元素（Host Element）"></a>宿主元素（Host Element）</h4><p>为了将Angular组件渲染成DOM树，需要将Angular组件与一个DOM元素相关联，这样的DOM元素称之为：<strong>宿主元素</strong>。<br>宿主元素的概念适用于指令（应用指令的元素）和组件（组件本身）。</p>
+<p>组件可以与宿主元素进行如下方式的交互：</p>
+<ul>
+<li>监听宿主元素事件 —&gt; <code>@HostListener</code></li>
+<li>更改宿主元素属性 —&gt; 指令如<code>ngClass</code>，[attr.style]以及<code>@HostBinding</code></li>
+<li>调用宿主元素方法</li>
+</ul>
+<h4 id="HostListener"><a href="#HostListener" class="headerlink" title="@HostListener"></a>@HostListener</h4><p>HostListener是属性装饰器，用来为宿主元素添加事件监听</p>
+<h5 id="HostListener-装饰器定义"><a href="#HostListener-装饰器定义" class="headerlink" title="HostListener 装饰器定义"></a>HostListener 装饰器定义</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Type of the HostListener decorator / constructor function.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @stable</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> HostListenerDecorator &#123;</span><br><span class="line">  (eventName: <span class="built_in">string</span>, args?: <span class="built_in">string</span>[]): <span class="built_in">any</span>;</span><br><span class="line">  <span class="keyword">new</span> (eventName: <span class="built_in">string</span>, args?: <span class="built_in">string</span>[]): <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Type of the HostListener metadata.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @stable</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> HostListener &#123;</span><br><span class="line">  eventName?: <span class="built_in">string</span>;</span><br><span class="line">  args?: <span class="built_in">string</span>[];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="HostListener-装饰器应用"><a href="#HostListener-装饰器应用" class="headerlink" title="HostListener 装饰器应用"></a>HostListener 装饰器应用</h5><p>demo.directive.ts<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Directive, HostListener &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Directive</span>(&#123;selector: <span class="string">'button[counting]'</span>&#125;)</span><br><span class="line"><span class="keyword">class</span> CountClicks &#123;</span><br><span class="line">  numberOfClicks = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@HostListener</span>(<span class="string">'click'</span>, [<span class="string">'$event.target'</span>])</span><br><span class="line">  onClick(btn) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'button'</span>, btn, <span class="string">'number of clicks:'</span>, <span class="keyword">this</span>.numberOfClicks++);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>demo.component.ts<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component&#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app'</span>,</span><br><span class="line">  template: <span class="string">'&lt;button counting&gt;Increment&lt;/button&gt;'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> App &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此外，我们也可以监听宿主元素外，其它对象产生的事件，如<code>window</code>或<code>document</code>对象。例如：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="meta">@HostListener</span>(<span class="string">'document:click'</span>, [<span class="string">'$event'</span>])</span><br><span class="line">onClick(btn: Event) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.el.nativeElement.contains(event.target)) &#123;</span><br><span class="line">        <span class="keyword">this</span>.highlight(<span class="string">'yellow'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.highlight(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h4 id="Host-Event-Listener"><a href="#Host-Event-Listener" class="headerlink" title="Host Event Listener"></a>Host Event Listener</h4><p>也可以在指令的 metadata 信息中，设定宿主元素的事件监听信息，具体示例如下：</p>
+<p>demo.diretive.ts<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Directive, HostListener &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Directive</span>(&#123;</span><br><span class="line">  selector: <span class="string">'button[counting]'</span>,</span><br><span class="line">  host: &#123;</span><br><span class="line">    <span class="string">'(click)'</span>: <span class="string">'onClick($event.target)'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> CountClicks &#123;</span><br><span class="line">  numberOfClicks = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  onClick(btn) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'button'</span>, btn, <span class="string">'number of clicks:'</span>, <span class="keyword">this</span>.numberOfClicks++);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="HostBinding"><a href="#HostBinding" class="headerlink" title="@HostBinding"></a>@HostBinding</h4><p>HostBinding 是属性装饰器，用来动态设置宿主元素的属性值。</p>
+<h5 id="HostBinding-装饰器定义"><a href="#HostBinding-装饰器定义" class="headerlink" title="HostBinding 装饰器定义"></a>HostBinding 装饰器定义</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Type of the HostBinding decorator / constructor function.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @stable</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> HostBindingDecorator &#123;</span><br><span class="line">  (hostPropertyName?: <span class="built_in">string</span>): <span class="built_in">any</span>;</span><br><span class="line">  <span class="keyword">new</span> (hostPropertyName?: <span class="built_in">string</span>): <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Type of the HostBinding metadata.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @stable</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> HostBinding &#123; hostPropertyName?: <span class="built_in">string</span>; &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="HostBinding-装饰器应用"><a href="#HostBinding-装饰器应用" class="headerlink" title="HostBinding 装饰器应用"></a>HostBinding 装饰器应用</h5><p>demo.directive.ts<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Directive</span>(&#123;selector: <span class="string">'[ngModel]'</span>&#125;)</span><br><span class="line"><span class="keyword">class</span> NgModelStatus &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> control:NgModel</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@HostBinding</span>(<span class="string">'class.valid'</span>) <span class="keyword">get</span> valid() &#123; <span class="keyword">return</span> <span class="keyword">this</span>.control.valid; &#125;</span><br><span class="line">  <span class="meta">@HostBinding</span>(<span class="string">'class.invalid'</span>) <span class="keyword">get</span> invalid() &#123; <span class="keyword">return</span> <span class="keyword">this</span>.control.invalid; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>demo.component.ts<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app'</span>,</span><br><span class="line">  template: <span class="string">`&lt;input [(ngModel)]="prop"&gt;`</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> App &#123;</span><br><span class="line">  prop;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Host-Property-Bindings"><a href="#Host-Property-Bindings" class="headerlink" title="Host Property Bindings"></a>Host Property Bindings</h4><p>也可以在指令的 metadata 信息中，设定宿主元素的属性绑定信息，具体示例如下：<br>demo.directive.ts<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Directive</span>(&#123;</span><br><span class="line">  selector: <span class="string">'[ngModel]'</span>,</span><br><span class="line">  host: &#123;</span><br><span class="line">    <span class="string">'[class.valid]'</span>: <span class="string">'valid'</span>,</span><br><span class="line">    <span class="string">'[class.invalid]'</span>: <span class="string">'invalid'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> NgModelStatus &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> control:NgModel</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> valid() &#123; <span class="keyword">return</span> <span class="keyword">this</span>.control.valid; &#125;</span><br><span class="line">  <span class="keyword">get</span> invalid() &#123; <span class="keyword">return</span> <span class="keyword">this</span>.control.invalid; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>如果是测试一个只有内联模板和内联样式的控件，就不需要<code>async</code>函数。angular4官网的测试demo如下：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// banner-inline.component.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-banner'</span>,</span><br><span class="line">  template: <span class="string">'&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BannerComponent &#123;</span><br><span class="line">  title = <span class="string">'Test Tour of Heroes'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// banner-inline.component.spec.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; ComponentFixture, TestBed &#125; <span class="keyword">from</span> <span class="string">'@angular/core/testing'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; By &#125;              <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; DebugElement &#125;    <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; BannerComponent &#125; <span class="keyword">from</span> <span class="string">'./banner-inline.component'</span>;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'BannerComponent (inline template)'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> comp:    BannerComponent;</span><br><span class="line">  <span class="keyword">let</span> fixture: ComponentFixture&lt;BannerComponent&gt;;</span><br><span class="line">  <span class="keyword">let</span> de:      DebugElement;</span><br><span class="line">  <span class="keyword">let</span> el:      HTMLElement;</span><br><span class="line"></span><br><span class="line">  beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    TestBed.configureTestingModule(&#123;</span><br><span class="line">      declarations: [ BannerComponent ], <span class="comment">// declare the test component</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    fixture = TestBed.createComponent(BannerComponent);</span><br><span class="line"></span><br><span class="line">    comp = fixture.componentInstance; <span class="comment">// BannerComponent test instance</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// query for the title &lt;h1&gt; by CSS element selector</span></span><br><span class="line">    de = fixture.debugElement.query(By.css(<span class="string">'h1'</span>));</span><br><span class="line">    el = de.nativeElement;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="TestBed测试台"><a href="#TestBed测试台" class="headerlink" title="TestBed测试台"></a>TestBed测试台</h4><p><code>TestBed</code>（测试台）是Angular测试工具集中的首要概念。<br>它创建Angular测试模块（一个<code>@NgModule</code>类），我们可以通过调用它的<code>configureTestingModule</code>方法来为要测试的类生成模块环境。<br>其效果是，你可以把被测试的组件从原有的应用模块中剥离出来，把它附加到一个动态生成的Angular测试模块上，而该测试模块可以为这些测试进行特殊裁剪。</p>
+<p>这里的元数据对象只是声明了要测试的组件<code>BannerComponent</code>。<br>这个元数据中没有<code>imports</code>属性，这是因为：<br>(a) 默认的测试模块配置中已经有了<code>BannerComponent</code>所需的一切，<br>(b) <code>BannerComponent</code>不需要与任何其它组件交互。</p>
+<p>在<code>beforeEach</code>中调用<code>configureTestingModule</code>，以便<code>TestBed</code>可以在运行每个测试之前都把自己重置回它的基础状态。</p>
+<p>基础状态中包含一个默认的测试模块配置，它包含每个测试都需要的那些声明（组件、指令和管道）以及服务提供商（有些是Mock版）。</p>
+<h4 id="createComponent-方法"><a href="#createComponent-方法" class="headerlink" title="createComponent 方法"></a>createComponent 方法</h4><p>在配置好<code>TestBed</code>之后，我们可以告诉它创建一个待测组件的实例。<br>在这个例子中，<code>TestBed.createComponent</code>创建了一个<code>BannerComponent</code>的实例，并返回一个组件测试夹具。</p>
+<p><code>createComponent</code>方法封闭了当前的<code>TestBed</code>实例，以免将来再配置它。<br>我们不能再调用任何<code>TestBed</code>的方法修改配置：不能调用<code>configureTestingModule</code>或任何<code>override</code>…方法。<br>如果这么做，<code>TestBed</code>就会抛出错误。</p>
+<h4 id="ComponentFixture、DebugElement-和-query-By-css"><a href="#ComponentFixture、DebugElement-和-query-By-css" class="headerlink" title="ComponentFixture、DebugElement 和 query(By.css)"></a>ComponentFixture、DebugElement 和 query(By.css)</h4><p><code>createComponent</code>方法返回ComponentFixture，用来控制和访问已创建的组件所在的测试环境。<br>这个fixture提供了对组件实例自身的访问，同时还提供了用来访问组件的DOM元素的DebugElement对象。</p>
+<p><code>title</code>属性被插值到DOM的<code>&lt;h1&gt;</code>标签中。 用CSS选择器从fixture的<code>DebugElement</code>中<code>query`</code></p><h1>`元素。<p></p>
+<p>query方法接受predicate函数，并搜索fixture的整个DOM树，试图寻找第一个满足predicate函数的元素。</p>
+<p>By类是Angular测试工具之一，它生成有用的predicate。 它的<code>By.css</code>静态方法产生标准CSS选择器 predicate，与JQuery选择器相同的方式过滤。</p>
+<h4 id="测试程序"><a href="#测试程序" class="headerlink" title="测试程序"></a>测试程序</h4><p>再每个测试程序之前，Jasmin都一次运行<code>beforeEach</code>函数：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'should display original title'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  fixture.detectChanges();</span><br><span class="line">  expect(el.textContent).toContain(comp.title);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">it(<span class="string">'should display a different test title'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  comp.title = <span class="string">'Test Title'</span>;</span><br><span class="line">  fixture.detectChanges();</span><br><span class="line">  expect(el.textContent).toContain(<span class="string">'Test Title'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="测试带有外部模板的组件"><a href="#测试带有外部模板的组件" class="headerlink" title="测试带有外部模板的组件"></a>测试带有外部模板的组件</h4><p>在实际应用中，<code>BannerComponent</code>的行为和刚才的版本相同，但是实现方式不同。<br>它有一个外部模板和CSS文件，通过<code>templateUrl</code>和<code>styleUrls</code>属性来指定。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-banner'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./banner.component.html'</span>,</span><br><span class="line">  styleUrls:  [<span class="string">'./banner.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BannerComponent &#123;</span><br><span class="line">  title = <span class="string">'Test Tour of Heroes'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些测试有一个问题。 <code>TestBed.createComponent</code>方法是同步的。<br>但是Angular模板编译器必须在创建组件实例之前先从文件系统中读取这些值，而这是异步的。<br>以前测试内联模板时使用的设置方式不适用于外部模板。</p>
+<p><code>BannerComponent</code>测试的设置方式必须给Angular模板编译器一些时间来读取文件。<br>以前放在<code>beforeEach</code>中的逻辑被拆分成了两个<code>beforeEach</code>调用。 第一个<code>beforeEach</code>处理异步编译工作。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">async</span> &#125; <span class="keyword">from</span> <span class="string">'@angular/core/testing'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// async beforeEach</span></span><br><span class="line">beforeEach(<span class="keyword">async</span>(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  TestBed.configureTestingModule(&#123;</span><br><span class="line">    declarations: [ BannerComponent ], <span class="comment">// declare the test component</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .compileComponents();  <span class="comment">// compile template and css</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<p><code>TestBed.compileComponents</code>方法会异步编译这个测试模块中配置的所有组件。<br>在这个例子中，<code>BannerComponent</code>是唯一要编译的组件。<br>当<code>compileComponents</code>完成时，外部组件和css文件会被“内联”，而<code>TestBed.createComponent</code>会用同步的方式创建一个<code>BannerComponent</code>的新实例。</p>
+<blockquote>
+<p><strong>NOTE</strong>: WebPack用户不用调用compileComponents，因为它会在构建过程中自动内联模板和css，然后执行测试</p>
+</blockquote>
+<h4 id="测试有依赖的组件"><a href="#测试有依赖的组件" class="headerlink" title="测试有依赖的组件"></a>测试有依赖的组件</h4><p>组件经常依赖其他服务。</p>
+<p><code>WelcomeComponent</code>为登陆的用户显示一条欢迎信息。它从注入的<code>UserService</code>的属性得知用户的身份：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// welcome.component.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; UserService &#125;       <span class="keyword">from</span> <span class="string">'./model/user.service'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-welcome'</span>,</span><br><span class="line">  template: <span class="string">'&lt;h3 class="welcome" &gt;&lt;i&gt;&#123;&#123;welcome&#125;&#125;&lt;/i&gt;&lt;/h3&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> WelcomeComponent  <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  welcome = <span class="string">'-- not initialized yet --'</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> userService: UserService</span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.welcome = <span class="keyword">this</span>.userService.isLoggedIn ?</span><br><span class="line">      <span class="string">'Welcome, '</span> + <span class="keyword">this</span>.userService.user.name :</span><br><span class="line">      <span class="string">'Please log in.'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// welcome.component.sepc.ts</span></span><br><span class="line">TestBed.configureTestingModule(&#123;</span><br><span class="line">   declarations: [ WelcomeComponent ],</span><br><span class="line"><span class="comment">// providers:    [ UserService ]  // NO! Don't provide the real service!</span></span><br><span class="line">                                  <span class="comment">// Provide a test-double instead</span></span><br><span class="line">   providers:    [ &#123;provide: UserService, useValue: userServiceStub &#125; ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="提供服务替身"><a href="#提供服务替身" class="headerlink" title="提供服务替身"></a>提供服务替身</h5><p>注入真实的service组件有可能很麻烦，而且不能确保能获取到相同的测试对象。<br>实际上，服务的替身（stubs、fakes、spies或者mocks）通常会更加合适。<br>所以在真实的<code>UserService</code>的位置创建和注册<code>UserService</code>替身，会让测试更加容易和安全。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">userServiceStub = &#123;</span><br><span class="line">  isLoggedIn: <span class="literal">true</span>,</span><br><span class="line">  user: &#123; name: <span class="string">'Test User'</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="获取注入的服务"><a href="#获取注入的服务" class="headerlink" title="获取注入的服务"></a>获取注入的服务</h5><p>最安全并总是有效的获取注入服务的方法，是从被测试的组件的注入器获取。 组件注入器是fixture的<code>DebugElement</code>的属性。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UserService actually injected into the component</span></span><br><span class="line">userService = fixture.debugElement.injector.get(UserService);</span><br></pre></td></tr></table></figure>
+<h5 id="TestBed-get-方法"><a href="#TestBed-get-方法" class="headerlink" title="TestBed.get 方法"></a>TestBed.get 方法</h5><p>你可以通过<code>TestBed.get</code>方法来从根注入器中获取服务。 它更容易被记住，也更加简介。<br>但是只有在Angular使用测试的根注入器中的那个服务实例来注入到组件时，它才有效。<br>幸运的是，在这个测试套件中，唯一的<code>UserService</code>提供商就是根测试模块，所以像下面这样调用<code>TestBed.get</code>很安全：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// UserService from the root injector</span><br><span class="line">userService = TestBed.get(UserService);</span><br></pre></td></tr></table></figure>
+<h5 id="测试程序-1"><a href="#测试程序-1" class="headerlink" title="测试程序"></a>测试程序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">beforeEach(() =&gt; &#123;</span><br><span class="line">  // stub UserService for test purposes</span><br><span class="line">  userServiceStub = &#123;</span><br><span class="line">    isLoggedIn: true,</span><br><span class="line">    user: &#123; name: &apos;Test User&apos;&#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  TestBed.configureTestingModule(&#123;</span><br><span class="line">     declarations: [ WelcomeComponent ],</span><br><span class="line">     providers:    [ &#123;provide: UserService, useValue: userServiceStub &#125; ]</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  fixture = TestBed.createComponent(WelcomeComponent);</span><br><span class="line">  comp    = fixture.componentInstance;</span><br><span class="line"></span><br><span class="line">  // UserService from the root injector</span><br><span class="line">  userService = TestBed.get(UserService);</span><br><span class="line"></span><br><span class="line">  //  get the &quot;welcome&quot; element by CSS selector (e.g., by class name)</span><br><span class="line">  de = fixture.debugElement.query(By.css(&apos;.welcome&apos;));</span><br><span class="line">  el = de.nativeElement;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">it(&apos;should welcome the user&apos;, () =&gt; &#123;</span><br><span class="line">  fixture.detectChanges();</span><br><span class="line">  const content = el.textContent;</span><br><span class="line">  expect(content).toContain(&apos;Welcome&apos;, &apos;&quot;Welcome ...&quot;&apos;);</span><br><span class="line">  expect(content).toContain(&apos;Test User&apos;, &apos;expected name&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">it(&apos;should welcome &quot;Bubba&quot;&apos;, () =&gt; &#123;</span><br><span class="line">  userService.user.name = &apos;Bubba&apos;; // welcome message hasn&apos;t been shown yet</span><br><span class="line">  fixture.detectChanges();</span><br><span class="line">  expect(el.textContent).toContain(&apos;Bubba&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">it(&apos;should request login if not logged in&apos;, () =&gt; &#123;</span><br><span class="line">  userService.isLoggedIn = false; // welcome message hasn&apos;t been shown yet</span><br><span class="line">  fixture.detectChanges();</span><br><span class="line">  const content = el.textContent;</span><br><span class="line">  expect(content).not.toContain(&apos;Welcome&apos;, &apos;not welcomed&apos;);</span><br><span class="line">  expect(content).toMatch(/log in/i, &apos;&quot;log in&quot;&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><h4 id="ExpressionChangedAfterItHasBeenCheckedError-error"><a href="#ExpressionChangedAfterItHasBeenCheckedError-error" class="headerlink" title="ExpressionChangedAfterItHasBeenCheckedError error"></a><code>ExpressionChangedAfterItHasBeenCheckedError</code> error</h4><p>constructor -&gt; OnChanges -&gt; onInit -&gt; doCheck -&gt; afterContentInit -&gt; afterContentChecked -&gt; afterViewInit -&gt; afterViewChecked -&gt; onDestroy</p>
+<p>angular从app-root开始做变化检查（change detection），检查所有的数据绑定，然后开始检查子组件，<br>并且其只做一次检查（而不是循环检查直到稳定），父组件的数据绑定将不会再次检查，<br>所以此时应用处在一个不稳定状态（inconsistent state。</p>
+<p>在开发模式中，angular进行两个变化检查，第二次将会确认数据绑定是否发生改变，如果有就抛出<code>这个</code>错误。</p>
+<p>所以，如果在afterViewInit中修改了数据绑定就会出现这个错误。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>setTimeout / Promise.resolve().then</li>
+<li>ChangeDetectorRef#detectChanges() 强制检查</li>
+<li>如果是对与<code>*ngIf</code>的问题，可用<code>[hidden]</code>替代</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.cnblogs.com/Answer1215/p/5898545.html" target="_blank" rel="noopener">[Angular 2] ElementRef, @ViewChild &amp; Renderer</a></li>
+<li><a href="https://toddmotto.com/angular-ngfor-template-element" target="_blank" rel="noopener">Angular ngFor, &lt;ng-template&gt; and the compiler</a></li>
+<li><a href="https://segmentfault.com/a/1190000008878888" target="_blank" rel="noopener">Angular 2 HostListener &amp; HostBinding</a></li>
+<li><a href="https://angular.cn/guide/testing#测试" target="_blank" rel="noopener">Angular4: 文档-核心知识-测试</a></li>
+<li><a href="https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4" target="_blank" rel="noopener">Everything you need to know about the <code>ExpressionChangedAfterItHasBeenCheckedError</code> error</a></li>
+</ol>
+</h1>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2017/10/23/angular4学习笔记/">https://sampwood.github.io/2017/10/23/angular4学习笔记/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/SPA/">SPA</a>
+            
+              <a href="/tags/Angular4/">Angular4</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/10/31/es6-babel/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">es6之babel</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/10/12/express/">
+        <span class="next-text nav-default">express学习笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

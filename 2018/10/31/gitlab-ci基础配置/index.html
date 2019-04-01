@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="gitlab-ci基础配置">
+
+
+
+
+  <meta name="keywords" content="linux, git, Sampwood的One Piece">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/2018/10/31/gitlab-ci基础配置/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> gitlab-ci基础配置 - Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          gitlab-ci基础配置
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-31
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/linux/">linux</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用gitlab"><span class="toc-text">使用gitlab</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建自己的项目"><span class="toc-text">创建自己的项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置-gitlab-ci-yml文件"><span class="toc-text">配置.gitlab-ci.yml文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用gitlab-runner"><span class="toc-text">使用gitlab-runner</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装gitlab-runner"><span class="toc-text">安装gitlab-runner</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>之前写过一个“在vps上搭建一个git仓库并实现代码提交之后自动部署到nginx上”，<br>但是这个需要自己去维护<code>git hook</code>钩子触发的脚本，而且每次push之后都只能在本地的terminal中看到脚本的执行情况。<br>其实我们可以使用<code>gitlab-ci</code>来完成我们需要的东西。<br><a id="more"></a></p>
+<h3 id="使用gitlab"><a href="#使用gitlab" class="headerlink" title="使用gitlab"></a>使用gitlab</h3><p>使用<code>gitlab-ci</code>来完成自动部署的第一步当然是使用gitlab。<br>当然可以自己搭建gitlab仓库，不过我用了官方 <a href="https://gitlab.com" target="_blank" rel="noopener">gitlab</a></p>
+<h4 id="创建自己的项目"><a href="#创建自己的项目" class="headerlink" title="创建自己的项目"></a>创建自己的项目</h4><p>页面上点击<code>New project</code>，然后输入项目名称就ok了。</p>
+<h4 id="配置-gitlab-ci-yml文件"><a href="#配置-gitlab-ci-yml文件" class="headerlink" title="配置.gitlab-ci.yml文件"></a>配置<code>.gitlab-ci.yml</code>文件</h4><p>要使用<code>gitlab-ci</code>，需要在项目中配置<code>.gitlab-ci.yml</code>文件。</p>
+<p>关于这个文件的编写规则可以参考：<a href="https://docs.gitlab.com/ee/ci/yaml/README.html" target="_blank" rel="noopener">Configuration of your jobs with .gitlab-ci.yml</a></p>
+<p>简述下我的理解：</p>
+<ul>
+<li>全局关键字：<ul>
+<li>image：指定特定的运行版本；例如<code>image: node:latest</code></li>
+<li>stages：定义将被使用的运行阶段；一般分为三段：<code>build</code>, <code>test</code>, <code>deploy</code>；如果未定义那这三个都相当于存在；阶段的顺序是从<code>build</code>到<code>test</code>到<code>deploy</code>；相同阶段的<code>job</code>会并行执行；前一阶段错误将直接把<code>commit</code>标记为<code>failed</code>并且中断后续<code>job</code>的执行；</li>
+<li>cache： 指明在所有<code>job</code>之间的默认的共享文件、文件夹;如果<code>job</code>配置了<code>cache</code>，则会使用配置的<code>cache</code>，忽略全局的<code>cache</code></li>
+</ul>
+</li>
+<li><code>job</code>内部关键字<ul>
+<li>stage：定义当前<code>job</code>所在的阶段；值从全局<code>stages</code>里面取一个</li>
+<li>script：定义要执行的脚本；可以多个，每个另起一行用<code>-</code>开头；（每个<code>job</code>都必须存在<code>script</code>）</li>
+<li>tags：用来知名特定的<code>Runner</code>来跑当前<code>job</code>（很关键，弄很久才知道这个是最重要的，不然pipelines会一直处于pending状态，因为没有特定的runner来执行这个job）</li>
+<li>only：分支名（指明那个分支会跑当前<code>job</code>）</li>
+<li>except：分支名（指明那个分支<strong>不</strong>跑当前<code>job</code>）</li>
+<li>cache：指明在不同<code>job</code>之间的共享文件、文件夹;<ul>
+<li>paths：目录；可以多个，每个另起一行用<code>-</code>开头；</li>
+<li>key：如果你在不同的<code>job</code>共享了不同的目录，那么你就需要key来防止cache被覆盖</li>
+<li>untracked：设置是否缓存未添加到git管理的文件</li>
+<li>policy：默认的<code>policy</code>是<code>pull-push</code>的，也就是在<code>job</code>执行前下拉缓存，结束后保存缓存；可以设置成<code>pull</code>，既只读取缓存</li>
+</ul>
+</li>
+<li>artifacts：指明在<code>job</code>成功完成之后可以在gitlab上面下载到的文件（意思就是：指定的文件会被上传到gitlab，然后可以在<br>当前<code>Pipeline</code>中下载这些文件）<ul>
+<li>paths：指定上传的目录；可以多个，每个另起一行用</li>
+</ul>
+</li>
+<li>dependencies：应该和<code>artifacts</code>一起使用，来在不同的<code>job</code>间共享<code>artifacts</code>文件。（原理是，某个<code>job</code>配置了<code>artifacts</code>之后，<code>job</code>如果执行成功，就会把对应的文件上传到gitlab；同时，配置了<code>dependencies</code>的<code>job</code>会在脚本执行前去gitlab下载对应的<code>job</code>的<code>artifacts</code>文件）；当然，依赖只能按照<code>stages</code>运行阶段来依赖前一个阶段的<code>job</code></li>
+</ul>
+</li>
+</ul>
+<p>这里贴一个简单的demo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">image: node:latest</span><br><span class="line"></span><br><span class="line">cache:</span><br><span class="line">  paths:</span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line">prepare:</span><br><span class="line">  stage: build</span><br><span class="line">  tags:</span><br><span class="line">    - build</span><br><span class="line">  script:</span><br><span class="line">    - npm install</span><br><span class="line">  only:</span><br><span class="line">    - master</span><br><span class="line"></span><br><span class="line">testCache:</span><br><span class="line">  stage: test</span><br><span class="line">  tags:</span><br><span class="line">    - build</span><br><span class="line">  script:</span><br><span class="line">    - cd node_modules</span><br><span class="line">    - pwd</span><br><span class="line">  only:</span><br><span class="line">    - master</span><br><span class="line"></span><br><span class="line">production:</span><br><span class="line">  stage: deploy</span><br><span class="line">  tags:</span><br><span class="line">    - build</span><br><span class="line">  script:</span><br><span class="line">    - npm run build</span><br><span class="line">    - mkdir .public</span><br><span class="line">    - cp -r dist/* .public</span><br><span class="line">    - mv .public public</span><br><span class="line">  artifacts:</span><br><span class="line">    paths:</span><br><span class="line">      - public</span><br><span class="line">  only:</span><br><span class="line">    - master</span><br></pre></td></tr></table></figure></p>
+<p>到这，gitlab上的配置就基本OK了。</p>
+<p>接下来，我们需要去服务器上安装<code>gitlab-runner</code>来运行我们定义的<code>job</code>了。</p>
+<h3 id="使用gitlab-runner"><a href="#使用gitlab-runner" class="headerlink" title="使用gitlab-runner"></a>使用gitlab-runner</h3><p>其实具体的安装和使用说明，在gitlab上有很详细的文档。</p>
+<p>在项目首页，点击左侧<code>setting</code>里面的二级菜单<code>CI / CD</code>。找到<code>Runners</code>，点击右边的<code>Expand</code>按钮。<br>找到下面<code>Set up a specific Runner manually</code>的文档。</p>
+<p><img src="/images/gitlab-ci.png" alt="gitlab-ci"></p>
+<p><strong>Note</strong>：也可以直接看下面的内容。</p>
+<h4 id="安装gitlab-runner"><a href="#安装gitlab-runner" class="headerlink" title="安装gitlab-runner"></a>安装gitlab-runner</h4><p>这里是在linux上安装gitlab-runner。</p>
+<ol>
+<li><p>下载合适的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Linux x86-64</span><br><span class="line"> sudo wget -O /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64</span><br><span class="line"></span><br><span class="line"> # Linux x86</span><br><span class="line"> sudo wget -O /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-386</span><br><span class="line"></span><br><span class="line"> # Linux arm</span><br><span class="line"> sudo wget -O /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-arm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改执行权限： <code>sudo chmod +x /usr/local/bin/gitlab-runner</code></p>
+</li>
+<li>创建Gitlab CI用户：<code>sudo useradd --comment &#39;GitLab Runner&#39; --create-home gitlab-runner --shell /bin/bash</code></li>
+<li><p>安装和运行服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner</span><br><span class="line">sudo gitlab-runner start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注册Runner： <code>sudo gitlab-runner register</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )</span><br><span class="line">https://gitlab.com</span><br><span class="line"></span><br><span class="line">Please enter the gitlab-ci token for this runner</span><br><span class="line">xxx (PS: 就是在【Set up a specific Runner manually】的文档中的registration token)</span><br><span class="line"></span><br><span class="line">Please enter the gitlab-ci description for this runner</span><br><span class="line">[hostame] my-runner</span><br><span class="line"></span><br><span class="line">Please enter the gitlab-ci tags for this runner (comma separated):</span><br><span class="line">my-tag,another-tag (PS: 这个是最关键的，这个tag和job中的tags要对应才能起作用！！！当然你可以在gitlab中指定它不去匹配)</span><br><span class="line"></span><br><span class="line">...successful</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>Note</strong>: 还是一句话，注册Runner时输入的tag要和<code>.gitlab-ci.yml</code>文件中<code>job</code>的<code>tags</code>对应起来。</p>
+<p>到这里，gitlab-ci就可以使用了。提交一次试试~~</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2018/10/31/gitlab-ci基础配置/">https://sampwood.github.io/2018/10/31/gitlab-ci基础配置/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/linux/">linux</a>
+            
+              <a href="/tags/git/">git</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/12/29/wsl初体验/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">wsl初体验</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/10/26/sublime使用/">
+        <span class="next-text nav-default">sublime使用</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>
