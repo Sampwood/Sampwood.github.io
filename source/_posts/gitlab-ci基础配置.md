@@ -17,7 +17,7 @@ update: 2018-10-31 20:54:34
 ### 使用gitlab
 
 使用`gitlab-ci`来完成自动部署的第一步当然是使用gitlab。
-当然可以自己待见gitlab仓库，不过我用了官方 [gitlab](https://gitlab.com)
+当然可以自己搭建gitlab仓库，不过我用了官方 [gitlab](https://gitlab.com)
 
 #### 创建自己的项目
 

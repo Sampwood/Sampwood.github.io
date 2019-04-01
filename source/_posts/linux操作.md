@@ -9,7 +9,7 @@ toc: true
 ---
 
 ### 用户命令
-- 查看用户列表：cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F":" '{ print $1"|"$3"|"$4 }'|more
+- 查看用户列表：`cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F":" '{ print $1"|"$3"|"$4 }'|more`
 - 查看组信息：cat /etc/group
 - 查看用户所在组：id  user、groups user
 - 修改密码：passwd (*user*)
@@ -22,7 +22,7 @@ toc: true
 > 3. usermod -c Sam Sam(改用户注解)
 > 4. usermod -md /home/Sam Sam(改用户主目录)
 - 修改组名：groupmod -n sam admin(admin ---> sam)
-- 添加用户：useradd –d /home/sam -m sam
+- 添加用户：adduser(useradd) –d /home/sam -m sam
 - 给用户添加组：usermod -a -G groupName user
 - 删除用户：userdel *user*
 - 删除组：groupdel *group*

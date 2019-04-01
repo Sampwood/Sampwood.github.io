@@ -30,6 +30,12 @@ ssh-add ~/.ssh/id_rsa
 
 <!-- more -->
 
+### 修改ssh key的密码
+
+```bash
+ssh-keygen -f ~/.ssh/id_rsa -p
+```
+
 ### 配置不同的host使用不同的ssh
 
 在`~/.ssh`文件夹下，新建`config`文件并写入下面的代码

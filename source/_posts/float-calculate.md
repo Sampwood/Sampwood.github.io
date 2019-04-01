@@ -32,5 +32,7 @@ Math.signFigures = function(num, rank = 6) {
 };
 ```
 
+Math.signFigures(123.242545, 1) 会出问题！
+
 ## 参考
 1. [为什么js里面有些数字*100结果会不准确?](https://segmentfault.com/q/1010000005697295)
