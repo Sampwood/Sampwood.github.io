@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="wechat-web">
+
+
+
+
+  <meta name="keywords" content="mobile, vue, html5, Sampwood的One Piece">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/2019/08/19/wechat-web/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> wechat-web - Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          wechat-web
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-08-19
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/wechat/">wechat</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#开发环境"><span class="toc-text">开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#域名"><span class="toc-text">域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开发工具"><span class="toc-text">开发工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#js-sdk"><span class="toc-text">js-sdk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样式库"><span class="toc-text">样式库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微信网页授权"><span class="toc-text">微信网页授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js-sdk-之自定义分享"><span class="toc-text">js-sdk 之自定义分享</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#js-sdk使用步骤"><span class="toc-text">js-sdk使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vue项目"><span class="toc-text">vue项目</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a>
+    </li></div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>这几天开发了一个微信服务号，也算是入门了，纪录下其中的过程和遇到的坑。</p>
+<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>要在微信的平台上进行开发，需要一些基础的环境。其中包括，微信公众号，服务器，域名。</p>
+<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>域名需要备案，且需要配置在 <code>公众平台官网中的“开发 - 接口权限 - 网页服务 - 网页帐号 - 网页授权获取用户基本信息”的配置选项中</code></p>
+<p>域名的配置需要验证一个文件，这个配置下 <code>nginx</code> 就可以了。</p>
+<p>当然本地开发的时候是不可能时时发布的，所以可以通过修改本地 <code>host</code> 的方式来快速开发。</p>
+<a id="more"></a>
+<h4 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h4><p>除此之外，微信提供了一个 <code>微信web开发者工具</code> （桌面应用），用于开发和调试基于微信的网页。</p>
+<p>正常开发移动端只要在浏览器中选用 <code>响应式开发工具</code> 就可以切换到 移动端的机型。<br>所以，这个微信开发工具主要的价值是体现在<strong>它能如同微信一样获取用户授权，从而拿到部分用户信息</strong>。</p>
+<p>要使用开发工具，还得把自己加到 <code>微信公众平台-开发-开发者工具-web开发者工具-开发者微信号</code> 中。</p>
+<h4 id="js-sdk"><a href="#js-sdk" class="headerlink" title="js-sdk"></a>js-sdk</h4><p>和上面差不多，正常的移动端开发是用不上 <code>微信js-sdk</code> 的。</p>
+<p>它的作用是能通过 <code>js</code> 调用一些系统的功能，例如：自定义分享内容，图像接口，地理位置等。</p>
+<p>这次开发的功能只用到了 <code>自定义分享内容</code> 的功能。（PS：就是这个分享略坑，坑了我一天时间。后面再细说）</p>
+<h4 id="样式库"><a href="#样式库" class="headerlink" title="样式库"></a>样式库</h4><p>微信有提供一套web样式库- <code>weui</code>，如果没有设计或者设计风格贴近微信的可以用一下，或者参考下它的组件设计。</p>
+<p>因为这次设计风格和这个样式库差很多，而且页面也比较少。所以就都自己画了。</p>
+<h3 id="微信网页授权"><a href="#微信网页授权" class="headerlink" title="微信网页授权"></a>微信网页授权</h3><blockquote>
+<p>如果用户在微信客户端中访问第三方网页，公众号可以通过微信网页授权机制，来获取用户基本信息，进而实现业务逻辑。</p>
+</blockquote>
+<p>这边只说下前端的逻辑。</p>
+<p>网页授权的逻辑：</p>
+<ol>
+<li>用户同意授权，获取code； 也就是打开特定的微信页面，然后微信会跳转到我们设定的 <code>redirect_uri</code> 上，<br>并且通过 <code>$route.query.code</code> 来返回 <code>code</code></li>
+<li>通过 <code>code</code> 换取网页授权 <code>access_token</code>。通过 <code>access_token</code> 拉取用户信息。<br>这步是后端来实现的，所以前端只要通过调用后端接口就行了。😊</li>
+</ol>
+<p>用户信息包含：城市，省，国家，头像，昵称，性别，openid</p>
+<h3 id="js-sdk-之自定义分享"><a href="#js-sdk-之自定义分享" class="headerlink" title="js-sdk 之自定义分享"></a><code>js-sdk</code> 之自定义分享</h3><blockquote>
+<p>微信JS-SDK是微信公众平台 面向网页开发者提供的基于微信内的网页开发工具包。</p>
+</blockquote>
+<h4 id="js-sdk使用步骤"><a href="#js-sdk使用步骤" class="headerlink" title="js-sdk使用步骤"></a>js-sdk使用步骤</h4><ol>
+<li>引入js文件：（支持https）：<a href="http://res.wx.qq.com/open/js/jweixin-1.4.0.js" target="_blank" rel="noopener">http://res.wx.qq.com/open/js/jweixin-1.4.0.js</a></li>
+<li>注入权限验证配置</li>
+</ol>
+<blockquote>
+<p>所有需要使用JS-SDK的页面必须先注入配置信息，否则将无法调用（同一个url仅需调用一次，对于变化url的SPA的web app可在每次url变化时进行调用)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wx.config(&#123;</span><br><span class="line">    debug: <span class="literal">true</span>, <span class="comment">// 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。</span></span><br><span class="line">    appId: <span class="string">''</span>, <span class="comment">// 必填，公众号的唯一标识</span></span><br><span class="line">    timestamp: , <span class="comment">// 必填，生成签名的时间戳</span></span><br><span class="line">    nonceStr: <span class="string">''</span>, <span class="comment">// 必填，生成签名的随机串</span></span><br><span class="line">    signature: <span class="string">''</span>,<span class="comment">// 必填，签名</span></span><br><span class="line">    jsApiList: [] <span class="comment">// 必填，需要使用的JS接口列表</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这些数据都可以让后端生成，😊。</p>
+<p>这里存在一个坑。对于android设备，vue项目一切正常（可能是和官网说的修复有关）。</p>
+<p><strong>对于ios设备，vue项目的URL是不会变化的，只对第一次进入的URL能验证成功。</strong><br>当然页面fresh，是会刷新的url的。这个说的不会变化是指 <code>$router.push</code> 方法。</p>
+<ol start="3">
+<li>通过ready接口处理成功验证</li>
+<li>自定义分享内容<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">wx.ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;   <span class="comment">//需在用户可能点击分享按钮前就先调用</span></span><br><span class="line">  wx.updateAppMessageShareData(&#123; <span class="comment">// 分享到朋友</span></span><br><span class="line">    title: <span class="string">''</span>, <span class="comment">// 分享标题</span></span><br><span class="line">    desc: <span class="string">''</span>, <span class="comment">// 分享描述</span></span><br><span class="line">    link: <span class="string">''</span>, <span class="comment">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span></span><br><span class="line">    imgUrl: <span class="string">''</span>, <span class="comment">// 分享图标</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 设置成功</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.updateTimelineShareData(&#123; <span class="comment">// 分享到朋友圈</span></span><br><span class="line">    title: <span class="string">''</span>, <span class="comment">// 分享标题</span></span><br><span class="line">    link: <span class="string">''</span>, <span class="comment">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span></span><br><span class="line">    imgUrl: <span class="string">''</span>, <span class="comment">// 分享图标</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 设置成功</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h5><p>因为上面说的那个坑，所以在vue项目中，需要做一些特殊处理。</p>
+<p>处理原理是，在最开始进入页面的时候纪录下url，然后在每次路由刷新的时候判断是<code>andriod</code>机还是<code>ios</code>机子，做不同的处理.</p>
+<p>下面给出具体代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; wechatAuth &#125; <span class="keyword">from</span> <span class="string">'@/utils/wechatConfig.js'</span></span><br><span class="line"></span><br><span class="line">router.afterEach(<span class="function"><span class="params">to</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> authUrl = <span class="string">`<span class="subst">$&#123;<span class="built_in">window</span>.location.origin&#125;</span><span class="subst">$&#123;to.fullPath&#125;</span>`</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.__wxjs_is_wkwebview) &#123;</span><br><span class="line">    <span class="comment">// IOS</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.entryUrl) &#123;</span><br><span class="line">      <span class="built_in">window</span>.entryUrl = authUrl <span class="comment">// 将后面的参数去除</span></span><br><span class="line">    &#125;</span><br><span class="line">    wechatAuth(authUrl, <span class="string">'ios'</span>, to.meta.title)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 安卓</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      wechatAuth(authUrl, <span class="string">'android'</span>, to.meta.title)</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wechatAuth</span></span><br><span class="line"><span class="keyword">import</span> api <span class="keyword">from</span> <span class="string">'@/api'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'@/lib/jweixin-1.4.0.js'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> indexOfConfig = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> updateShareData = <span class="function">(<span class="params">shareConfig, shareSuccessCallback</span>) =&gt;</span> &#123;</span><br><span class="line">  wx.updateAppMessageShareData(&#123;</span><br><span class="line">    title: shareConfig.title,</span><br><span class="line">    desc: shareConfig.desc,</span><br><span class="line">    link: shareConfig.link,</span><br><span class="line">    imgUrl: shareConfig.imgUrl,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      shareSuccessCallback()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.updateTimelineShareData(&#123;</span><br><span class="line">    title: shareConfig.title,</span><br><span class="line">    link: shareConfig.link,</span><br><span class="line">    imgUrl: shareConfig.imgUrl,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      shareSuccessCallback()</span><br><span class="line">    &#125;,</span><br><span class="line">    fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.onMenuShareTimeline(&#123;</span><br><span class="line">    title: shareConfig.title,</span><br><span class="line">    link: shareConfig.link,</span><br><span class="line">    imgUrl: shareConfig.imgUrl,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      shareSuccessCallback()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.onMenuShareAppMessage(&#123;</span><br><span class="line">    title: shareConfig.title,</span><br><span class="line">    desc: shareConfig.desc,</span><br><span class="line">    link: shareConfig.link,</span><br><span class="line">    imgUrl: shareConfig.imgUrl,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      shareSuccessCallback()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> wechatAuth = <span class="keyword">async</span> (authUrl, device, title, allowShare = <span class="literal">true</span>, shareSuccessCallback = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> shareConfig = &#123;</span><br><span class="line">    title: <span class="string">'title'</span>,</span><br><span class="line">    desc: <span class="string">'desc'</span>,</span><br><span class="line">    link: allowShare ? authUrl : <span class="built_in">window</span>.location.origin,</span><br><span class="line">    imgUrl: <span class="built_in">window</span>.location.origin + <span class="string">'/favicon-matpool.ico'</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> params = &#123;</span><br><span class="line">    <span class="comment">// 这里在别人的代码中调用了encodeURIComponent，但我测试的结果是：没有encodeURIComponent才能正确分享。</span></span><br><span class="line">    url: device === <span class="string">'ios'</span> ? <span class="built_in">window</span>.entryUrl : authUrl </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> authRes = <span class="keyword">await</span> api.getWxConfig(params)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (authRes &amp;&amp; wx) &#123;</span><br><span class="line">    <span class="keyword">if</span> (device !== <span class="string">'ios'</span> || indexOfConfig === <span class="number">0</span>) &#123;</span><br><span class="line">      indexOfConfig++</span><br><span class="line"></span><br><span class="line">      wx.config(&#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: authRes.app_id,</span><br><span class="line">        timestamp: authRes.timestamp,</span><br><span class="line">        nonceStr: authRes.nonce,</span><br><span class="line">        signature: authRes.signature,</span><br><span class="line">        jsApiList: [</span><br><span class="line">          <span class="string">'updateAppMessageShareData'</span>,</span><br><span class="line">          <span class="string">'updateTimelineShareData'</span>,</span><br><span class="line">          <span class="string">'onMenuShareAppMessage'</span>,</span><br><span class="line">          <span class="string">'onMenuShareTimeline'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      wx.ready(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        updateShareData(shareConfig, shareSuccessCallback)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      updateShareData(shareConfig, shareSuccessCallback)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong>：就是这个encodeURIComponent坑了我一天的时间。😅</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://mp.weixin.qq.com/wiki" target="_blank" rel="noopener">微信公众平台技术文档</a></li>
+<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455784140" target="_blank" rel="noopener">微信web开发者工具</a></li>
+<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">微信js-sdk</a></li>
+<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455784134" target="_blank" rel="noopener">微信网页开发样式库</a></li>
+</ol>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2019/08/19/wechat-web/">https://sampwood.github.io/2019/08/19/wechat-web/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/mobile/">mobile</a>
+            
+              <a href="/tags/vue/">vue</a>
+            
+              <a href="/tags/html5/">html5</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/05/15/project-basic-configuration/">
+        <span class="next-text nav-default">project 基础设置</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>
