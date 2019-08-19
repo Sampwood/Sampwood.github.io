@@ -1,5 +1,5 @@
 ---
-title: project basic configuration
+title: project 基础设置
 categories:
   - coding
 tags:
@@ -178,10 +178,12 @@ npm i -D standard-version
 {
   "scirpt": {
     ...,
-    "release": "standard-version"
+    "release": "HUSKY_SKIP_HOOKS=1 standard-version"
   }
 }
 ```
+
+**Note**: `HUSKY_SKIP_HOOKS=1` 用于取消husky中第二个hook（`prepare-commit-msg`）,这个需要`husky`升级到`3.0.0`版本以上
 
 
 ## 参考

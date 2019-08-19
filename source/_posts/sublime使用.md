@@ -40,6 +40,7 @@ update: 2018-10-26 17:23:43
 - SublimeServer
 - Termial
 - Vue Svntax Highlight
+- cssrem: 自动计算px转化为rem（项目地址：`https://github.com/flashlizi/cssrem`，手动下载）
 
 ### 快捷键
 
