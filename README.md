@@ -40,6 +40,7 @@ git subtree pull --prefix=themes/even even master --squash
     - vue
     - linter
     - http
+    - wechat
 - 随笔
 
 ### 标签
@@ -78,3 +79,4 @@ git subtree pull --prefix=themes/even even master --squash
 - 跨域
 - utils
 - 浏览器
+- 性能
