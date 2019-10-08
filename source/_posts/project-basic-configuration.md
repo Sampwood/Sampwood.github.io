@@ -21,6 +21,8 @@ update: 2019-05-15 20:59:36
 npm i -D prettier eslint-plugin-prettier eslint-config-prettier
 ```
 
+<!-- more -->
+
 `eslint-plugin-prettier` 插件会调用 `prettier` 对你的代码风格进行检查.
 其原理是先使用 `prettier` 对你的代码进行格式化，然后与格式化之前的代码进行对比，如果过出现了不一致，这个地方就会被 `prettier` 进行标记。
  
