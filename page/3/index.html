@@ -225,6 +225,120 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/05/27/parenting/">parenting</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-27
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/随笔/">随笔</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><ol>
+<li>护理喂养疾病：《美国儿科协会育儿百科0~5岁》。<strong>建议阅读时间</strong>：根据月龄读，可以作为随时放在案边查询的工具书。</li>
+<li>规律作息和睡眠问题:《实用程序育儿法》。<strong>建议阅读时间</strong>：宝宝1个月之前读完，可以对今后规划宝宝作息有个全面的安排。而且小月龄宝宝更加容易培养好习惯。当然如果你错过了，现在补看也可以。</li>
+<li>心理认知发展: 《你的1岁孩子》。<strong>建议阅读时间</strong>：宝宝6个月以后，或者当你觉得应付宝宝吃睡等这些基础问题已经游刃有余时。</li>
+<li>如何与孩子互动：《游戏力》。</li>
+<li>《崔玉涛：宝贝健康公开课》</li>
+<li>《张思莱育儿微访谈》</li>
+<li>《给孩子一口漂亮的牙齿》</li>
+<li>《冀连梅谈：中国人应该这样用药》</li>
+<li>《郑玉巧育儿经》胎儿卷、婴儿卷、幼儿卷</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://www.zhihu.com/question/20853110" target="_blank" rel="noopener">有哪些值得推荐的育儿类图书？</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/05/18/float-calculate/">js中的浮点数计算</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-18
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/js/">js</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>由于<code>舍入误差</code>的存在，浮点数的计算会不是很精确。例如<code>1.11 * 100 =&gt; 111.00000000000001</code>。</p>
+<p>下面是一段简单处理的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//按照有效数字位数进行四舍五入，默认6位有效数字</span><br><span class="line">Math.signFigures = function(num, rank = 6) &#123;</span><br><span class="line">    if(!num) return(0);</span><br><span class="line">    let sign = num / Math.abs(num);</span><br><span class="line">    let number = num * sign;</span><br><span class="line">    let temp = rank - 1 - Math.floor(Math.log10(number));</span><br><span class="line">    let ans;</span><br><span class="line">    if (temp &gt; 0) &#123;</span><br><span class="line">        ans = parseFloat(number.toFixed(temp));</span><br><span class="line">    &#125; else if (temp &lt; 0) &#123;</span><br><span class="line">        temp = Math.pow(10, temp);</span><br><span class="line">        ans = Math.round(number / temp) * temp;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        ans = Math.round(number);</span><br><span class="line">    &#125;</span><br><span class="line">    return (ans * sign);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>Math.signFigures(123.242545, 1) 会出问题！</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://segmentfault.com/q/1010000005697295" target="_blank" rel="noopener">为什么js里面有些数字*100结果会不准确?</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/05/14/jsts-polygon-study/">jsts-polygon-study</a>
         
       </h1>
@@ -643,113 +757,6 @@
         
       
     </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/08/vim配置&操作/">vim配置&操作</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-08
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/coding/">coding</a>
-            
-              <a href="/categories/coding/linux/">linux</a>
-            
-          </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="单个命令："><a href="#单个命令：" class="headerlink" title="单个命令："></a>单个命令：</h3><p>  x: 删除当前光标所在的一个字符<br>  p: 粘贴<br>  hjkl: 移动光标（左下上右）<br>  d: 删除 （dd就是删除一行）<br>  a: 在光标后插入<br>
-          <div class="read-more">
-            <a href="/2018/01/08/vim配置&操作/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </p></div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/18/vnc-in-ubuntu/">vnc in ubuntu</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-18
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/coding/">coding</a>
-            
-              <a href="/categories/coding/linux/">linux</a>
-            
-          </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>Ubuntu 16.04 LTS 安装VNC，在百度和google上面找了很多的教程，基本都不成功，一些问题好多人问，但就是没有回答。</p>
-<p>最后搭建成功了的是Xfce桌面环境，unity/gnome一直是个残缺的样子（木有左边的菜单栏和右上角的时间，登出）<br>
-          <div class="read-more">
-            <a href="/2017/12/18/vnc-in-ubuntu/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </p></div>
 
     
 

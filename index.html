@@ -225,6 +225,120 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2019/10/25/stream-web/">web端的音频流</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-10-25
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/html/">html</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>昨天看到一个有意思的题目：怎么使用HTML5实现录音的功能？</p>
+<p>然后试着了解了下，实现原理主要是用了<code>MediaStream</code>这个对象。</p>
+<blockquote>
+<p>The MediaStream interface represents a stream of media content. A stream consists of several tracks such as video or audio tracks.<br>Each track is specified as an instance of MediaStreamTrack.<br>You can obtain a MediaStream object either by using the constructor or by calling MediaDevices.getUserMedia().</p>
+</blockquote>
+<p>这是来自<code>MDN文档</code> 对 <code>MediaStream</code> 的说明。</p>
+<p>从中我们可以知道，可以通过 <code>MediaDevices.getUserMedia()</code> 方法来获取设备的音频输入功能。</p>
+          <div class="read-more">
+            <a href="/2019/10/25/stream-web/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2019/10/09/stylelint/">引入stylelint对项目做代码样式审查</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-10-09
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/css/">css</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>早就看到<code>stylelint</code> 的介绍文章，感觉有点意思。因为懒，这几天才接入了这个样式检查的工具。</p>
+<p>话不多说，直接看如何引入这个库吧。</p>
+<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><p>安装相关依赖库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add stylelint stylelint-config-standard stylelint-config-prettier</span><br></pre></td></tr></table></figure></p>
+          <div class="read-more">
+            <a href="/2019/10/09/stylelint/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2019/10/08/web-performance/">网页性能优化</a>
         
       </h1>
@@ -658,125 +772,6 @@
 <p><strong>函数节流（throttle）</strong>与 <strong>函数防抖（debounce）</strong>都是为了限制函数的执行频次，<br>以优化函数触发频率过高导致的响应速度跟不上触发频率，出现延迟，假死或卡顿的现象。</p>
           <div class="read-more">
             <a href="/2019/01/11/节流和防抖/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/01/08/跨域问题/">跨域问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-01-08
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/coding/">coding</a>
-            
-              <a href="/categories/coding/http/">http</a>
-            
-          </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>跨域在前端是个很常见的场景。<br>首先，我们先来了解下什么是跨域，什么情况下出现跨域。</p>
-<h3 id="概念以及场景"><a href="#概念以及场景" class="headerlink" title="概念以及场景"></a>概念以及场景</h3><p>跨域的始作俑者是<a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">同源策略</a>:</p>
-<blockquote>
-<p>同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</p>
-</blockquote>
-<p>换句话说就是，浏览器限制了，我们在一个页面下面去调用另外一个源的资源。<br>最常见的场景是我们在当前页面下调用了另一个源的接口。结果浏览器直接报错了，说不行，不能这样干。</p>
-<p>下面是同源的定义：</p>
-<blockquote>
-<p>如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。</p>
-</blockquote>
-          <div class="read-more">
-            <a href="/2019/01/08/跨域问题/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/01/07/git多平台换行符问题-LF-CRLF/">git多平台换行符问题(LF/CRLF)</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-01-07
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/coding/">coding</a>
-            
-              <a href="/categories/coding/version-control/">version-control</a>
-            
-          </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h3><p>目前大部分的前端开发用macos/windows来开发，linux系统使用的较少。<br>一个多人开发的项目必然会覆盖windows和unix系统。<br>而这个两个系统间存在一些差异，其中之一就是文本换行的方式。</p>
-<p>CRLF, LF 都是用来表示文本换行的方式。主流的操作系统一般使用CRLF或者LF作为其文本的换行符。<br>CR(Carriage Return) 代表回车，对应字符 <code>\r</code>；LF(Line Feed) 代表换行，对应字符 <code>\n</code>。</p>
-<p>unix/linux(macos)使用的是LF，windows使用的是CRLF。</p>
-<p>跨平台协作开发是常有的，不统一的换行符确实对跨平台的文件交换带来了麻烦。<br>最大的问题是，在不同平台上，换行符发生改变时，Git 会认为整个文件被修改，这就造成我们 <code>diff</code> 不能正确反映本次的修改。</p>
-<p>例如在查看<code>diff</code>的时候，出现下面的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in .gitignore.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">warning: LF will be replaced by CRLF in README.md.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-          <div class="read-more">
-            <a href="/2019/01/07/git多平台换行符问题-LF-CRLF/" class="read-more-link">阅读更多</a>
           </div>
         
       
