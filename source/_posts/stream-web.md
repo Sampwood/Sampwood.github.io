@@ -118,7 +118,7 @@ tags:
 
 所以停止录音的方法是：
 ```javascript
-stream.getTracks()tracks.forEach(function(track) {
+stream.getTracks().forEach(function(track) {
   track.stop();
 });
 ```
