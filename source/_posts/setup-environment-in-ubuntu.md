@@ -17,3 +17,5 @@ update: 2018-03-17 12:42:38
 6. [安装git](https://git-scm.com/download/linux)：`# add-apt-repository ppa:git-core/ppa` `# apt update; apt install git`
 7. [安装node](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)：`curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -` `sudo apt-get install -y nodejs`
 8. 安装Mongodb：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+**NOTE**: 如果要让`mongodb` 监听公网ip, 设置`/etc/mongod.conf` 中 `bindIp: 0.0.0.0`
