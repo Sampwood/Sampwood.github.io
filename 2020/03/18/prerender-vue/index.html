@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="prerender-vue">
+
+
+
+
+  <meta name="keywords" content="vue, environment, seo, Sampwood的One Piece">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sampwood的One Piece">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="https://sampwood.github.io/2020/03/18/prerender-vue/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":0},"category_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+</script>
+
+    <title> prerender-vue - Sampwood的One Piece </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Sampwood的One Piece</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Sampwood的One Piece</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          prerender-vue
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-03-18
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/vue/">vue</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景"><span class="toc-text">场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖"><span class="toc-text">依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#prerender-spa-plugin"><span class="toc-text">prerender-spa-plugin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sitemap-js"><span class="toc-text">sitemap.js</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实践"><span class="toc-text">实践</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装依赖"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将vue-router-mode属性改为history"><span class="toc-text">将vue router mode属性改为history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置webpack文件"><span class="toc-text">配置webpack文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改main-js"><span class="toc-text">修改main.js</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖包不能下载"><span class="toc-text">依赖包不能下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux不能正常打包"><span class="toc-text">Linux不能正常打包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#闪屏"><span class="toc-text">闪屏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他页面刷新时不能正常访问"><span class="toc-text">其他页面刷新时不能正常访问</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a>
+    </li></div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>目前大部分接触到的页面都会使用SPA来实现。但是SPA会有个问题，就是对于SEO的支持不是很好。</p>
+<p>对于vue项目来说，可以使用nuxt一把梭😹。<br>但对于简单的场景来说，其实也可以用预渲染的方式来只对首页和文档部分做静态渲染。<br>这样既满足了SEO的支持，也和原本vue的写法一样。</p>
+<a id="more"></a>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><h4 id="prerender-spa-plugin"><a href="#prerender-spa-plugin" class="headerlink" title="prerender-spa-plugin"></a>prerender-spa-plugin</h4><p>预渲染依赖 <code>prerender-spa-plugin</code> 插件。</p>
+<p><code>prerender-spa-plugin</code> 是 <code>webpack</code> 的插件，所以用 <code>webpack</code> 打包的单页面（<code>react</code>，<code>vue</code>，<code>angular</code>等）都能使用。</p>
+<p><code>prerender-spa-plugin</code> 原理就是使用浏览器内核预先加载页面渲染数据得到完整页面后生成完整的<code>html</code>文件。</p>
+<h4 id="sitemap-js"><a href="#sitemap-js" class="headerlink" title="sitemap.js"></a>sitemap.js</h4><p>百度爬虫非常喜欢Sitemap，Sitemap协议使你能够告知搜索引擎网站中可供抓取的网址，sitemap的生成就是让搜索引擎更好的去访问网站从而给网站的收录产生一个好的作用。</p>
+<p>所以用<code>sitemap</code> 库来自动生成 <code>sitemap.xml</code> 文件对SEO有很大帮助。</p>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add prerender-spa-plugin sitemap -D</span><br></pre></td></tr></table></figure>
+<h4 id="将vue-router-mode属性改为history"><a href="#将vue-router-mode属性改为history" class="headerlink" title="将vue router mode属性改为history"></a>将vue router mode属性改为history</h4><p>mode必须为history，如果不改为history，在hash模式下，prerender-spa-plugin打包出来的静态html只有首页的html是完整的，其他页面还是用的首页骨架，然后动态生成生成html替换，就达不到seo的效果。</p>
+<h4 id="配置webpack文件"><a href="#配置webpack文件" class="headerlink" title="配置webpack文件"></a>配置webpack文件</h4><p>修改build/webpack.prod.conf.js 文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const resolve = dir =&gt; path.join(__dirname, &apos;..&apos;, dir);</span><br><span class="line">// pre-render</span><br><span class="line">const PrerenderSPAPlugin = require(&apos;prerender-spa-plugin&apos;)</span><br><span class="line">const Renderer = PrerenderSPAPlugin.PuppeteerRenderer</span><br><span class="line">const VueLoaderPlugin = require(&apos;vue-loader/lib/plugin&apos;)</span><br><span class="line">const routes = [&apos;/&apos;] // 确定需要预渲染的页面路由和生成sitemap的路由，这两个也可以分开</span><br><span class="line">// sitemap url容器</span><br><span class="line">const sitemap = require(&apos;sitemap&apos;);</span><br><span class="line">const siteMapUrls = [];</span><br><span class="line"></span><br><span class="line">const webpackConfig = merge(baseWebpackConfig, &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">      // pre render</span><br><span class="line">      new PrerenderSPAPlugin(&#123;</span><br><span class="line">        staticDir: path.join(__dirname, &apos;../dist&apos;),</span><br><span class="line">        // Output directory</span><br><span class="line">        outputDir: path.join(__dirname, &apos;../dist/rendered&apos;),</span><br><span class="line">        routes,</span><br><span class="line">        postProcess (context) &#123;</span><br><span class="line">          //content 参数</span><br><span class="line">          const &#123;originalRoute, route, html&#125; = context;</span><br><span class="line">          //将路由添加到全局sitemap容器</span><br><span class="line">          siteMapUrls.push(originalRoute);</span><br><span class="line"></span><br><span class="line">          //当当前路由为最后一个生成路由时  </span><br><span class="line">          if (route === routes[routes.length - 1]) &#123;</span><br><span class="line">            //去除重复的链接</span><br><span class="line">            let currentSiteMapUrls = Array.from(new Set(siteMapUrls));</span><br><span class="line">            // //过滤掉链接中的锚点后内容</span><br><span class="line">            currentSiteMapUrls = currentSiteMapUrls.map(url =&gt; &#123;</span><br><span class="line">              const isMao = url.indexOf(&apos;#&apos;) &gt; -1;</span><br><span class="line">              //生成sitemap所需数据，具体参数参详sitemap.js官网</span><br><span class="line">              return &#123;url: isMao ? url.split(&apos;#&apos;)[0] : url, changefreq: &apos;weekly&apos;, priority: 1, lastmod: new Date().toLocaleDateString()&#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            //生成siteMap文件</span><br><span class="line">            const sm = sitemap.createSitemap(&#123;</span><br><span class="line">              //路由前缀地址，全地址自动不会添加hostname</span><br><span class="line">              hostname: &apos;https://matpool.com&apos;,</span><br><span class="line">              cacheTime: 600000,  //600 sec (10 min) cache purge period</span><br><span class="line">              urls: currentSiteMapUrls</span><br><span class="line">            &#125;);</span><br><span class="line">            //将sitemap文件添加搭配打包文件夹dist中</span><br><span class="line">            fs.writeFileSync(resolve(&apos;dist/sitemap.xml&apos;), sm.toString());</span><br><span class="line">          &#125;</span><br><span class="line">          // 解决闪屏问题</span><br><span class="line">          context.html = html.replace(&apos;id=&quot;app&quot;&apos;, &apos;id=&quot;app&quot; data-server-rendered=&quot;true&quot;&apos;);</span><br><span class="line">          //返回当前contet对象</span><br><span class="line">          return context</span><br><span class="line">        &#125;,</span><br><span class="line">        renderer: new Renderer(&#123;</span><br><span class="line">          inject: &#123;</span><br><span class="line">            foo: &apos;bar&apos;</span><br><span class="line">          &#125;,</span><br><span class="line">          headless: true,</span><br><span class="line">          renderAfterDocumentEvent: &apos;render-event&apos;,</span><br><span class="line">          //puppeteer参数，标签意思：完全信任在Chrome中打开的内容</span><br><span class="line">          args: [&apos;--no-sandbox&apos;, &apos;--disable-setuid-sandbox&apos;]</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;),</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>上面webpack文件中 <code>postProcess</code> 是用来配合<code>sitemap</code>库生成<code>sitemap.xml</code>文件的。<br>PrerenderSPAPlugin 插件中其他代码是用来生成预渲染页面的。</p>
+<h4 id="修改main-js"><a href="#修改main-js" class="headerlink" title="修改main.js"></a>修改main.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  i18n,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="comment">// 这个是关键，触发事件来引导预渲染。"render-event" 得和上面的PrerenderSPAPlugin.renderer.renderAfterDocumentEvent一致</span></span><br><span class="line">    <span class="built_in">document</span>.dispatchEvent(<span class="keyword">new</span> Event(<span class="string">'render-event'</span>))</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h4 id="依赖包不能下载"><a href="#依赖包不能下载" class="headerlink" title="依赖包不能下载"></a>依赖包不能下载</h4><p><code>prerender-spa-plugin</code> 依赖 google 的 <code>puppeteer</code> 库。所以install的时候需要翻墙，或者设置淘宝源。</p>
+<h4 id="Linux不能正常打包"><a href="#Linux不能正常打包" class="headerlink" title="Linux不能正常打包"></a>Linux不能正常打包</h4><p>本地打包没有问题，linux服务器打包可能会出现ERROR: Fail to lauunch chrome!</p>
+<p>原因一：linux 环境缺少一些<a href="https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#chrome-headless-doesnt-launch-on-unix" target="_blank" rel="noopener">依赖</a></p>
+<p>所以需要先在Linux上装好这些依赖。</p>
+<p>因为我是用docker来构建部署的，这里提供下dockerfile：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">18.04</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> maintainer=<span class="string">"sampwood@163.com"</span></span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> sed -i <span class="string">'s/archive.ubuntu.com/mirrors.aliyun.com/g'</span> /etc/apt/sources.list; \</span></span><br><span class="line"><span class="bash">  apt-get update; \</span></span><br><span class="line"><span class="bash">  DEBIAN_FRONTEND=noninteractive \</span></span><br><span class="line"><span class="bash">  apt-get install -y --no-install-recommends \</span></span><br><span class="line"><span class="bash">  ca-certificates \</span></span><br><span class="line"><span class="bash">  bash \</span></span><br><span class="line"><span class="bash">  curl \</span></span><br><span class="line"><span class="bash">  git \</span></span><br><span class="line"><span class="bash">  apt-utils</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> curl -sL https://deb.nodesource.com/setup_12.x | bash</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get install -y nodejs</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> curl -sL https://sentry.io/get-cli/ | bash</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm config <span class="built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node-sass/</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm install -g yarn@1.16.0 standard-version@7.1.0</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yarn config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yarn config <span class="built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node-sass/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash">  apt-get update \</span></span><br><span class="line"><span class="bash">  &amp;&amp; apt-get install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget \</span></span><br><span class="line"><span class="bash">  &amp;&amp; rm -rf /var/lib/apt/lists/*</span></span><br></pre></td></tr></table></figure>
+<h4 id="闪屏"><a href="#闪屏" class="headerlink" title="闪屏"></a>闪屏</h4><p>在预渲染构建完成之后，访问页面，可能会出现闪屏的现象。</p>
+<p>解决方法：在 <code>PrerenderSPAPlugin.postProcess</code> 中加入下面这段代码（上面的例子中已经加了）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.html = html.replace(<span class="string">'id="app"'</span>, <span class="string">'id="app" data-server-rendered="true"'</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="其他页面刷新时不能正常访问"><a href="#其他页面刷新时不能正常访问" class="headerlink" title="其他页面刷新时不能正常访问"></a>其他页面刷新时不能正常访问</h4><p>在预渲染页面之外的页面刷新时，可能会出现不能正常渲染的情况。</p>
+<p>解决方法：配置 <code>nginx</code> 文件:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">  <span class="section">server</span> &#123;</span><br><span class="line">    <span class="comment"># pre-rendered routes</span></span><br><span class="line">    <span class="attribute">location</span> = / &#123;</span><br><span class="line">        <span class="attribute">try_files</span> <span class="variable">$uri</span> /rendered/index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># all other dynamic routes</span></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">      <span class="attribute">index</span> index.html;</span><br><span class="line">      <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里面的 <code>/rendered/</code> 文件夹要和上面<code>webpack.prod.conf.js</code> 中 <code>PrerenderSPAPlugin.outputDir</code> 保持一致</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://brickyang.github.io/2019/01/14/%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-Puppeteer-%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">国内下载安装 Puppeteer 的方法</a></li>
+<li><a href="https://juejin.im/post/5dcbc2196fb9a0606f094186#heading-2" target="_blank" rel="noopener">vue项目seo问题简单解决，并生成sitemap</a></li>
+<li><a href="https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md" target="_blank" rel="noopener">puppeteer Troubleshooting</a></li>
+</ol>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2020/03/18/prerender-vue/">https://sampwood.github.io/2020/03/18/prerender-vue/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/vue/">vue</a>
+            
+              <a href="/tags/environment/">environment</a>
+            
+              <a href="/tags/seo/">seo</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2020/01/22/browser-render/">
+        <span class="next-text nav-default">浏览器渲染</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:sampwood@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/sampwood" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2020
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Sampwood</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>
