@@ -26,7 +26,7 @@ wsl, 就是Windows Subsystem for Linux, 简单的说 WSL 就是让开发者在 W
 
 1. 控制面板 -> 程序 -> 启用或关闭 Windows 功能 -> 勾选 适用Linux的Windows子系统 （我是秋季创造者更新版本，我记得之前低版本可能是 beta 版本）
 
-   ![\images\wsl](..\images\wsl.jpg)
+   ![\images\wsl](/images/wsl.jpg)
 
 2. 打开 window商店，选择合适的 Linux 发行版安装 (这里搜索Linux 根据下面第一个suggestion 进入)，这里我选择了 Ubuntu
 
