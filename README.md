@@ -41,6 +41,7 @@ git subtree pull --prefix=themes/even even master --squash
     - linter
     - http
     - wechat
+    - browser
 - 随笔
 
 ### 标签
