@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="Web developer form somewhere">
+  <meta name="description" content="记一次webpack debug">
 
 
 
+
+  <meta name="keywords" content="webpack, Sampwood的One Piece">
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="https://sampwood.github.io/archives/2019/04/">
+<link rel="canonical" href="https://sampwood.github.io/2020/08/02/webpack-debug/">
 
 
 
@@ -87,11 +89,7 @@
   window.config = {"title":"Sampwood的One Piece","subtitle":"step by step","description":"Web developer form somewhere","author":"Sampwood","language":"zh-CN","timezone":"Asia/Shanghai","url":"https://sampwood.github.io","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repo":"https://github.com/Sampwood/sampwood.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"jsonContent":{"meta":false,"pages":false,"posts":{"title":true,"date":true,"path":true,"text":false,"raw":false,"content":false,"slug":false,"updated":false,"comments":false,"link":false,"permalink":false,"excerpt":false,"categories":false,"tags":true}},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":0},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"sampwood@163.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/sampwood","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
-    <title>
-  
-    归档 - Sampwood的One Piece
-  
-</title>
+    <title> 记一次webpack debug - Sampwood的One Piece </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -221,59 +219,117 @@
           <div id="content" class="content">
             
   
-  
-  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          记一次webpack debug
+        
+      </h1>
 
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 61 篇日志
+      <div class="post-meta">
+        <span class="post-time">
+          2020-08-02
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/coding/">coding</a>
+            
+              <a href="/categories/coding/js/">js</a>
+            
           </span>
-        </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <p>项目需要引入jupyterlab组件，结果在项目中导入css出错了，报错信息是找不到 <code>@jupyterlab/application/style/index.css</code> 文件中的依赖样式文件 <code>@import url(&#39;~@fortawesome/fontawesome-free/css/all.min.css&#39;);</code></p>
+<a id="more"></a>
+<p>报错信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">error  in ./src/views/jupyterlab/index.vue?vue&amp;type=style&amp;index=1&amp;lang=css&amp;</span><br><span class="line"></span><br><span class="line">Module build failed (from ./node_modules/postcss-loader/lib/index.js):</span><br><span class="line">Error: Failed to find &apos;~@fortawesome/fontawesome-free/css/all.min.css&apos;</span><br><span class="line">in [</span><br><span class="line">  /Users/sam/Documents/code/AICloud_Web/node_modules/@jupyterlab/application/style</span><br><span class="line">]</span><br><span class="line">  at resolveModule.catch.catch (/Users/sam/Documents/code/AICloud_Web/node_modules/postcss-import/lib/resolve-id.js:35:13)</span><br><span class="line"></span><br><span class="line">@ ./node_modules/vue-style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./src/views/jupyterlab/index.vue?vue&amp;type=style&amp;index=1&amp;lang=css&amp; 4:14-313 14:3-18:5 15:22-321</span><br><span class="line">@ ./src/views/jupyterlab/index.vue?vue&amp;type=style&amp;index=1&amp;lang=css&amp;</span><br><span class="line">@ ./src/views/jupyterlab/index.vue</span><br><span class="line">@ ./src/router/index.js</span><br><span class="line">@ ./src/main.js</span><br></pre></td></tr></table></figure></p>
+<p>哎，由于经验不足，查了半天才发现原因。其实从错误信息中<code>Module build failed (from ./node_modules/postcss-loader/lib/index.js)</code> 可以看到是 postcss-loader 找不到<code>~@fortawesome/fontawesome-free/css/all.min.css</code>，从 <code>at resolveModule.catch.catch (/Users/sam/Documents/code/AICloud_Web/node_modules/postcss-import/lib/resolve-id.js:35:13)</code> 可以看到 postcss-loader 是用了 <code>postcss-import</code> 来引入依赖的样式文件的。如果能理解这个错误信息，那么debug过程就顺利很多。</p>
+<p>正常来说 <code>~</code> 是用来表明后面的内容是第三方依赖的文件，而 <code>postcss-import</code> 却<a href="https://github.com/postcss/postcss-import/issues/386#issuecomment-449740987" target="_blank" rel="noopener">不支持这个语法</a>。。。</p>
+<p>既然知道是postcss的问题，那么再来看下项目中postcss的配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  &quot;plugins&quot;: &#123;</span><br><span class="line">    &quot;postcss-import&quot;: &#123;&#125;,</span><br><span class="line">    &quot;postcss-url&quot;: &#123;&#125;,</span><br><span class="line">    // to edit target browsers: use &quot;browserslist&quot; field in package.json</span><br><span class="line">    &quot;autoprefixer&quot;: &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从配置文件中可以看到 postcss-import 是在这里引入的，那么只要把 <code>postcss-import</code> 和 <code>postcss-url</code> 删掉就好了，事实也确实如此！</p>
+<p>当然还要检查下之前的样式引入是否存在问题。因为 <strong><code>postcss-import</code> 是直接使用包名就能找到依赖项的，而 <code>css-loader</code> 需要在包名前加上 <code>~</code></strong>。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://sampwood.github.io">Sampwood</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://sampwood.github.io/2020/08/02/webpack-debug/">https://sampwood.github.io/2020/08/02/webpack-debug/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
       
     
 
     
-      
+      <footer class="post-footer">
         
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2019</h2>
+          <div class="post-tags">
+            
+              <a href="/tags/webpack/">webpack</a>
+            
           </div>
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            04-01
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2019/04/01/npm-scripts设置环境变量方法/" class="archive-post-link">
-            npm scripts设置环境变量方法
-          </a>
-        </span>
-      </div>
+        
+        
+  <nav class="post-nav">
     
-  </section>
-
-  
-  <nav class="pagination">
+      <a class="prev" href="/2020/08/02/web-worker/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">web worker</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
+    
+      <a class="next" href="/2020/04/20/新获取的知识点/">
+        <span class="next-text nav-default">新获取的知识点</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -357,6 +413,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
