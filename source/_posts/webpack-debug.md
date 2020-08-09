@@ -5,8 +5,8 @@ categories:
   - js
 tags:
   - webpack
-date: 2020-08-02 22:54:33
-update: 2020-08-02 22:54:33
+date: 2020-08-09 22:01:33
+update: 2020-08-09 22:01:33
 ---
 
 项目需要引入jupyterlab组件，结果在项目中导入css出错了，报错信息是找不到 `@jupyterlab/application/style/index.css` 文件中的依赖样式文件 `@import url('~@fortawesome/fontawesome-free/css/all.min.css');`
